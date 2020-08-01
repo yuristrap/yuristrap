@@ -1,0 +1,17 @@
+@mixin container-box {
+	width: 100%;
+	padding-left: $container-padding;
+	padding-right: $container-padding;
+	box-sizing: border-box;
+}
+
+.container-fluid {
+	@include container-box;
+}
+
+.container {
+	max-width: $lg-width;
+	margin-left: auto;
+	margin-right: auto;
+	@include container-box;
+}
