@@ -1,0 +1,13 @@
+.container-fluid {
+	
+}
+
+.container {
+	width: 100%;
+	max-width: $lg-width;
+	padding-left: $container-padding;
+	padding-right: $container-padding;
+	margin-left: auto;
+	margin-right: auto;
+	box-sizing: border-box;
+}
