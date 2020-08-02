@@ -1,3 +1,4 @@
+// Container
 @mixin container-box {
 	width: 100%;
 	padding-left: $container-padding;
@@ -10,8 +11,33 @@
 }
 
 .container {
-	max-width: $lg-width;
+	max-width: $container-width;
 	margin-left: auto;
 	margin-right: auto;
 	@include container-box;
+	@media (min-width: 980px) {
+		background-color: tomato;
+	}
+}
+
+
+// Grid
+.row {
+	display: flex;
+	justify-content: space-between;
+	text-align: center;
+	margin-left: -$container-padding;
+	margin-right: -$container-padding;
+	flex-wrap: wrap;
+	.col {
+		flex: 1 1 0;
+		padding-left: $container-padding;
+		padding-right: $container-padding;
+	}
+	@for $i from 1 through 12 {
+		.col-#{$i} {
+			flex: 0 0 $i / 12 * 100%;
+			max-width : $i / 12 * 100%;
+		}
+	}
 }
