@@ -1,17 +1,66 @@
+// Container
 @mixin container-box {
 	width: 100%;
 	padding-left: $container-padding;
 	padding-right: $container-padding;
 	box-sizing: border-box;
 }
-
 .container-fluid {
 	@include container-box;
 }
-
 .container {
-	max-width: $lg-width;
+	max-width: $container-width;
 	margin-left: auto;
 	margin-right: auto;
 	@include container-box;
+}
+
+// Grid
+@mixin flex-column ($i, $responsive-width) {
+	width: 100%;
+	// flex working on $responsive-width
+	@media (min-width: $responsive-width) {
+		flex: 0 0 $i / $MAX-COLUMNS * 100%;
+		max-width : $i / $MAX-COLUMNS * 100%;
+	}
+}
+.row {
+	display: flex;
+	margin-left: -$container-padding;
+	margin-right: -$container-padding;
+	justify-content: space-between;
+	text-align: center;
+	flex-wrap: wrap;
+	/*
+		.col
+		@desc: Auto sizing
+	*/
+	.col {
+		flex: 1 1 0;
+		padding-left: $container-padding;
+		padding-right: $container-padding;
+	}
+	@for $i from 1 through $MAX-COLUMNS {
+		/*
+			.col-*
+			@desc: None-Responsive Sizing. Based on Flex
+		*/
+		.col-#{$i} {
+			flex: 0 0 $i / $MAX-COLUMNS * 100%;
+			max-width : $i / $MAX-COLUMNS * 100%;
+		}
+		/*
+			.col-sm-*, .col-md-*, .col-lg-*
+			@desc: Responsive Sizing
+		*/
+		.col-sm-#{$i} {
+			@include flex-column($i, $SM-WIDTH);
+		}
+		.col-md-#{$i} {
+			@include flex-column($i, $MD-WIDTH);
+		}
+		.col-lg-#{$i} {
+			@include flex-column($i, $LG-WIDTH);
+		}
+	}
 }
