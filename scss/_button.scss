@@ -1,5 +1,4 @@
-// node-sass --output-style compressed scss/yuri.scss --output dist/css
-.btn{
+.btn {
     font-size: 20px;
     margin: 4px 5px;
     padding: 5px 20px;
@@ -7,201 +6,200 @@
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    // Safari
     -webkit-transition-duration: 0.4s; 
     transition-duration: 0.4s;
     border: 0px;   
-}
-
-.btn-sm{
-    padding: 8px 8px;
-    font-size: 12px;
-}
-.btn-lg{
-    border-radius: 2%;
-    padding: 20px 40px;
-}
-.btn-block{
-    border-radius: 2%;
-    min-width: 100%;
+    &.btn-sm {
+        padding: 8px 8px;
+        font-size: 12px;
+    }
+    &.btn-lg {
+        border-radius: 2%;
+        padding: 20px 40px;
+    }
+    &.btn-block {
+        border-radius: 2%;
+        min-width: 100%;
+    }
 }
 
 // ----
-.btn-green{
+.btn-success {
     background-color: $success;
-    color: white;
+    color: $white;
+    &:hover {
+        background-color : $success-hover;
+    }
+    &:focus {
+        outline-color: $success-focus;
+    }
 }
-.btn-green:hover{
-    background-color : #00a03e;
-}
-.btn-green:focus{
-    outline-color: green;
-}
-.btn-outline-green{
-    background-color: white;
+.btn-outline-success {
+    background-color: $white;
     color :$success;
     border: 1px solid $success;
-}
-.btn-outline-green:hover{
-    background-color: $success;
-    color: white;
-}
-.btn-outline-green:focus{
-    outline-color: green;    
+    &:hover {
+        background-color: $success-ol-hover;
+        color: $white;
+    }
+    &:focus {
+        outline-color: $success-ol-focus;    
+    }
 }
 
 // ----
-.btn-primary{
+.btn-primary {
     background-color: $primary;
-    color: white;
+    color: $white;
+    &:hover {
+        background-color : $primary-hover;
+    }
+    &:focus {
+        outline-color: $primary-focus;
+    }
 }
-.btn-primary:hover{
-    background-color : #3366CC;
-}
-.btn-primary:focus{
-    outline-color: #003399;
-}
-.btn-outline-primary{
-    background-color: white;
+.btn-outline-primary {
+    background-color: $white;
     color : $primary;
-    border: 1px solid #0087cb;
-}
-.btn-outline-primary:hover{
-    background-color: $primary;
-    color: white;
-}
-.btn-outline-primary:focus{
-    outline-color: #3366CC;    
-}
-
-// ----
-.btn-orange{
-    background-color: orange;
-    color: white;
-}
-.btn-orange:hover{
-    background-color : #d68b00;
-}
-.btn-orange:focus{
-    outline-color: #c78000;
-}
-.btn-outline-orange{
-    background-color: white;
-    color :orange;
-    border: 1px solid orange;
-}
-.btn-outline-orange:hover{
-    background-color: orange;
-    color: white;
-}
-.btn-outline-orange:focus{
-    outline-color: orange;    
+    border: 1px solid $primary;
+    &:hover {
+        background-color: $primary-ol-hover;
+        color: $white;
+    }
+    &:focus {
+        outline-color: $primary-ol-focus;    
+    }
 }
 
 // ----
-.btn-danger{
+.btn-warning{
+    background-color: $warning;
+    color: $white;
+    &:hover {
+        background-color : $warning-hover;
+    }
+    &:focus {
+        outline-color: $warning-focus;
+    }
+}
+.btn-outline-warning {
+    background-color: $white;
+    color :$warning;
+    border: 1px solid $warning;
+    &:hover {
+        background-color: $waring-ol-hover;
+        color: $white;
+    }
+    &:focus {
+        outline-color: $waring-ol-focus;    
+    }
+}
+
+// ----
+.btn-danger {
     background-color: $danger;
-    color: white;
+    color: $white;
+    &:hover {
+        background-color : $danger-hover;
+    }
+    &:focus {
+        outline-color: $danger-focus;
+    }
 }
-.btn-danger:hover{
-    background-color : #e84a5f;
-}
-.btn-danger:focus{
-    outline-color: #e8505b;
-}
-.btn-outline-danger{
-    background-color: white;
+.btn-outline-danger {
+    background-color: $white;
     color :$danger;
     border: 1px solid $danger;
-}
-.btn-outline-danger:hover{
-    background-color: $danger;
-    color: white;
-}
-.btn-outline-danger:focus{
-    outline-color: #e84a5f;  
+
+    &:hover {
+        background-color: $danger-ol-hover;
+        color: $white;
+    }
+    &:focus {
+        outline-color: $danger-ol-focus;  
+    }
 }
 
 // ----
-.btn-dark{
+.btn-dark {
     background-color:$dark;
-    color: white;
+    color: $white;
+    &:hover {
+        background-color : $dark-hover;
+    }
+    &:focus {
+        outline-color: $dark-focus;
+    }
 }
-.btn-dark:hover{
-    background-color : #3d3d3b;
-}
-.btn-dark:focus{
-    outline-color: #3d3d3b;
-}
-.btn-outline-dark{
-    background-color: white;
+.btn-outline-dark {
+    background-color: $white;
     color : $dark;
     border: 1px solid $dark;
-}
-.btn-outline-dark:hover{
-    background-color: $dark;
-    color: white;
-}
-.btn-outline-dark:focus{
-    outline-color: #3d3d3b;  
-}
-
-// ----
-.btn-light{
-    background-color:white;
-    color: black;
-}
-.btn-light:hover{
-    background-color : gainsboro;
-}
-.btn-light:focus{
-    outline-color: gainsboro;
+    &:hover {
+        background-color: $dark-ol-hover;
+        color: $white;
+    }
+    &:focus {
+        outline-color: $dark-ol-focus;  
+    }
 }
 
 // ----
-.btn-info{
+.btn-light {
+    background-color:$white;
+    color: $black;
+    &:hover {
+        background-color : $light-hover;
+    }
+    &:focus {
+        outline-color: $light-focus;
+    }
+}
+
+// ----
+.btn-info {
     background-color: $info;
-    color: white;
+    color: $white;
+    &:hover {
+        background-color : #3EA99F;
+    }
+    &:focus {
+        outline-color: #3EA99F;
+    }
 }
-.btn-info:hover{
-    background-color : #3EA99F;
-}
-.btn-info:focus{
-    outline-color: #3EA99F;
-}
-.btn-outline-info{
-    background-color: white;
+.btn-outline-info {
+    background-color: $white;
     color :$info;
     border: 1px solid $info;
-}
-.btn-outline-info:hover{
-    background-color: $info;
-    color: white;
-}
-.btn-outline-info:focus{
-    outline-color: #46C7C7;  
+    &:hover {
+        background-color: $info-ol-hover;
+        color: $white;
+    }
+    &:focus {
+        outline-color: $info-ol-focus;  
+    }
 }
 
 // ----
-.btn-brown{
-    background-color: #ba7967;
-    color: white;
+.btn-brown {
+    background-color: $brown;
+    color: $white;
+    &:hover {
+        background-color : $brown-hover;
+    }
+    &:focus {
+        outline-color: $brown-focus;
+    }
 }
-.btn-brown:hover{
-    background-color : #966051;
-}
-.btn-brown:focus{
-    outline-color: #595238;
-}
-.btn-outline-brown{
-    background-color: white;
-    color :#ba7967;
-    border: 1px solid #ba7967;
-}
-.btn-outline-brown:hover{
-    background-color: #ba7967;
-    color: white;
-}
-.btn-outline-brown:focus{
-    outline-color: #ba7967;  
+.btn-outline-brown {
+    background-color: $white;
+    color :$brown;
+    border: 1px solid $brown;
+    &:hover {
+        background-color: $brown-ol-hover;
+        color: $white;
+    }
+    &:focus {
+        outline-color: $brown-ol-focus;  
+    }
 }
