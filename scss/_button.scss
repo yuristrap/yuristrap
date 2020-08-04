@@ -28,10 +28,10 @@
     background-color: $success;
     color: $white;
     &:hover {
-        background-color : $success-hover;
+        background-color : darken($success, 10%);
     }
     &:focus {
-        outline-color: $success-focus;
+        outline-color: darken($success, 10%);
     }
 }
 .btn-outline-success {
@@ -39,11 +39,11 @@
     color :$success;
     border: 1px solid $success;
     &:hover {
-        background-color: $success-ol-hover;
+        background-color: $success;
         color: $white;
     }
     &:focus {
-        outline-color: $success-ol-focus;    
+        outline-color:darken($success, 10%);    
     }
 }
 
@@ -52,10 +52,10 @@
     background-color: $primary;
     color: $white;
     &:hover {
-        background-color : $primary-hover;
+        background-color : darken($primary, 10%);
     }
     &:focus {
-        outline-color: $primary-focus;
+        outline-color: darken($primary, 10%);
     }
 }
 .btn-outline-primary {
@@ -63,11 +63,11 @@
     color : $primary;
     border: 1px solid $primary;
     &:hover {
-        background-color: $primary-ol-hover;
+        background-color: $primary;
         color: $white;
     }
     &:focus {
-        outline-color: $primary-ol-focus;    
+        outline-color: darken($primary, 10%);    
     }
 }
 
@@ -76,10 +76,10 @@
     background-color: $warning;
     color: $white;
     &:hover {
-        background-color : $warning-hover;
+        background-color : darken($warning, 10%);
     }
     &:focus {
-        outline-color: $warning-focus;
+        outline-color: darken($warning, 10%);
     }
 }
 .btn-outline-warning {
@@ -87,11 +87,11 @@
     color :$warning;
     border: 1px solid $warning;
     &:hover {
-        background-color: $waring-ol-hover;
+        background-color: $warning;
         color: $white;
     }
     &:focus {
-        outline-color: $waring-ol-focus;    
+        outline-color: darken($warning, 10%);    
     }
 }
 
@@ -100,10 +100,10 @@
     background-color: $danger;
     color: $white;
     &:hover {
-        background-color : $danger-hover;
+        background-color : darken($danger, 10%);
     }
     &:focus {
-        outline-color: $danger-focus;
+        outline-color:  darken($danger, 10%);
     }
 }
 .btn-outline-danger {
@@ -112,11 +112,11 @@
     border: 1px solid $danger;
 
     &:hover {
-        background-color: $danger-ol-hover;
+        background-color: $danger;
         color: $white;
     }
     &:focus {
-        outline-color: $danger-ol-focus;  
+        outline-color:  darken($danger, 10%);  
     }
 }
 
@@ -125,10 +125,10 @@
     background-color:$dark;
     color: $white;
     &:hover {
-        background-color : $dark-hover;
+        background-color : darken($dark, 15%);
     }
     &:focus {
-        outline-color: $dark-focus;
+        outline-color: darken($dark, 15%);
     }
 }
 .btn-outline-dark {
@@ -136,11 +136,11 @@
     color : $dark;
     border: 1px solid $dark;
     &:hover {
-        background-color: $dark-ol-hover;
+        background-color: $dark;
         color: $white;
     }
     &:focus {
-        outline-color: $dark-ol-focus;  
+        outline-color:  darken($dark, 15%);  
     }
 }
 
@@ -149,10 +149,10 @@
     background-color:$white;
     color: $black;
     &:hover {
-        background-color : $light-hover;
+        background-color : $light;
     }
     &:focus {
-        outline-color: $light-focus;
+        outline-color: $light;
     }
 }
 
@@ -161,10 +161,10 @@
     background-color: $info;
     color: $white;
     &:hover {
-        background-color : #3EA99F;
+        background-color : darken($info, 10%);
     }
     &:focus {
-        outline-color: #3EA99F;
+        outline-color: darken($info, 10%);
     }
 }
 .btn-outline-info {
@@ -172,11 +172,11 @@
     color :$info;
     border: 1px solid $info;
     &:hover {
-        background-color: $info-ol-hover;
+        background-color: $info;
         color: $white;
     }
     &:focus {
-        outline-color: $info-ol-focus;  
+        outline-color: darken($info, 10%);  
     }
 }
 
@@ -185,10 +185,10 @@
     background-color: $brown;
     color: $white;
     &:hover {
-        background-color : $brown-hover;
+        background-color : darken($brown, 10%);
     }
     &:focus {
-        outline-color: $brown-focus;
+        outline-color: darken($brown, 10%);
     }
 }
 .btn-outline-brown {
@@ -196,10 +196,10 @@
     color :$brown;
     border: 1px solid $brown;
     &:hover {
-        background-color: $brown-ol-hover;
+        background-color: $brown;
         color: $white;
     }
     &:focus {
-        outline-color: $brown-ol-focus;  
+        outline-color: darken($brown, 10%);  
     }
 }
