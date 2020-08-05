@@ -1,6 +1,9 @@
 @import 'variables';
 
+@import 'reboot';
 @import 'yuri-reboot';
 @import 'yuri-grid';
-@import '_button';
+
+@import 'button';
+@import '_navbar';
 @import '_alerts';
