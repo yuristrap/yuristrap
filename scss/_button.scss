@@ -1,153 +1,152 @@
+/**
+ * 	Base of Button
+ */
 .btn {
-    font-size: 20px;
+    display: inline-block;
     margin: 4px 5px;
     padding: 5px 20px;
-    border-radius: 5%;  
+    border: 0px;
+    border-radius: 0.25rem;
+    font-size: 20px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
     -webkit-transition-duration: 0.4s; 
     transition-duration: 0.4s;
-    border: 0px;   
+	cursor: pointer;
     &.btn-sm {
         padding: 8px 8px;
         font-size: 12px;
     }
     &.btn-lg {
-        border-radius: 2%;
         padding: 20px 40px;
     }
     &.btn-block {
-        border-radius: 2%;
         min-width: 100%;
     }
 }
 
-// ----
-.btn-success {
-    background-color: $success;
-    color: $white;
-    &:hover {
-        background-color : darken($success, 10%);
-    }
+/**
+ * 	Button focus event & border setting
+ */
+@mixin focus-darken ($color) {
+    border: 1px solid $color;
     &:focus {
-        outline-color: darken($success, 10%);
-    }
-}
-.btn-outline-success {
-    background-color: $white;
-    color :$success;
-    border: 1px solid $success;
-    &:hover {
-        background-color: $success;
-        color: $white;
-    }
-    &:focus {
-        outline-color:darken($success, 10%);    
+        outline-color: darken($color, 10%);
     }
 }
 
-// ----
+/**
+ * 	Primary Button
+ */
 .btn-primary {
-    background-color: $primary;
     color: $white;
+    background-color: $primary;
     &:hover {
         background-color : darken($primary, 10%);
     }
-    &:focus {
-        outline-color: darken($primary, 10%);
-    }
+	@include focus-darken($primary);
 }
 .btn-outline-primary {
-    background-color: $white;
     color : $primary;
-    border: 1px solid $primary;
+    background-color: $white;
     &:hover {
         background-color: $primary;
         color: $white;
     }
-    &:focus {
-        outline-color: darken($primary, 10%);    
-    }
+	@include focus-darken($primary);
 }
 
-// ----
-.btn-warning{
-    background-color: $warning;
+/**
+ * 	Success Button
+ */
+.btn-success {
     color: $white;
+    background-color: $success;
+    &:hover {
+        background-color : darken($success, 10%);
+    }
+	@include focus-darken($success);
+}
+.btn-outline-success {
+    color :$success;
+    background-color: $white;
+    &:hover {
+        background-color: $success;
+        color: $white;
+    }
+	@include focus-darken($success);
+}
+
+
+/**
+ * 	Warning Button
+ */
+.btn-warning{
+    color: $white;
+    background-color: $warning;
     &:hover {
         background-color : darken($warning, 10%);
     }
-    &:focus {
-        outline-color: darken($warning, 10%);
-    }
+	@include focus-darken($warning);
 }
 .btn-outline-warning {
-    background-color: $white;
     color :$warning;
-    border: 1px solid $warning;
+    background-color: $white;
     &:hover {
         background-color: $warning;
         color: $white;
     }
-    &:focus {
-        outline-color: darken($warning, 10%);    
-    }
+	@include focus-darken($warning);
 }
 
-// ----
+/**
+ * 	Danger Button
+ */
 .btn-danger {
-    background-color: $danger;
     color: $white;
+    background-color: $danger;
     &:hover {
         background-color : darken($danger, 10%);
     }
-    &:focus {
-        outline-color:  darken($danger, 10%);
-    }
+	@include focus-darken($danger);
 }
 .btn-outline-danger {
-    background-color: $white;
     color :$danger;
-    border: 1px solid $danger;
-
+    background-color: $white;
     &:hover {
         background-color: $danger;
         color: $white;
     }
-    &:focus {
-        outline-color:  darken($danger, 10%);  
-    }
+	@include focus-darken($danger);
 }
 
-// ----
+/**
+ * 	Dark Button
+ */
 .btn-dark {
-    background-color:$dark;
     color: $white;
+    background-color: $dark;
     &:hover {
         background-color : darken($dark, 15%);
     }
-    &:focus {
-        outline-color: darken($dark, 15%);
-    }
+	@include focus-darken($dark);
 }
 .btn-outline-dark {
     background-color: $white;
     color : $dark;
-    border: 1px solid $dark;
     &:hover {
         background-color: $dark;
         color: $white;
     }
-    &:focus {
-        outline-color:  darken($dark, 15%);  
-    }
+	@include focus-darken($dark);
 }
 
-// ----
+/**
+ * 	Light Button
+ */
 .btn-light {
-    background-color:$white;
-    color: $black;
+    color: $dark;
+    background-color: $white;
     &:hover {
         background-color : $light;
     }
@@ -156,50 +155,44 @@
     }
 }
 
-// ----
+/**
+ * 	Info Button
+ */
 .btn-info {
-    background-color: $info;
     color: $white;
+    background-color: $info;
     &:hover {
         background-color : darken($info, 10%);
     }
-    &:focus {
-        outline-color: darken($info, 10%);
-    }
+	@include focus-darken($info);
 }
 .btn-outline-info {
+    color: $info;
     background-color: $white;
-    color :$info;
-    border: 1px solid $info;
     &:hover {
         background-color: $info;
         color: $white;
     }
-    &:focus {
-        outline-color: darken($info, 10%);  
-    }
+	@include focus-darken($info);
 }
 
-// ----
+/**
+ * 	Brown Button
+ */
 .btn-brown {
-    background-color: $brown;
     color: $white;
+    background-color: $brown;
     &:hover {
         background-color : darken($brown, 10%);
     }
-    &:focus {
-        outline-color: darken($brown, 10%);
-    }
+	@include focus-darken($brown);
 }
 .btn-outline-brown {
+    color: $brown;
     background-color: $white;
-    color :$brown;
-    border: 1px solid $brown;
     &:hover {
         background-color: $brown;
         color: $white;
     }
-    &:focus {
-        outline-color: darken($brown, 10%);  
-    }
+	@include focus-darken($brown);
 }
