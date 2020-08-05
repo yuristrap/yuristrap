@@ -1,3 +1,4 @@
+// Navbar
 .navbar {
 	width: 100%;	
 	position: relative;
@@ -7,9 +8,11 @@
     align-items: center;
 	flex-flow: row nowrap;
 	justify-content: flex-start;
-	box-sizing: border-box;
 	&.navbar-light {
 		background-color: $light;
+	}
+	&.navbar-dark {
+		background-color: $dark;
 	}
 	.navbar-brand {
 		margin-right: 1rem;
@@ -22,6 +25,7 @@
 	}
 }
 
+// Navbar menu
 .navbar-nav {
 	display: flex;
 	flex-direction: row;
@@ -29,22 +33,27 @@
     margin-top: 0;
     margin-bottom: 0;
     list-style: none;	
-	align-items: center;	
-	box-sizing: border-box;
+	align-items: center;
+	/**
+	 *	.nav-item
+	 *	@desc: Menu of navbar (li)
+	 */
 	.nav-item {
 		line-height: 1.5;
-		box-sizing: border-box;
 		text-size-adjust: 100%;
 		&.active {
 			.nav-link {
 				color: $black;
 			}
 		}
+		/**
+		 *	.nav-link
+		 *	@desc: Link of menu (a)
+		 */
 		.nav-link {
 			display: block;
 			color: rgba($black, 0.6);
 			padding: 0.5rem;
-			box-sizing: border-box;
 			&.disabled {
 				color: rgba($black, 0.3);
 				pointer-events: none;

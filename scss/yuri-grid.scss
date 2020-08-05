@@ -4,7 +4,6 @@
 	width: 100%;
 	padding-left: $container-padding;
 	padding-right: $container-padding;
-	box-sizing: border-box;
 }
 .container-fluid {
 	@include container-box;
@@ -21,14 +20,13 @@
 	position: relative;
 	flex: 0 0 percentage($i / $MAX-COLUMNS);
 	max-width : percentage($i / $MAX-COLUMNS);
-	box-sizing: border-box;
 	padding: $column-padding;
 }
 @mixin flex-column ($i, $responsive-width) {
 	width: 100%;
 	// flex working on $responsive-width
 	@media (min-width: $responsive-width) {
-		@include base-column ($i);
+		@include base-column($i);
 	}
 }
 .row {
@@ -56,7 +54,7 @@
 		 *	@desc: None-Responsive sizing. Based on flex
 		 */
 		.col-#{$i} {
-			@include base-column ($i);
+			@include base-column($i);
 		}
 		/**
 		 *	.col-sm-*
