@@ -1,5 +1,6 @@
 // Container
 @mixin container-box {
+	position: relative;
 	width: 100%;
 	padding-left: $container-padding;
 	padding-right: $container-padding;
@@ -16,51 +17,105 @@
 }
 
 // Grid
+@mixin base-column ($i) {
+	position: relative;
+	flex: 0 0 percentage($i / $MAX-COLUMNS);
+	max-width : percentage($i / $MAX-COLUMNS);
+	box-sizing: border-box;
+	padding: $column-padding;
+}
 @mixin flex-column ($i, $responsive-width) {
 	width: 100%;
 	// flex working on $responsive-width
 	@media (min-width: $responsive-width) {
-		flex: 0 0 $i / $MAX-COLUMNS * 100%;
-		max-width : $i / $MAX-COLUMNS * 100%;
+		@include base-column ($i);
 	}
 }
 .row {
 	display: flex;
+	position: relative;
 	margin-left: -$container-padding;
 	margin-right: -$container-padding;
-	justify-content: space-between;
+	// justify-content: space-between;
 	text-align: center;
 	flex-wrap: wrap;
-	/*
-		.col
-		@desc: Auto sizing
-	*/
+	/**
+	 *	.col
+	 *	@desc: auto sizing
+	 */
 	.col {
+		position: relative;
 		flex: 1 1 0;
 		padding-left: $container-padding;
 		padding-right: $container-padding;
+		padding: $column-padding;
 	}
 	@for $i from 1 through $MAX-COLUMNS {
-		/*
-			.col-*
-			@desc: None-Responsive Sizing. Based on Flex
-		*/
+		/**
+		 *	.col-*
+		 *	@desc: None-Responsive sizing. Based on flex
+		 */
 		.col-#{$i} {
-			flex: 0 0 $i / $MAX-COLUMNS * 100%;
-			max-width : $i / $MAX-COLUMNS * 100%;
+			@include base-column ($i);
 		}
-		/*
-			.col-sm-*, .col-md-*, .col-lg-*
-			@desc: Responsive Sizing
-		*/
+		/**
+		 *	.col-sm-*
+		 *	@desc: Responsive sizing on SM-WIDTH
+		 */
 		.col-sm-#{$i} {
 			@include flex-column($i, $SM-WIDTH);
 		}
+		/**
+		 *	.col-md-*
+		 *	@desc: Responsive sizing on MD-WIDTH
+		 */
 		.col-md-#{$i} {
 			@include flex-column($i, $MD-WIDTH);
 		}
+		/**
+		 *	.col-lg-*
+		 *	@desc: Responsive sizing on LG-WIDTH
+		 */
 		.col-lg-#{$i} {
 			@include flex-column($i, $LG-WIDTH);
 		}
 	}
 }
+
+// Responsive
+@mixin hide-block ($responsive-width) {
+	@media (max-width: $responsive-width) {
+		display: none;
+	}
+}
+.hide-sm {
+	@include hide-block($SM-WIDTH);
+}
+.hide-md {
+	@include hide-block($MD-WIDTH);
+}
+.hide-lg {
+	@include hide-block($LG-WIDTH);
+}
+.hide-xl {
+	@include hide-block($XL-WIDTH);
+}
+
+@mixin show-block ($responsive-width) {
+	@media (min-width: $responsive-width) {
+		display: none;
+	}
+}
+.show-sm {
+	@include show-block($SM-WIDTH);
+}
+.show-md {
+	@include show-block($MD-WIDTH);
+}
+.show-lg {
+	@include show-block($LG-WIDTH);
+}
+.show-xl {
+	@include show-block($XL-WIDTH);
+}
+
