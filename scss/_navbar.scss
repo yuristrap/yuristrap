@@ -1,3 +1,37 @@
+
+$NAV-LINK-OPA: .6;
+$NAV-LINK-DISABLED-OPA: .3;
+
+@mixin navbar-theme ($fontColor) {
+	color: $fontColor;
+	/**
+	 *	.nav-item
+	 *	@desc: Menu of navbar (li)
+	 */
+	.navbar-nav {
+		.nav-item {
+			&.active {
+				.nav-link {
+					color: $fontColor;
+				}
+			}
+			/**
+			 *	.nav-link
+			 *	@desc: Link of menu (a)
+			 */
+			.nav-link {
+				color: rgba($fontColor, $NAV-LINK-OPA);
+				&.disabled {
+					color: rgba($fontColor, $NAV-LINK-DISABLED-OPA);
+				}
+			}
+		}
+	}
+	.navbar-brand {
+		color: $fontColor;
+	}
+}
+
 // Navbar
 .navbar {
 	width: 100%;	
@@ -8,11 +42,17 @@
     align-items: center;
 	flex-flow: row nowrap;
 	justify-content: flex-start;
+	@include navbar-theme($black);
 	&.navbar-light {
 		background-color: $light;
 	}
 	&.navbar-dark {
 		background-color: $dark;
+		@include navbar-theme($white);
+	}
+	&.navbar-primary {
+		background-color: $primary;
+		@include navbar-theme($white);
 	}
 	.navbar-brand {
 		margin-right: 1rem;
@@ -41,24 +81,24 @@
 	.nav-item {
 		line-height: 1.5;
 		text-size-adjust: 100%;
-		&.active {
-			.nav-link {
-				color: $black;
-			}
-		}
 		/**
 		 *	.nav-link
 		 *	@desc: Link of menu (a)
 		 */
 		.nav-link {
 			display: block;
-			color: rgba($black, 0.6);
 			padding: 0.5rem;
 			&.disabled {
-				color: rgba($black, 0.3);
 				pointer-events: none;
 				cursor: default;
 			}
 		}
 	}
+}
+
+.navbar-collapse {
+	display: flex;
+	flex-basis: auto;
+	flex-grow: 1;
+	justify-content: space-between;
 }
