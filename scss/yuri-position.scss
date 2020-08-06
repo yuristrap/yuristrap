@@ -1,0 +1,12 @@
+
+.fixed-top {
+	position: fixed !important;
+	top: 0px !important;
+	z-index: $Z-fixed;
+}
+
+.fixed-bottom {
+	position: fixed !important;
+	bottom: 0px !important;
+	z-index: $Z-fixed;
+}
