@@ -1,0 +1,45 @@
+// Card
+.card {
+	position: relative;
+    display: flex;
+    flex-direction: column;
+	border: 1px solid $gray;
+	border-radius: .5rem;
+	overflow: hidden;	
+	.card-img-top {
+		width: 100%;
+	}
+	
+	.card-header {
+		padding: 1rem 1.25rem;
+		border-bottom: 1px solid $gray;
+	}
+	.card-body {
+		padding: 1.25rem;
+		.card-text {
+		}
+	}
+	.card-footer {
+		padding: 1rem 1.25rem;
+		border-top: 1px solid $gray;
+	}
+	
+}
+
+.card-title {
+
+}
+.card-subtitle {
+
+}
+.card-text {
+	
+}
+.card-link {
+	&:hover {
+		color : darken($link-color, 10%);
+	}
+	+ .card-link {
+		margin-left: 1.25rem;
+	}
+}
