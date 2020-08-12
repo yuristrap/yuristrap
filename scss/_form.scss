@@ -1,0 +1,31 @@
+$FORM-CHECK-INLINE-MARGIN: 1rem;
+
+.form {
+	
+}
+
+/**
+ * form-group
+ */
+.form-group {
+	margin-bottom: 1rem;
+}
+
+
+/**
+ * form-check
+ */
+.form-check {
+	&.form-check-inline {
+		display: inline;
+		+ .form-check-inline {
+			margin-left: $FORM-CHECK-INLINE-MARGIN;
+		}
+	}
+}
+.form-check-input {
+  &[disabled] ~ .form-check-label,
+  &:disabled ~ .form-check-label {
+    color: $gray;
+  }
+}
