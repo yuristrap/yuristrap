@@ -17,6 +17,7 @@ $DISABLED-OPA: .5;
  * form-check
  */
 .form-check {
+		position: relative;
 	&.form-check-inline {
 		display: inline;
 		+ .form-check-inline {
@@ -27,35 +28,93 @@ $DISABLED-OPA: .5;
 	/**
 	 * checkbox
 	 */
-	input[type=checkbox].form-check-input {
+	input[type=checkbox].form-check-input,
+	input[type=radio].form-check-input
+	{
 		display: none;
 		& + .form-check-label {
 			cursor: pointer;
 			&:before {
 				content: '';
+				line-height: 1rem;
+				display: inline-block;
+				margin-top: -2px;
+				margin-right: 10px;
+				vertical-align: middle;
+			}
+		}
+		&:checked + .form-check-label:before {
+			color: $white;  
+			background-color: $primary;
+		}
+	}
+	input[type=checkbox].form-check-input {
+		& + .form-check-label {
+			&:before {
 				width: 1rem;
 				height: 1rem;
 				font-size: .8rem;
-				left: 0;
-				line-height: 1rem;
-				margin-top: -2px;
-				margin-right: 10px;
-				display: inline-block;
-				text-align: center;
-				vertical-align: middle;
 				border-radius: 2px;
 				box-shadow: 0px 0px 2px rgba(0,0,0,0.5);
 			}
 		}
 		&:checked + .form-check-label:before {
 			content: '\2714';
+			text-align: center;
 			text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
-			color: $white;  
-			background-color: $primary;
-			text-align: center;   
+		}
+	}
+	input[type=radio].form-check-input {
+		position: relative;
+		width: 0;
+		height: 0;
+		& + .form-check-label {
+			&:before,
+			&:after {
+				top: 50%;
+				width: .8rem;
+				height: .8rem;
+				border-radius: 50%;
+				-webkit-transition: 240ms;
+				-o-transition: 240ms;
+				transition: 240ms;
+			}
+			&:before {
+				margin-left: .1rem;
+				margin-top: -.3rem;
+				background-color: $primary;
+				-webkit-transform: scale(0);
+				-ms-transform: scale(0);
+				-o-transform: scale(0);
+				transform: scale(0);
+			}
+			&:after {
+				content: '';
+				position: absolute;
+				left: 0px;
+				margin-top: -.5rem;
+				border: .1rem solid rgba($black, .4);
+			}
+		}
+		&:checked + .form-check-label:before {
+			-webkit-transform: scale(0.7);
+			-ms-transform: scale(0.7);
+			-o-transform: scale(0.7);
+			transform: scale(0.7);
+		}
+		&:checked + .form-check-label:after {
+			// content: '';
+			border: .1rem solid $primary;
+		}
+		&[disabled] ~ .form-check-label,
+		&:disabled ~ .form-check-label {
+			&:after {
+				border: .1rem solid $gray;
+			}
 		}
 	}
 }
+
 .form-check-input {
 	&[disabled] ~ .form-check-label,
 	&:disabled ~ .form-check-label {
