@@ -47,7 +47,7 @@
 }
 .btn-outline-primary {
     color : $primary;
-    background-color: $white;
+    background-color: transparent;
     &:hover {
         background-color: $primary;
         color: $white;
@@ -68,7 +68,7 @@
 }
 .btn-outline-success {
     color :$success;
-    background-color: $white;
+    background-color: transparent;
     &:hover {
         background-color: $success;
         color: $white;
@@ -90,7 +90,7 @@
 }
 .btn-outline-warning {
     color :$warning;
-    background-color: $white;
+    background-color: transparent;
     &:hover {
         background-color: $warning;
         color: $white;
@@ -111,7 +111,7 @@
 }
 .btn-outline-danger {
     color :$danger;
-    background-color: $white;
+    background-color: transparent;
     &:hover {
         background-color: $danger;
         color: $white;
@@ -131,8 +131,8 @@
 	@include focus-darken($dark);
 }
 .btn-outline-dark {
-    background-color: $white;
     color : $dark;
+    background-color: transparent;
     &:hover {
         background-color: $dark;
         color: $white;
@@ -167,7 +167,7 @@
 }
 .btn-outline-info {
     color: $info;
-    background-color: $white;
+    background-color: transparent;
     &:hover {
         background-color: $info;
         color: $white;
@@ -188,7 +188,7 @@
 }
 .btn-outline-brown {
     color: $brown;
-    background-color: $white;
+    background-color: transparent;
     &:hover {
         background-color: $brown;
         color: $white;

@@ -32,6 +32,8 @@
 			<a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
 		  </li>
 		</ul>
+		<input class="container_toggle" type="checkbox" id="switch" name="mode">
+		<label for="switch">Toggle</label>
 	</nav>
 	<br/>
 	<br/>
@@ -296,6 +298,26 @@
 		<!-- 	end of body	 -->
 	</div>
 	<!-- JavaScript -->
+	  <script>
+	   var checkbox = document.querySelector('input[name=mode]');
+
+        checkbox.addEventListener('change', function() {
+            if(this.checked) {
+                trans()
+                document.documentElement.setAttribute('data-theme', 'dark')
+            } else {
+                trans()
+                document.documentElement.setAttribute('data-theme', 'light')
+            }
+        })
+
+        let trans = () => {
+            document.documentElement.classList.add('transition');
+            window.setTimeout(() => {
+                document.documentElement.classList.remove('transition');
+            }, 1000)
+        }
+		</script>
 	<!-- 	   -->
   </body>
 </html>
