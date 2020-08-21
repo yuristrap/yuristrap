@@ -1,0 +1,43 @@
+/**
+ * The value changes according to the darkmode.
+ * -> font-color
+ */
+.dark-color {
+	color: var(--darkColor) !important;
+}
+.light-color {
+	color: var(--lightColor) !important;
+}
+
+/**
+ * The value changes according to the darkmode.
+ * -> background-color
+ */
+.dark-bg {
+	background-color: var(--darkColor) !important;
+}
+.light-bg {
+	background-color: var(--lightColor) !important;
+}
+
+/**
+ * Independent of darkmode
+ * -> font-color
+ */
+.none-light-color {
+	color: $dark !important;
+}
+.none-dark-color {
+	color: $light !important;
+}
+
+/**
+ * Independent of darkmode
+ * -> background-color
+ */
+.none-light-bg {
+	background-color: $dark !important;
+}
+.none-dark-bg {
+	background-color: $light !important;
+}

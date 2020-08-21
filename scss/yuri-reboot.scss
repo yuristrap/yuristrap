@@ -1,5 +1,5 @@
 html {
-	background: var(--whiteColor);
+	background-color: var(--whiteColor);
 	color: var(--blackColor);
 	&.transition {
 	  transition: cubic-bezier(0.68, -0.55, 0.27, 01.55) 200ms!important;
@@ -7,10 +7,12 @@ html {
 	}
 }
 html[data-theme='dark'] {
-	background: var(--whiteColor);
+	background-color: var(--whiteColor);
 	color: var(--blackColor);
 	--whiteColor: black;
 	--blackColor: white;
+	--lightColor: #4c5870;
+	--darkColor: #fafafa;
 }
 
 body {
