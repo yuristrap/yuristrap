@@ -1,0 +1,36 @@
+// Responsive
+@mixin hide-block ($responsive-width) {
+	@media (max-width: $responsive-width) {
+		display: none;
+	}
+}
+.hide-sm {
+	@include hide-block($SM-WIDTH);
+}
+.hide-md {
+	@include hide-block($MD-WIDTH);
+}
+.hide-lg {
+	@include hide-block($LG-WIDTH);
+}
+.hide-xl {
+	@include hide-block($XL-WIDTH);
+}
+
+@mixin show-block ($responsive-width) {
+	@media (min-width: $responsive-width) {
+		display: none;
+	}
+}
+.show-sm {
+	@include show-block($SM-WIDTH);
+}
+.show-md {
+	@include show-block($MD-WIDTH);
+}
+.show-lg {
+	@include show-block($LG-WIDTH);
+}
+.show-xl {
+	@include show-block($XL-WIDTH);
+}

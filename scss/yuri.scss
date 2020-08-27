@@ -1,16 +1,12 @@
 @import 'variables';
 
-@import 'yuri-root';
+@import 'yuri-grid';
 @import 'yuri-night';
 @import 'yuri-reboot';
-@import 'yuri-flex';
-@import 'yuri-position';
-@import 'yuri-grid';
-@import 'yuri-design';
-@import 'yuri-text';
+@import 'yuri-convenience';
 
-@import 'button';
-@import 'navbar';
 @import 'alert';
+@import 'button';
 @import 'card';
 @import 'form';
+@import 'navbar';
