@@ -74,7 +74,7 @@ $DISABLED-OPA: .5;
 				top: 50%;
 				width: .8rem;
 				height: .8rem;
-				border-radius: 50%;
+				border-radius: $BORDER-ROUNDED;
 				-webkit-transition: 240ms;
 				-o-transition: 240ms;
 				transition: 240ms;

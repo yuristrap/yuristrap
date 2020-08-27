@@ -1,0 +1,18 @@
+/**
+ * border-radius design
+ */
+.border-flat {
+	border-radius: 0px !important;
+}
+.border-radius-xs {
+	border-radius: $BORDER-XS !important;
+}
+.border-radius-sm {
+	border-radius: $BORDER-SM !important;
+}
+.border-radius-md {
+	border-radius: $BORDER-MD !important;
+}
+.border-rounded {
+	border-radius: $BORDER-ROUNDED !important;
+}

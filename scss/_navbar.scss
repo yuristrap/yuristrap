@@ -1,6 +1,4 @@
-
-$NAV-LINK-OPA: .6;
-$NAV-LINK-DISABLED-OPA: .3;
+$NAV-LINK-DISABLED-OPA: 50%;
 
 @mixin navbar-theme ($fontColor) {
 	color: $fontColor;
@@ -12,7 +10,8 @@ $NAV-LINK-DISABLED-OPA: .3;
 		.nav-item {
 			&.active {
 				.nav-link {
-					color: rgba($fontColor, 1);
+					// color: rgba($fontColor, 1);
+					color: $fontColor;
 				}
 			}
 			/**
@@ -20,15 +19,19 @@ $NAV-LINK-DISABLED-OPA: .3;
 			 *	@desc: Link of menu (a)
 			 */
 			.nav-link {
-				color: rgba($fontColor, $NAV-LINK-OPA);
+					// color: rgba($fontColor, 1);
+					color: $fontColor;
 				&.disabled {
-					color: rgba($fontColor, $NAV-LINK-DISABLED-OPA);
+					// color: rgba($fontColor, 1);
+					color: $fontColor;
+					opacity: $NAV-LINK-DISABLED-OPA;
 				}
 			}
 		}
 	}
 	.navbar-brand {
-					color: rgba($fontColor, 1);
+		// color: rgba($fontColor, 1);
+		color: $fontColor;
 	}
 }
 

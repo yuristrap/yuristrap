@@ -1,6 +1,6 @@
 :root {
-	--whiteColor: white;
-	--blackColor: black;
-	--lightColor: #fafafa;
-	--darkColor: #4c5870;
+	--whiteColor: #{$white};
+	--blackColor: #{$black};
+	--lightColor: #{$light};
+	--darkColor: #{$dark};
 }
