@@ -13,6 +13,10 @@ html[data-theme='dark'] {
 	--blackColor: white;
 	--lightColor: #4c5870;
 	--darkColor: #fafafa;
+	// --blackColor: #{derive-rgb-values-from-hex($white)};
+	// --whiteColor: #{derive-rgb-values-from-hex($black)};
+	// --darkColor: #{derive-rgb-values-from-hex($light)};
+	// --lightColor: #{derive-rgb-values-from-hex($dark)};
 }
 
 body {
