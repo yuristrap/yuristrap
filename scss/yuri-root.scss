@@ -1,12 +1,6 @@
-
-
 :root {
-	--whiteColor: white;
-	--blackColor: black;
-	--lightColor: #fafafa;
-	--darkColor: #4c5870;
-	// --whiteColor: #{derive-rgb-values-from-hex($white)};
-	// --blackColor: #{derive-rgb-values-from-hex($black)};
-	// --lightColor: #{derive-rgb-values-from-hex($light)};
-	// --darkColor: #{derive-rgb-values-from-hex($dark)};
+	--whiteColor: #{$white};
+	--blackColor: #{$black};
+	--lightColor: #{$light};
+	--darkColor: #{$dark};
 }
