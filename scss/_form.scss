@@ -1,5 +1,11 @@
+/**
+ * Form values
+ * $FORM-TYPE-SIZE and $FORM-LABEL-BLANK must have the same data type, like 'px' 'rem'...
+ */
+$FORM-TYPE-SIZE: 1rem;
+$FORM-LABEL-BLANK: .6rem;
 $FORM-CHECK-INLINE-MARGIN: 1rem;
-$DISABLED-OPA: .5;
+$DISABLED-OPA: .6;
 
 .form {
 	
@@ -26,21 +32,28 @@ $DISABLED-OPA: .5;
 	}
 	
 	/**
-	 * checkbox
+	 * checkbox, radio
 	 */
 	input[type=checkbox].form-check-input,
 	input[type=radio].form-check-input
 	{
 		display: none;
 		& + .form-check-label {
+			padding-left: $FORM-TYPE-SIZE + $FORM-LABEL-BLANK;
 			cursor: pointer;
+			&:before,
+			&:after {
+				position: absolute;
+				width: $FORM-TYPE-SIZE;
+				height: $FORM-TYPE-SIZE;
+				left: 0px;
+				top: 0px;
+				margin-top: $FORM-TYPE-SIZE * .2;
+			}
 			&:before {
 				content: '';
-				line-height: 1rem;
 				display: inline-block;
-				margin-top: -2px;
 				margin-right: 10px;
-				vertical-align: middle;
 			}
 		}
 		&:checked + .form-check-label:before {
@@ -51,11 +64,9 @@ $DISABLED-OPA: .5;
 	input[type=checkbox].form-check-input {
 		& + .form-check-label {
 			&:before {
-				width: 1rem;
-				height: 1rem;
-				font-size: .8rem;
+				font-size: $FORM-TYPE-SIZE * .8;
 				border-radius: 2px;
-				box-shadow: 0px 0px 2px rgba(0,0,0,0.5);
+				box-shadow: 0px 0px 2px var(--darkColor);
 			}
 		}
 		&:checked + .form-check-label:before {
@@ -71,17 +82,13 @@ $DISABLED-OPA: .5;
 		& + .form-check-label {
 			&:before,
 			&:after {
-				top: 50%;
-				width: .8rem;
-				height: .8rem;
+				content: '';
 				border-radius: $BORDER-ROUNDED;
 				-webkit-transition: 240ms;
 				-o-transition: 240ms;
 				transition: 240ms;
 			}
 			&:before {
-				margin-left: .1rem;
-				margin-top: -.3rem;
 				background-color: $primary;
 				-webkit-transform: scale(0);
 				-ms-transform: scale(0);
@@ -89,27 +96,15 @@ $DISABLED-OPA: .5;
 				transform: scale(0);
 			}
 			&:after {
-				content: '';
-				position: absolute;
-				left: 0px;
-				margin-top: -.5rem;
-				border: .1rem solid rgba($black, .4);
+				box-shadow: 0px 0px 2px var(--darkColor);
 			}
 		}
-		&:checked + .form-check-label:before {
-			-webkit-transform: scale(0.7);
-			-ms-transform: scale(0.7);
-			-o-transform: scale(0.7);
-			transform: scale(0.7);
-		}
-		&:checked + .form-check-label:after {
-			// content: '';
-			border: .1rem solid $primary;
-		}
-		&[disabled] ~ .form-check-label,
-		&:disabled ~ .form-check-label {
-			&:after {
-				border: .1rem solid $gray;
+		&:checked + .form-check-label {
+			&:before {
+				-webkit-transform: scale(0.7);
+				-ms-transform: scale(0.7);
+				-o-transform: scale(0.7);
+				transform: scale(0.7);
 			}
 		}
 	}
@@ -119,7 +114,8 @@ $DISABLED-OPA: .5;
 	&[disabled] ~ .form-check-label,
 	&:disabled ~ .form-check-label {
 		color: $gray;
-		&:before {
+		&:before,
+		&:after {
 			background-color: rgba($gray, $DISABLED-OPA);
 		}
 	}
