@@ -1,0 +1,42 @@
+.list-group {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+	border: 1px solid $gray;
+	border-radius: $BORDER-SM;
+	overflow: hidden;
+    padding-left:0px; 
+    border-bottom: 0px;
+ 
+    .list-group-item {
+        &:not(button) { 
+            list-style:none;
+            padding: 1rem 1.25rem;
+            border-bottom: 1px solid $gray;
+        }
+    }
+
+    a{
+        &:not(.disabled) {
+            &:link {
+                color: black;
+            }
+        }
+    }
+
+    .active {
+        background-color: desaturate(blue , 50%);       // 임시 색
+    }
+    
+    .disabled {
+         color: fade-out(black, .5);
+    }
+
+    .list-group-item-action {
+        &:not(.active):not(.disabled) {
+            &:hover {
+                background-color : gray;
+            }
+        }
+    }
+}
