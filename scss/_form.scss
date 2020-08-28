@@ -111,6 +111,12 @@ $DISABLED-OPA: .6;
 }
 
 .form-check-input {
+	&:checked ~ .form-check-label.worked-with {
+		color: $primary;
+	}
+}
+
+.form-check-input {
 	&[disabled] ~ .form-check-label,
 	&:disabled ~ .form-check-label {
 		color: $gray;
