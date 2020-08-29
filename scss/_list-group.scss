@@ -15,10 +15,8 @@ $list-BG-OPA: .3;
 
 @mixin base-list ($color) {
 	color : $color;
-	border: 1px solid $color;
-	background-color: $color;
-	border: 1px solid rgba($color, .4);
-	background-color: rgba($color, .3);
+	border: 1px solid rgba($color, $list-BORDER-OPA);
+	background-color: rgba($color, $list-BG-OPA);
 }
 
 .list-group {
@@ -32,7 +30,7 @@ $list-BG-OPA: .3;
 
     &.list-group-flush {
         .list-group-item {
-            border-bottom: 1px solid  var(--darkColor);
+            border-bottom: 1px solid var(--darkColor);
             padding: 1rem 1.25rem;
         }
     }
@@ -66,23 +64,23 @@ $list-BG-OPA: .3;
                 @include base-list($info);
             }
             &.list-group-item-light { 
+                @include base-list($gray);
                 border: 1px solid $gray;
                 background-color: $white;
-                @include base-list($gray);
             }
             &.list-group-item-dark {
                 @include base-list($dark);
             }
+            &.list-group-item-action {
+                &:not(.active):not(.disabled):not(button) {
+                    &:hover {
+                        background-color : var(--darkColor);
+                    }
+                }
+            } 
         }
     }
-    .list-group-item-action {
-        &:not(.active):not(.disabled):not(button) {
-            &:hover {
-                background-color : var(--darkColor);
-            }
-        }
-    }
-    
+
     button {
         text-align: left;
         font-size: medium; 
@@ -98,7 +96,7 @@ $list-BG-OPA: .3;
     a{
         &:not(.disabled) {
             &:focus {
-               outline: solid 2px blue;     // 적용중
+               outline: solid 2px blue;     // 적용중(미완성)
             }
             &:link {
                 color: var(--darkColor);
@@ -106,4 +104,3 @@ $list-BG-OPA: .3;
         }
     }
 }
-
