@@ -1273,20 +1273,87 @@ p {
   position: relative;
   display: flex;
   flex-direction: column;
-  border: 1px solid gainsboro;
-  border-radius: 0.5rem;
   overflow: hidden;
   padding-left: 0px;
-  border-bottom: 0px; }
-  .list-group .list-group-item:not(button) {
-    list-style: none;
-    padding: 1rem 1.25rem;
-    border-bottom: 1px solid gainsboro; }
-  .list-group a:not(.disabled):link {
-    color: black; }
+  width: 50%;
+  background-color: #fafafa; }
+  .list-group.list-group-flush .list-group-item {
+    border-bottom: 1px solid var(--darkColor);
+    padding: 1rem 1.25rem; }
   .list-group .active {
     background-color: #4040bf; }
   .list-group .disabled {
-    color: rgba(0, 0, 0, 0.5); }
-  .list-group .list-group-item-action:not(.active):not(.disabled):hover {
-    background-color: gray; }
+    color: rgba(76, 88, 112, 0.5); }
+  .list-group:not(.list-group-flush) .list-group-item {
+    border: 1px solid var(--darkColor);
+    border-bottom: 0px;
+    padding: 1rem 1.25rem; }
+    .list-group:not(.list-group-flush) .list-group-item:first-child {
+      border-top-left-radius: 0.5rem;
+      border-top-right-radius: 0.5rem; }
+    .list-group:not(.list-group-flush) .list-group-item:last-child {
+      border-bottom-left-radius: 0.5rem;
+      border-bottom-right-radius: 0.5rem;
+      border-bottom: 1px solid var(--darkColor); }
+    .list-group:not(.list-group-flush) .list-group-item.list-group-item-primary {
+      color: #b897ff;
+      border: 1px solid #b897ff;
+      background-color: #b897ff;
+      border: 1px solid rgba(184, 151, 255, 0.4);
+      background-color: rgba(184, 151, 255, 0.3); }
+    .list-group:not(.list-group-flush) .list-group-item.list-group-item-success {
+      color: #17c37b;
+      border: 1px solid #17c37b;
+      background-color: #17c37b;
+      border: 1px solid rgba(23, 195, 123, 0.4);
+      background-color: rgba(23, 195, 123, 0.3); }
+    .list-group:not(.list-group-flush) .list-group-item.list-group-item-danger {
+      color: #ff847c;
+      border: 1px solid #ff847c;
+      background-color: #ff847c;
+      border: 1px solid rgba(255, 132, 124, 0.4);
+      background-color: rgba(255, 132, 124, 0.3); }
+    .list-group:not(.list-group-flush) .list-group-item.list-group-item-warning {
+      color: orange;
+      border: 1px solid orange;
+      background-color: orange;
+      border: 1px solid rgba(255, 165, 0, 0.4);
+      background-color: rgba(255, 165, 0, 0.3); }
+    .list-group:not(.list-group-flush) .list-group-item.list-group-item-info {
+      color: #43C6DB;
+      border: 1px solid #43C6DB;
+      background-color: #43C6DB;
+      border: 1px solid rgba(67, 198, 219, 0.4);
+      background-color: rgba(67, 198, 219, 0.3); }
+    .list-group:not(.list-group-flush) .list-group-item.list-group-item-light {
+      border: 1px solid gainsboro;
+      background-color: white;
+      color: gainsboro;
+      border: 1px solid gainsboro;
+      background-color: gainsboro;
+      border: 1px solid rgba(220, 220, 220, 0.4);
+      background-color: rgba(220, 220, 220, 0.3); }
+    .list-group:not(.list-group-flush) .list-group-item.list-group-item-dark {
+      color: #4c5870;
+      border: 1px solid #4c5870;
+      background-color: #4c5870;
+      border: 1px solid rgba(76, 88, 112, 0.4);
+      background-color: rgba(76, 88, 112, 0.3); }
+  .list-group .list-group-item-action:not(.active):not(.disabled):not(button):hover {
+    background-color: var(--darkColor); }
+  .list-group button {
+    text-align: left;
+    font-size: medium; }
+    .list-group button:first-child {
+      border-top-left-radius: 0.5rem;
+      border-top-right-radius: 0.5rem; }
+    .list-group button:last-child {
+      border-bottom-left-radius: 0.5rem;
+      border-bottom-right-radius: 0.5rem;
+      border-bottom: 1px solid var(--darkColor); }
+    .list-group button:not(.active):hover:enabled {
+      background-color: var(--darkColor); }
+  .list-group a:not(.disabled):focus {
+    outline: solid 2px blue; }
+  .list-group a:not(.disabled):link {
+    color: var(--darkColor); }

@@ -1,42 +1,109 @@
+$list-BORDER-OPA: .4;
+$list-BG-OPA: .3;
+
+@mixin border-radius {
+    &:first-child {
+        border-top-left-radius:  $BORDER-SM;
+        border-top-right-radius: $BORDER-SM;
+    }
+    &:last-child {
+        border-bottom-left-radius:  $BORDER-SM;
+        border-bottom-right-radius: $BORDER-SM;
+        border-bottom: 1px solid  var(--darkColor);
+    }
+}
+
+@mixin base-list ($color) {
+	color : $color;
+	border: 1px solid $color;
+	background-color: $color;
+	border: 1px solid rgba($color, .4);
+	background-color: rgba($color, .3);
+}
+
 .list-group {
     position: relative;
     display: flex;
     flex-direction: column;
-	border: 1px solid $gray;
-	border-radius: $BORDER-SM;
 	overflow: hidden;
     padding-left:0px; 
-    border-bottom: 0px;
- 
-    .list-group-item {
-        &:not(button) { 
-            list-style:none;
-            padding: 1rem 1.25rem;
-            border-bottom: 1px solid $gray;
-        }
-    }
+    width: 50%; 
+    background-color: $light;
 
-    a{
-        &:not(.disabled) {
-            &:link {
-                color: black;
-            }
+    &.list-group-flush {
+        .list-group-item {
+            border-bottom: 1px solid  var(--darkColor);
+            padding: 1rem 1.25rem;
         }
     }
 
     .active {
         background-color: desaturate(blue , 50%);       // 임시 색
     }
-    
     .disabled {
-         color: fade-out(black, .5);
+         color: fade-out($dark, .5);
     }
 
+    &:not(.list-group-flush) {
+        .list-group-item {
+            border: 1px solid  var(--darkColor);
+            border-bottom: 0px;
+            padding: 1rem 1.25rem;
+            @include border-radius;
+            &.list-group-item-primary {
+                @include base-list($primary);
+            }
+            &.list-group-item-success {
+                @include base-list($success);
+            }
+            &.list-group-item-danger {
+                @include base-list($danger);
+            }
+            &.list-group-item-warning {
+                @include base-list($warning);
+            }
+            &.list-group-item-info {
+                @include base-list($info);
+            }
+            &.list-group-item-light { 
+                border: 1px solid $gray;
+                background-color: $white;
+                @include base-list($gray);
+            }
+            &.list-group-item-dark {
+                @include base-list($dark);
+            }
+        }
+    }
     .list-group-item-action {
-        &:not(.active):not(.disabled) {
+        &:not(.active):not(.disabled):not(button) {
             &:hover {
-                background-color : gray;
+                background-color : var(--darkColor);
+            }
+        }
+    }
+    
+    button {
+        text-align: left;
+        font-size: medium; 
+        @include border-radius;
+
+        &:not(.active) {
+            &:hover:enabled{
+                background-color : var(--darkColor);
+            }
+        }
+    }
+
+    a{
+        &:not(.disabled) {
+            &:focus {
+               outline: solid 2px blue;     // 적용중
+            }
+            &:link {
+                color: var(--darkColor);
             }
         }
     }
 }
+
