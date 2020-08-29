@@ -1237,6 +1237,22 @@ p {
           opacity: 0.5; }
     .navbar.navbar-primary .navbar-brand {
       color: var(--lightColor); }
+    .navbar.navbar-primary .navbar-toggler {
+      background-color: #b897ff; }
+  .navbar.navbar-sm .navbar-toggler {
+    display: none; }
+  @media (max-width: 576px) {
+    .navbar.navbar-sm {
+      justify-content: space-between; }
+      .navbar.navbar-sm .navbar-toggler {
+        display: block; }
+      .navbar.navbar-sm .navbar-collapse {
+        display: none;
+        flex: 1 1 100%; }
+        .navbar.navbar-sm .navbar-collapse .navbar-nav {
+          display: block;
+          flex-direction: column;
+          align-items: left; } }
   .navbar.navbar-md .navbar-toggler {
     display: none; }
   @media (max-width: 768px) {
@@ -1244,10 +1260,41 @@ p {
       justify-content: space-between; }
       .navbar.navbar-md .navbar-toggler {
         display: block; }
-      .navbar.navbar-md .navbar-nav {
+      .navbar.navbar-md .navbar-collapse {
         display: none;
-        flex: 1 1 100%;
-        align-items: left; } }
+        flex: 1 1 100%; }
+        .navbar.navbar-md .navbar-collapse .navbar-nav {
+          display: block;
+          flex-direction: column;
+          align-items: left; } }
+  .navbar.navbar-lg .navbar-toggler {
+    display: none; }
+  @media (max-width: 992px) {
+    .navbar.navbar-lg {
+      justify-content: space-between; }
+      .navbar.navbar-lg .navbar-toggler {
+        display: block; }
+      .navbar.navbar-lg .navbar-collapse {
+        display: none;
+        flex: 1 1 100%; }
+        .navbar.navbar-lg .navbar-collapse .navbar-nav {
+          display: block;
+          flex-direction: column;
+          align-items: left; } }
+  .navbar.navbar-xl .navbar-toggler {
+    display: none; }
+  @media (max-width: 1200px) {
+    .navbar.navbar-xl {
+      justify-content: space-between; }
+      .navbar.navbar-xl .navbar-toggler {
+        display: block; }
+      .navbar.navbar-xl .navbar-collapse {
+        display: none;
+        flex: 1 1 100%; }
+        .navbar.navbar-xl .navbar-collapse .navbar-nav {
+          display: block;
+          flex-direction: column;
+          align-items: left; } }
   .navbar .navbar-brand {
     margin-right: 1rem;
     display: inline-block;
@@ -1287,4 +1334,19 @@ p {
   display: flex;
   flex-basis: auto;
   flex-grow: 1;
+  align-items: center;
   justify-content: space-between; }
+
+.navbar-toggler {
+  cursor: pointer;
+  border: 1px solid var(--darkColor);
+  border-radius: 0.25rem;
+  background-color: #fafafa; }
+  .navbar-toggler .navbar-toggler-icon {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
+    background: no-repeat center center;
+    background-size: 100% 100%;
+    background-image: url(https://systemuicons.com/images/icons/side_menu.svg); }
