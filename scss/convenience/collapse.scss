@@ -1,0 +1,13 @@
+@mixin collapse-responsive () {
+	.collapse {
+		overflow: hidden;
+		&:not(.show) {
+			max-height: 0px;
+			transition: max-height $COLLAPSE-SPEED ease-out;
+		}
+		&.show {
+			max-height: 100vh;
+			transition: max-height $COLLAPSE-SPEED ease-in;
+		}
+	}
+}

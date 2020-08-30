@@ -34,18 +34,19 @@ $NAV-LINK-DISABLED-OPA: .5;
 		color: $fontColor;
 	}
 }
+
 @mixin navbar-responsive ($responsive-width) {
 	.navbar-toggler {
 		display: none;
 	}
 	@media (max-width: $responsive-width) {
 		justify-content: space-between;
+		@include collapse-responsive();
 		.navbar-toggler {
 			display: block;
 		}
 		.navbar-collapse {
-			display: none;
-			flex: 1 1 100%;
+			flex-basis: 100%;
 			.navbar-nav {
 				display: block;
 				flex-direction: column;
