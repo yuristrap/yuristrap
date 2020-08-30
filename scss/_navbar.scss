@@ -34,6 +34,26 @@ $NAV-LINK-DISABLED-OPA: .5;
 		color: $fontColor;
 	}
 }
+@mixin navbar-responsive ($responsive-width) {
+	.navbar-toggler {
+		display: none;
+	}
+	@media (max-width: $responsive-width) {
+		justify-content: space-between;
+		.navbar-toggler {
+			display: block;
+		}
+		.navbar-collapse {
+			display: none;
+			flex: 1 1 100%;
+			.navbar-nav {
+				display: block;
+				flex-direction: column;
+				align-items: left;
+			}
+		}
+	}
+}
 
 // Navbar
 .navbar {
@@ -41,30 +61,51 @@ $NAV-LINK-DISABLED-OPA: .5;
 	position: relative;
     padding: .5rem 1rem;	
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
-	flex-flow: row nowrap;
+	flex-flow: row wrap;
 	justify-content: flex-start;
-	// @include navbar-theme($black);
+	/**
+	 * Navbar-Themes
+	 */
 	@include navbar-theme(var(--darkColor));
 	&.navbar-light {
-		// background-color: $light;
 		background-color: var(--lightColor);
 	}
 	&.navbar-dark {
-		// background-color: $dark;
 		background-color: var(--darkColor);
-		// @include navbar-theme($white);
 		@include navbar-theme(var(--lightColor));
 	}
 	&.navbar-primary {
 		background-color: $primary;
-		// @include navbar-theme($white);
 		@include navbar-theme(var(--lightColor));
+		.navbar-toggler {
+			background-color: $primary;
+		}
 	}
+
+	/**
+	 * Responsive-size
+	 */
+	&.navbar-sm {
+		@include navbar-responsive($SM-WIDTH);
+	}
+	&.navbar-md {
+		@include navbar-responsive($MD-WIDTH);
+	}
+	&.navbar-lg {
+		@include navbar-responsive($LG-WIDTH);
+	}
+	&.navbar-xl {
+		@include navbar-responsive($XL-WIDTH);
+	}
+	
+	/**
+	 * Navbar-brand : title
+	 */
 	.navbar-brand {
 		margin-right: 1rem;
 		display: inline-block;
+		padding: 0.5rem;
 		font-weight: 700;
 		.navbar-brand-logo {
 			display: inline-block;
@@ -80,7 +121,7 @@ $NAV-LINK-DISABLED-OPA: .5;
 	padding-left: 0;
     margin-top: 0;
     margin-bottom: 0;
-    list-style: none;	
+    list-style: none;
 	align-items: center;
 	/**
 	 *	.nav-item
@@ -108,5 +149,22 @@ $NAV-LINK-DISABLED-OPA: .5;
 	display: flex;
 	flex-basis: auto;
 	flex-grow: 1;
+	align-items: center;
 	justify-content: space-between;
+}
+
+.navbar-toggler {
+	cursor: pointer;
+	border: 1px solid var(--darkColor);
+	border-radius: $BORDER-XS;
+	background-color: $light;
+	.navbar-toggler-icon {
+		display: inline-block;
+		width: 1.5em;
+		height: 1.5em;
+		vertical-align: middle;
+		background: no-repeat center center;
+		background-size: 100% 100%;
+		background-image: url(https://systemuicons.com/images/icons/side_menu.svg);
+	}
 }
