@@ -41,9 +41,12 @@ $NAV-LINK-DISABLED-OPA: .5;
 	}
 	@media (max-width: $responsive-width) {
 		justify-content: space-between;
-		@include collapse-responsive();
 		.navbar-toggler {
 			display: block;
+		}
+		.collapse {
+			// Auto responsive, don't have to use `collpase-**`
+			@include base-collapse();
 		}
 		.navbar-collapse {
 			flex-basis: 100%;
