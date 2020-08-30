@@ -18,6 +18,43 @@ $DISABLED-OPA: .6;
 	margin-bottom: 1rem;
 }
 
+.form-control {	
+	margin-bottom: 1rem;
+	display: block;
+	width: 100%;
+	padding: .375rem .75rem;
+	font-size: 1rem;
+	line-height: 1.5;
+	color: var(--dirkColor);
+	background-color: var(--lightColor);
+	background-clip: padding-box;
+	border: 1px solid $gray;
+	border-radius: .25rem;
+	transition: border-color .15s ease-in-out;
+	&[readonly] {
+		background-color: $gray;
+		opacity: 1;
+	}
+	&:focus {  
+		box-shadow:0;
+		border-color: blue;
+		outline :0;
+	}  
+
+	&.form-control-lg {
+		padding: .5rem 1rem;
+		font-size: 1.25rem;
+		line-height: 1.5;
+		border-radius: .3rem;
+	}
+	&.form-control-sm {
+		padding: .25rem .5rem;
+    	font-size: .875rem;
+    	line-height: 1.5;
+		border-radius: .2rem;
+	}
+}
+
 
 /**
  * form-check
