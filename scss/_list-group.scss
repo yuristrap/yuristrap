@@ -1,6 +1,7 @@
 $LIST-BORDER-OPA: .4;
 $LIST-BG-OPA: .3;
-$FONT-SIZE: medium;
+$LIST-WIDTH: 35%;
+
 @mixin border-radius {
     &:first-child {
         border-top-left-radius:  $BORDER-SM;
@@ -25,10 +26,11 @@ $FONT-SIZE: medium;
     flex-direction: column;
 	overflow: hidden;
     padding-left:0px; 
-    margin-right: 35%;
-    background-color: $light;
+    margin-right: $LIST-WIDTH;
+    background-color: var(--lightColor);
+    color: var(--darkColor);
 
-    &.list-group-flush {
+    &.list-group-flush { 
         .list-group-item {
             border-bottom: 1px solid var(--darkColor);
             padding: 1rem 1.25rem;
@@ -39,7 +41,8 @@ $FONT-SIZE: medium;
         background-color: desaturate(blue , 50%);       // 임시 색
     }
     .disabled {
-         color: fade-out($dark, .5);
+        $colortest: var(--darkColor);
+         color: fade-out($dark, 0);
     }
 
     &:not(.list-group-flush) {
@@ -70,6 +73,7 @@ $FONT-SIZE: medium;
             }
             &.list-group-item-dark {
                 @include base-list($dark);
+                color: $black;
             }
             &.list-group-item-action {
                 &:not(.active):not(.disabled):not(button) {
@@ -103,8 +107,10 @@ $FONT-SIZE: medium;
     }
 
     button {
+        background-color: var(--lightColor);
+        color: var(--darkColor);
         text-align: left;
-        font-size: $FONT-SIZE; 
+        font-size: medium; 
         @include border-radius;
 
         &:not(.active) {
@@ -117,7 +123,7 @@ $FONT-SIZE: medium;
     a{
         &:not(.disabled) {
             &:focus {
-               outline: 0;     // 적용중(미완성)
+               outline: 0;
             }
             &:link {
                 color: var(--darkColor);

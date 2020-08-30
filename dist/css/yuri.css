@@ -1276,14 +1276,15 @@ p {
   overflow: hidden;
   padding-left: 0px;
   margin-right: 35%;
-  background-color: #fafafa; }
+  background-color: var(--lightColor);
+  color: var(--darkColor); }
   .list-group.list-group-flush .list-group-item {
     border-bottom: 1px solid var(--darkColor);
     padding: 1rem 1.25rem; }
   .list-group .active {
     background-color: #4040bf; }
   .list-group .disabled {
-    color: rgba(76, 88, 112, 0.5); }
+    color: #4c5870; }
   .list-group:not(.list-group-flush) .list-group-item {
     border: 1px solid var(--darkColor);
     border-bottom: 0px;
@@ -1324,7 +1325,8 @@ p {
     .list-group:not(.list-group-flush) .list-group-item.list-group-item-dark {
       color: #4c5870;
       border: 1px solid rgba(76, 88, 112, 0.4);
-      background-color: rgba(76, 88, 112, 0.3); }
+      background-color: rgba(76, 88, 112, 0.3);
+      color: black; }
     .list-group:not(.list-group-flush) .list-group-item.list-group-item-action:not(.active):not(.disabled):not(button):hover {
       background-color: var(--darkColor); }
     .list-group:not(.list-group-flush) .list-group-item .badge {
@@ -1346,6 +1348,8 @@ p {
       padding-left: .6em;
       border-radius: 10rem; }
   .list-group button {
+    background-color: var(--lightColor);
+    color: var(--darkColor);
     text-align: left;
     font-size: medium; }
     .list-group button:first-child {
