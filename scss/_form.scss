@@ -16,6 +16,22 @@ $DISABLED-OPA: .6;
  */
 .form-group {
 	margin-bottom: 1rem;
+	.form-control-plaintext {
+		padding-top: .375rem;
+		padding-bottom: .375rem;
+		margin-bottom: 0;
+		line-height: 1.5;
+		background-color: transparent;
+		border: solid transparent;
+		border-width: 1px 0;
+	}
+
+	.col-form-label {    
+		margin-top: 2px;
+		margin-bottom: 0;
+		font-size: inherit;
+		line-height: 1.5;
+	}
 }
 
 .form-control {	
