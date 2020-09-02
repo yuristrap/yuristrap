@@ -1071,6 +1071,21 @@ p {
  * Form values
  * $FORM-TYPE-SIZE and $FORM-LABEL-BLANK must have the same data type, like 'px' 'rem'...
  */
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -5px;
+  margin-left: -5px; }
+  .form-row.form-row > .col, .form-row .form-row > [class*=col-] {
+    padding-right: 5px;
+    padding-left: 5px; }
+
+fieldset {
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  border: 0; }
+
 /**
  * form-group
  */
@@ -1085,10 +1100,19 @@ p {
     border: solid transparent;
     border-width: 1px 0; }
   .form-group .col-form-label {
-    margin-top: 2px;
-    margin-bottom: 0;
-    font-size: inherit;
-    line-height: 1.5; }
+    margin-top: 15px;
+    padding-left: 1.6rem;
+    margin-bottom: 0; }
+    .form-group .col-form-label.col-form-label-sm {
+      padding-top: calc(.25rem + 1px);
+      padding-bottom: calc(.25rem + 1px);
+      font-size: .875rem;
+      line-height: 1.5; }
+    .form-group .col-form-label.col-form-label-lg {
+      padding-top: calc(.5rem + 1px);
+      padding-bottom: calc(.5rem + 1px);
+      font-size: 1.25rem;
+      line-height: 1.5; }
 
 .form-control {
   margin-bottom: 1rem;
