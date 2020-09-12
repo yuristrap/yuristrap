@@ -1358,7 +1358,6 @@ p {
   overflow: hidden;
   padding-left: 0px;
   margin-right: auto;
-  background-color: var(--lightColor);
   color: var(--darkColor); }
   .list-group.list-group-flush .list-group-item {
     border-bottom: 1px solid var(--darkColor);
