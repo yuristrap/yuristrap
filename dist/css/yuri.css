@@ -676,6 +676,15 @@ p {
   margin-top: 0;
   margin-bottom: 1rem; }
 
+/**
+ * form fieldest tag
+ */
+fieldset {
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  border: 0; }
+
 .justify-start {
   justify-content: flex-start !important; }
 
@@ -1076,15 +1085,9 @@ p {
   flex-wrap: wrap;
   margin-right: -5px;
   margin-left: -5px; }
-  .form-row.form-row > .col, .form-row .form-row > [class*=col-] {
+  .form-row .form-group[class*=col-] {
     padding-right: 5px;
     padding-left: 5px; }
-
-fieldset {
-  min-width: 0;
-  padding: 0;
-  margin: 0;
-  border: 0; }
 
 /**
  * form-group
@@ -1099,18 +1102,14 @@ fieldset {
     background-color: transparent;
     border: solid transparent;
     border-width: 1px 0; }
-  .form-group .col-form-label {
+  .form-group.col-form-label {
     margin-top: 15px;
     padding-left: 1.6rem;
     margin-bottom: 0; }
-    .form-group .col-form-label.col-form-label-sm {
-      padding-top: calc(.25rem + 1px);
-      padding-bottom: calc(.25rem + 1px);
+    .form-group.col-form-label.col-form-label-sm {
       font-size: .875rem;
       line-height: 1.5; }
-    .form-group .col-form-label.col-form-label-lg {
-      padding-top: calc(.5rem + 1px);
-      padding-bottom: calc(.5rem + 1px);
+    .form-group.col-form-label.col-form-label-lg {
       font-size: 1.25rem;
       line-height: 1.5; }
 
