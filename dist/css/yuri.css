@@ -1518,8 +1518,6 @@ p {
   .spinner-border.spinner-border-sm {
     width: 35px;
     height: 35px; }
-  .spinner-border.light {
-    border-bottom-color: #fafafa; }
   .spinner-border.success {
     border-bottom-color: #17c37b; }
   .spinner-border.primary {
@@ -1533,6 +1531,33 @@ p {
   .spinner-border.info {
     border-bottom-color: #43C6DB; }
   .spinner-border.brown {
+    border-bottom-color: #ba7967; }
+
+.spinner-dot {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-block;
+  border-top: 3px solid black;
+  border-right: 3px solid transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite; }
+  .spinner-dot.spinner-dot-sm {
+    width: 35px;
+    height: 35px; }
+  .spinner-dot.success {
+    border-bottom-color: #17c37b; }
+  .spinner-dot.primary {
+    border-bottom-color: #b897ff; }
+  .spinner-dot.warning {
+    border-bottom-color: orange; }
+  .spinner-dot.danger {
+    border-bottom-color: #ff847c; }
+  .spinner-dot.gray {
+    border-bottom-color: gainsboro; }
+  .spinner-dot.info {
+    border-bottom-color: #43C6DB; }
+  .spinner-dot.brown {
     border-bottom-color: #ba7967; }
 
 @keyframes rotation {
