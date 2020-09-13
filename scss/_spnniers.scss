@@ -37,9 +37,6 @@
    }  
    &.brown {
        @include set-spinner-color($brown);
-   } 
-   &.m-5 {
-       margin: 2.5rem;
    }
   }
   

@@ -608,12 +608,6 @@
 .none-dark-bg {
   background-color: #fafafa !important; }
 
-fieldset {
-  min-width: 0;
-  padding: 0;
-  margin: 0;
-  border: 0; }
-
 :root {
   --whiteColor: white;
   --blackColor: black;
@@ -1540,8 +1534,6 @@ p {
     border-bottom-color: #43C6DB; }
   .spinner-border.brown {
     border-bottom-color: #ba7967; }
-  .spinner-border.m-5 {
-    margin: 2.5rem; }
 
 @keyframes rotation {
   0% {
