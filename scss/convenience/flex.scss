@@ -1,3 +1,50 @@
+// Flex
+.flexed {
+	display: flex;
+}
+
+// Flex-Direction
+.f-column {
+	flex-direction: column;
+}
+.f-row {
+	flex-direction: row;
+}
+.f-column-reverse {
+	flex-direction: column-reverse;
+}
+.f-row-reverse {
+	flex-direction: row-reverse;
+}
+
+// Flex-Fill
+.f-fill {
+	flex: 1 1 auto;
+}
+
+// Flex-Responsive
+@mixin change-to-row ($responsive-width) {
+	@media (max-width: $responsive-width) {
+		flex-direction: row;
+	}
+}
+@mixin change-to-column ($responsive-width) {
+	@media (max-width: $responsive-width) {
+		flex-direction: column;
+	}
+}
+.f-row-sm {	@include change-to-row($SM-WIDTH); }
+.f-row-md {	@include change-to-row($MD-WIDTH); }
+.f-row-lg {	@include change-to-row($LG-WIDTH); }
+.f-row-xl {	@include change-to-row($XL-WIDTH); }
+
+// Flex-Responsive
+.f-column-sm {	@include change-to-column($SM-WIDTH); }
+.f-column-md {	@include change-to-column($MD-WIDTH); }
+.f-column-lg {	@include change-to-column($LG-WIDTH); }
+.f-column-xl {	@include change-to-column($XL-WIDTH); }
+
+// Flex-Justify
 .justify-start {
 	justify-content: flex-start !important;
 }

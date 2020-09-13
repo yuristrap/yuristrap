@@ -1,10 +1,52 @@
+/**
+ * Position
+ */
+.pos-static {
+	position: static;
+}
+.pos-relative {
+	position: relative;
+}
+.pos-absolute {
+	position: absolute;
+}
+.pos-fixed {
+	position: fixed;
+}
+.pos-sticky {
+	position: -webkit-sticky;
+	position: sticky;
+}
 
+
+/**
+ * Pos-convenience
+ */
+.top-left {
+	top: 0px;
+	left: 0px;
+}
+.top-right {
+	top: 0px;
+	right: 0px;
+}
+.bottom-left {
+	bottom: 0px;
+	left: 0px;
+}
+.bottom-right {
+	bottom: 0px;
+	right: 0px;
+}
+
+/**
+ * Pos Fixed-*
+ */
 .fixed-top {
 	position: fixed !important;
 	top: 0px !important;
 	z-index: $Z-fixed;
 }
-
 .fixed-bottom {
 	position: fixed !important;
 	bottom: 0px !important;

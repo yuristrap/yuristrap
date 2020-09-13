@@ -1,6 +1,5 @@
 $LIST-BORDER-OPA: .4;
 $LIST-BG-OPA: .3;
-$LIST-WIDTH: 35%;
 
 @mixin border-radius {
     &:first-child {
@@ -25,9 +24,8 @@ $LIST-WIDTH: 35%;
     display: flex;
     flex-direction: column;
 	overflow: hidden;
-    padding-left:0px; 
-    margin-right: $LIST-WIDTH;
-    background-color: var(--lightColor);
+    padding-left:0px;
+    margin-right: auto;
     color: var(--darkColor);
 
     &.list-group-flush { 
