@@ -18,7 +18,19 @@ $LIST-BG-OPA: .3;
 	border: 1px solid rgba($color, $LIST-BORDER-OPA);
 	background-color: rgba($color, $LIST-BG-OPA);
 }
-
+@mixin test($color) {
+    &.list-group-item-action {
+        &:not(.active):not(.disabled):not(button) {
+            &:hover {
+                background-color : $color;
+                color: var(--lightColor);
+                @if $color ==$dark {
+                    color: $white;
+                }
+            }
+        }
+    }
+}
 .list-group {
     position: relative;
     display: flex;
@@ -49,37 +61,39 @@ $LIST-BG-OPA: .3;
             border-bottom: 0px;
             padding: 1rem 1.25rem;
             @include border-radius;
+            color: var(--darkColor);
+            @include test(var(--darkColor));
             &.list-group-item-primary {
                 @include base-list($primary);
+                @include test($primary);
             }
             &.list-group-item-success {
                 @include base-list($success);
+                @include test($success);
             }
             &.list-group-item-danger {
                 @include base-list($danger);
+                @include test($danger);
             }
             &.list-group-item-warning {
                 @include base-list($warning);
+                @include test($warning);
             }
             &.list-group-item-info {
                 @include base-list($info);
+                @include test($info);
             }
             &.list-group-item-light { 
                 @include base-list($gray);
+                @include test($gray);
                 border: 1px solid $gray;
                 background-color: $white;
             }
             &.list-group-item-dark {
                 @include base-list($dark);
-                color: $black;
+                @include test($dark);
             }
-            &.list-group-item-action {
-                &:not(.active):not(.disabled):not(button) {
-                    &:hover {
-                        background-color : var(--darkColor);
-                    }
-                }
-            }
+            
             .badge {
                 float: right;
                 display: inline-block;
