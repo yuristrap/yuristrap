@@ -18,7 +18,7 @@ $LIST-BG-OPA: .3;
 	border: 1px solid rgba($color, $LIST-BORDER-OPA);
 	background-color: rgba($color, $LIST-BG-OPA);
 }
-@mixin test($color) {
+@mixin list-action-hover($color) {
     &.list-group-item-action {
         &:not(.active):not(.disabled):not(button) {
             &:hover {
@@ -62,36 +62,36 @@ $LIST-BG-OPA: .3;
             padding: 1rem 1.25rem;
             @include border-radius;
             color: var(--darkColor);
-            @include test(var(--darkColor));
+            @include list-action-hover(var(--darkColor));
             &.list-group-item-primary {
                 @include base-list($primary);
-                @include test($primary);
+                @include list-action-hover($primary);
             }
             &.list-group-item-success {
                 @include base-list($success);
-                @include test($success);
+                @include list-action-hover($success);
             }
             &.list-group-item-danger {
                 @include base-list($danger);
-                @include test($danger);
+                @include list-action-hover($danger);
             }
             &.list-group-item-warning {
                 @include base-list($warning);
-                @include test($warning);
+                @include list-action-hover($warning);
             }
             &.list-group-item-info {
                 @include base-list($info);
-                @include test($info);
+                @include list-action-hover($info);
             }
             &.list-group-item-light { 
                 @include base-list($gray);
-                @include test($gray);
+                @include list-action-hover($gray);
                 border: 1px solid $gray;
                 background-color: $white;
             }
             &.list-group-item-dark {
                 @include base-list($dark);
-                @include test($dark);
+                @include list-action-hover($dark);
             }
             
             .badge {
