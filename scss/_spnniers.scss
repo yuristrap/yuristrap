@@ -1,0 +1,53 @@
+@mixin set-spinner-color($color) {
+  border-bottom-color : $color;
+}
+  .spinner-border {
+    width: 48px;
+    height: 48px;
+    border: 5px solid #FFF;
+    border-bottom-color: black;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+    &.spinner-border-sm {
+      width: 35px;
+      height: 35px;
+   }
+   &.light {
+        @include set-spinner-color($light);
+   }
+   &.success {
+       @include set-spinner-color($success);
+   } 
+   &.primary {
+       @include set-spinner-color($primary);
+   }
+   &.warning {
+       @include set-spinner-color($warning);
+   } 
+   &.danger {
+       @include set-spinner-color($danger);
+   } 
+   &.gray {
+       @include set-spinner-color($gray);
+   } 
+   &.info {
+       @include set-spinner-color($info);
+   }  
+   &.brown {
+       @include set-spinner-color($brown);
+   } 
+   &.m-5 {
+       margin: 2.5rem;
+   }
+  }
+  
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  } 
