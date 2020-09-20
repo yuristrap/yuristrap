@@ -1,5 +1,3 @@
-$NAV-LINK-DISABLED-OPA: .5;
-
 @mixin navbar-theme ($fontColor) {
 	color: $fontColor;
 	/**
@@ -34,6 +32,7 @@ $NAV-LINK-DISABLED-OPA: .5;
 		color: $fontColor;
 	}
 }
+
 @mixin navbar-responsive ($responsive-width) {
 	.navbar-toggler {
 		display: none;
@@ -43,9 +42,12 @@ $NAV-LINK-DISABLED-OPA: .5;
 		.navbar-toggler {
 			display: block;
 		}
+		.collapse {
+			// Auto responsive, don't have to use `collpase-**`
+			@include base-collapse();
+		}
 		.navbar-collapse {
-			display: none;
-			flex: 1 1 100%;
+			flex-basis: 100%;
 			.navbar-nav {
 				display: block;
 				flex-direction: column;
@@ -117,32 +119,11 @@ $NAV-LINK-DISABLED-OPA: .5;
 // Navbar menu
 .navbar-nav {
 	display: flex;
-	flex-direction: row;
 	padding-left: 0;
     margin-top: 0;
     margin-bottom: 0;
     list-style: none;
 	align-items: center;
-	/**
-	 *	.nav-item
-	 *	@desc: Menu of navbar (li)
-	 */
-	.nav-item {
-		line-height: 1.5;
-		text-size-adjust: 100%;
-		/**
-		 *	.nav-link
-		 *	@desc: Link of menu (a)
-		 */
-		.nav-link {
-			display: block;
-			padding: 0.5rem;
-			&.disabled {
-				pointer-events: none;
-				cursor: default;
-			}
-		}
-	}
 }
 
 .navbar-collapse {

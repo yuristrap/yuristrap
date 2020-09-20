@@ -94,9 +94,9 @@ $DISABLED-OPA: .6;
  * form-check
  */
 .form-check {
-		position: relative;
+	position: relative;
 	&.form-check-inline {
-		display: inline;
+		display: inline-block;
 		+ .form-check-inline {
 			margin-left: $FORM-CHECK-INLINE-MARGIN;
 		}

@@ -1,0 +1,59 @@
+/**
+ * Badge
+ */
+.badge {
+	display: inline;
+	padding: .3em .5em;
+	font-size: 75%;
+	font-weight: 700;
+	// line-height: 1;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: baseline;
+	border-radius: $BORDER-XS;
+}
+
+/**
+ * Badge Colors
+ */
+.badge-primary {
+	color: $light;
+	background-color: $primary;
+}
+.badge-success {
+	color: $light;
+	background-color: $success;
+}
+.badge-warning {
+	color: $light;
+	background-color: $warning;
+}
+.badge-danger {
+	color: $light;
+	background-color: $danger;
+}
+.badge-dark {
+	color: $light;
+	background-color: $dark;
+}
+.badge-light {
+	color: $dark;
+	background-color: $light;
+}
+.badge-info {
+	color: $light;
+	background-color: $info;
+}
+.badge-brown {
+	color: $light;
+	background-color: $brown;
+}
+
+/**
+ * Badge-pill
+ */
+.badge-pill {
+	padding-right: .6em;
+	padding-left: .6em;
+	border-radius: 50rem;
+}

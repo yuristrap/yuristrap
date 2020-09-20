@@ -5,8 +5,9 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<!-- CSS -->
-	<link rel="stylesheet" href="dist/css/yuri.css">
+	<link rel="stylesheet" href="yuri.css">
 	<title>Yuri Strap</title>
+  
 	<style>
 		.col-test {
 			border: 1px solid #C5A4D8;
@@ -20,10 +21,10 @@
 	<!-- Navbar -->
 	<nav class="navbar navbar-light navbar-md fixed-top">
 		<a class="navbar-brand" href="#">Navbar</a>
-		<button class="navbar-toggler" type="button" data-target="#navbar-collapse-00">
+		<button class="navbar-toggler" type="button" data-target="#navbar-collapse-00" data-toggle="collapse">
 			<span class="navbar-toggler-icon"></span>
 		</button>
-		<div class="navbar-collapse" id="navbar-collapse-00">
+		<div class="collapse navbar-collapse" id="navbar-collapse-00">
 			<ul class="navbar-nav" id="navbar-nav">
 				<li class="nav-item active">
 					<a class="nav-link" href="#">Home</a>
@@ -59,11 +60,10 @@
 	<br />
 	<nav class="navbar navbar-md">
 		<a class="navbar-brand" href="#">Navbar</a>
-		<button class="navbar-toggler" type="button" data-target="#navbar-collapse-01">
+		<button class="navbar-toggler" type="button" data-target="#navbar-collapse-01" data-toggle="collapse">
 			<span class="navbar-toggler-icon"></span>
-
 		</button>
-		<div class="navbar-collapse" id="navbar-collapse-01">
+		<div class="collapse navbar-collapse" id="navbar-collapse-01">
 			<ul class="navbar-nav">
 				<li class="nav-item active">
 					<a class="nav-link" href="#">Home</a>
@@ -303,6 +303,65 @@
 		</div>
 		<br />
 		<br />
+		
+		<h1>Pagination</h1>
+		<nav aria-label="navigation example">
+		  <ul class="pagination">
+			<li class="page-item"><a class="page-link" href="#">Previous</a></li>
+			<li class="page-item"><a class="page-link" href="#">1</a></li>
+			<li class="page-item"><a class="page-link" href="#">2</a></li>
+			<li class="page-item"><a class="page-link" href="#">3</a></li>
+			<li class="page-item"><a class="page-link" href="#">Next</a></li>
+		  </ul>
+		</nav>
+		<nav aria-label="navigation example">
+		  <ul class="pagination justify-center">
+			<li class="page-item"><a class="page-link" href="#"><span aria-hidden="true">&laquo;</span></a></li>
+			<li class="page-item"><a class="page-link" href="#">1</a></li>
+			<li class="page-item"><a class="page-link" href="#">2</a></li>
+			<li class="page-item"><a class="page-link" href="#">3</a></li>
+			<li class="page-item"><a class="page-link" href="#"><span aria-hidden="true">&raquo;</span></a></li>
+		  </ul>
+		</nav>
+		<nav aria-label="navigation ">
+		  <ul class="pagination rounded primary justify-center">
+			<li class="page-item"><a class="page-link" href="#"><span aria-hidden="true">&laquo;</span></a></li>
+			<li class="page-item"><a class="page-link" href="#">1</a></li>
+			<li class="page-item"><a class="page-link" href="#">2</a></li>
+			<li class="page-item"><a class="page-link" href="#">3</a></li>
+			<li class="page-item"><a class="page-link" href="#"><span aria-hidden="true">&raquo;</span></a></li>
+		  </ul>
+		</nav>
+		<nav aria-label="navigation ">
+		  <ul class="pagination bubble primary justify-center">
+			<li class="page-item"><a class="page-link" href="#"><span aria-hidden="true">&laquo;</span></a></li>
+			<li class="page-item"><a class="page-link" href="#">1</a></li>
+			<li class="page-item"><a class="page-link" href="#">2</a></li>
+			<li class="page-item"><a class="page-link" href="#">3</a></li>
+			<li class="page-item"><a class="page-link" href="#"><span aria-hidden="true">&raquo;</span></a></li>
+		  </ul>
+		</nav>
+		<nav aria-label="navigation example">
+		  <ul class="pagination">
+			<li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+			<li class="page-item"><a class="page-link" href="#">1</a></li>
+			<li class="page-item active"><a class="page-link" href="#">2</a></li>
+			<li class="page-item"><a class="page-link" href="#">3</a></li>
+			<li class="page-item"><a class="page-link" href="#">Next</a></li>
+		  </ul>
+		</nav>
+		<nav aria-label="navigation example">
+		  <ul class="pagination primary">
+			<li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+			<li class="page-item"><a class="page-link" href="#">1</a></li>
+			<li class="page-item active"><a class="page-link" href="#">2</a></li>
+			<li class="page-item"><a class="page-link" href="#">3</a></li>
+			<li class="page-item"><a class="page-link" href="#">Next</a></li>
+		  </ul>
+		</nav>
+		<br />
+		<br />
+		
 		<h1>Active & Disabled items</h1>
 		<ul class="list-group">
 			<li class="list-group-item ">Cras jusasdfasdfasjdhfkjashdkfljashdlfjkahsdfkljhasdkfjhasdhlfto odio</li>
@@ -312,6 +371,7 @@
 			<li class="list-group-item">Vestibulum at eros</li>
 		</ul>
 
+		
 		<h1>Links list</h1>
 		<div class="list-group">
 			<a href="#" class="list-group-item list-group-item-action active">
@@ -614,10 +674,45 @@
 		  
 		<br />
 		<br />
+		
+		<h1>Badge</h1>
+		<h1>Example heading <span class="badge badge-primary">New</span></h1>
+		<h2>Example heading <span class="badge badge-primary">New</span></h2>
+		<h3>Example heading <span class="badge badge-primary">New</span></h3>
+		<h4>Example heading <span class="badge badge-primary">New</span></h4>
+		<h5>Example heading <span class="badge badge-primary">New</span></h5>
+		<h6>Example heading <span class="badge badge-primary">New</span></h6>
+		<br />
+		<br />
+		<button type="button" class="btn btn-primary">
+		  Notifications <span class="badge badge-light">4</span>
+		</button>
+		<br />
+		<span class="badge badge-primary">Primary</span>
+		<span class="badge badge-success">Success</span>
+		<span class="badge badge-danger">Danger</span>
+		<span class="badge badge-warning">Warning</span>
+		<span class="badge badge-info">Info</span>
+		<span class="badge badge-light">Light</span>
+		<span class="badge badge-dark">Dark</span>
+		<span class="badge badge-brown">Brown</span>
+		<br />
+		<span class="badge badge-pill badge-primary">Primary</span>
+		<span class="badge badge-pill badge-success">Success</span>
+		<span class="badge badge-pill badge-danger">Danger</span>
+		<span class="badge badge-pill badge-warning">Warning</span>
+		<span class="badge badge-pill badge-info">Info</span>
+		<span class="badge badge-pill badge-light">Light</span>
+		<span class="badge badge-pill badge-dark">Dark</span>
+		<span class="badge badge-pill badge-brown">Brown</span>
+		<br />
+		<br />
+		<br />
 		<!-- 	end of body	 -->
 	</div>
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-	<script src="js/navbar.js"></script>
+	<script src="yuri.js"></script>
+  
 	<!-- JavaScript -->
 	<script>
 		var checkbox = document.querySelector('input[name=mode]');
