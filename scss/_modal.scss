@@ -15,18 +15,40 @@ $MODAL-BG-OPA: .4;
 	.modal-content {
 		background-color: $white;
 		margin: .5rem;
-		padding: 1rem;
 		border: 1px solid $gray;
 		@media (min-width: $SM-WIDTH) {
 			margin: 1.75rem auto;
 			max-width: 50%;
 		}
 	}
+	.modal-header {
+		display: flex;
+		padding: 1rem;
+		align-items: normal;
+		justify-content: space-between;
+		border-bottom: 1px solid $gray;
+		.modal-title {
+			margin: 0px;
+			padding: 0px;
+		}
+	}
+	.modal-body {
+		padding: 1rem;
+	}
+	.modal-footer {
+		padding: 1rem;
+		border-top: 1px solid $gray;
+	}
 	.close {
 		color: rgba($black, .7);
 		float: right;
 		font-size: 1.5rem;
 		font-weight: bold;
+		line-height: 1;
+		padding: 1rem 1rem;
+		margin: -1rem -1rem -1rem auto;
+		border: none;
+		background: transparent;
 		&:hover,
 		&:focus {
 			color: $black;
