@@ -9,16 +9,36 @@ $MODAL-BG-OPA: .4;
 	height: 100%;
 	overflow: auto;
 	background-color: rgba($black, $MODAL-BG-OPA);
+	&.modal-center {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		.modal-content {
+			margin: 0;
+			width: 50%;
+			@media (max-width: $MD-WIDTH) {
+				width: 75%;
+			}
+			@media (max-width: $SM-WIDTH) {
+				width: 100%;
+				margin: .5rem;
+			}
+		}
+	}
 	&:not(.show) {
 		display: none;
 	}
 	.modal-content {
 		background-color: $white;
-		margin: .5rem;
+		margin: 1.75rem auto;
+		max-width: 50%;
 		border: 1px solid $gray;
-		@media (min-width: $SM-WIDTH) {
-			margin: 1.75rem auto;
-			max-width: 50%;
+		@media (max-width: $MD-WIDTH) {
+			max-width: 75%;
+		}
+		@media (max-width: $SM-WIDTH) {
+			max-width: 100%;
+			margin: .5rem;
 		}
 	}
 	.modal-header {
@@ -56,4 +76,13 @@ $MODAL-BG-OPA: .4;
 			cursor: pointer;
 		}
 	}
+}
+
+.modal-opend-window {
+	height: 100vh;
+	overflow-y: hidden;
+	padding-right: 15px;
+}
+.modal-opend-mobile {
+	overflow-y: hidden;
 }
