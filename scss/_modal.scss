@@ -25,27 +25,27 @@ $MODAL-BG-OPA: .4;
 			}
 		}
 	}
-	// &:not(.show) {
-	// 	max-height: 0px;
-	// 	transition: max-height $COLLAPSE-SPEED ease-out;
-	// }
 	&:not(.show) {
 		opacity: 0;
 		visibility: hidden;
-		transition: padding .2s, opacity .2s linear;
+		// transition: visibility 0s, padding .2s, opacity .2s linear;
 		.modal-content {
 			opacity: 0;
-			transition: all .2s;
+			// transition: all .2s;
 			transform: translateY(-100px);
 		}
+	}
+	&.removing {
+		opacity: 0;
+		visibility: visible;
 	}
 	&.show {
 		opacity: 1;
 		visibility: visible;
-		transition: padding .2s, opacity .2s linear;
+		// transition: visibility 0s, padding .2s, opacity .2s linear;
 		.modal-content {
 			opacity: 1;
-			transition: all .2s;
+			// transition: all .2s;
 			transform: translateY(0px);
 		}
 	}

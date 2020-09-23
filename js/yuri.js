@@ -18,9 +18,9 @@ function whichTransitionEvent() {
 const transitionEvent = whichTransitionEvent();
 
 $(function(){	
-	const body = document.body;
+	const body = $('body');
 	
-    $('body').on('click', '[data-toggle="collapse"]', function(e){
+    body.on('click', '[data-toggle="collapse"]', function(e){
 		e.preventDefault();
 		var collapseTarget = $(this).data('target');
 
@@ -29,9 +29,25 @@ $(function(){
 		else
 			$(collapseTarget).removeClass('show');
     });
-    $('body').on('click', '[data-toggle="modal"]', function(e){
+    body.on('click', '[data-toggle="modal"]', function(e){
 		e.preventDefault();
-		var modalTarget = $(this).data('target');
+		let modalTarget;
+		let transitionSpeed = '.2';
+		try {
+			modalTarget = $(this).data('target');
+			if (modalTarget === undefined) throw `${$(this)} : data-target not defined`;
+		} catch (err) {
+			console.error(err);
+		}
+		try {
+			if ($(modalTarget).data('speed') !== undefined) {
+				transitionSpeed = Number($(modalTarget).data('speed'));
+				if (isNaN(transitionSpeed)) throw `${modalTarget} : data-speed was wrong type`;
+				transitionSpeed /= 1000;
+			}
+		} catch (err) {
+			console.error(err);
+		}
 		
 		if (!$(modalTarget).hasClass('addModalCloseEvent') && !$(modalTarget).hasClass('bg-disabled')) {
 			$(modalTarget).addClass('addModalCloseEvent');
@@ -39,8 +55,12 @@ $(function(){
 				$(modalTarget)[i].addEventListener('click' , function(e) {
 					if (e.target == this && $(this).hasClass('show')) {
 						$(this).removeClass('show');
-						$(modalTarget).one(transitionEvent, (e) => {
-								$('body').removeClass('modal-opend-' + (mobileCheck()? 'mobile' : 'window'));
+						$(this).addClass('removing');
+						$(this).one(transitionEvent, (e) => {
+							$(modalTarget).removeClass('removing');
+							body.removeClass('modal-opend-' + (mobileCheck()? 'mobile' : 'window'));
+							$(modalTarget).css('transition', '');
+							$(modalTarget + ' > .modal-content').css('transition', '');
 						});
 					}
 				});
@@ -49,12 +69,18 @@ $(function(){
 		
 		if (!$(modalTarget).hasClass('show')) {
 			$(modalTarget).addClass('show');
-			$('body').addClass('modal-opend-' + (mobileCheck()? 'mobile' : 'window'));
+			body.addClass('modal-opend-' + (mobileCheck()? 'mobile' : 'window'));
+			$(modalTarget).css('transition', `visibility 0s, padding ${transitionSpeed}s, opacity ${transitionSpeed}s linear`);
+			$(modalTarget + ' > .modal-content').css('transition', `all ${transitionSpeed}s`);
 		}
 		else {
 			$(modalTarget).removeClass('show');
+			$(modalTarget).addClass('removing');
 			$(modalTarget).one(transitionEvent, (e) => {
-					$('body').removeClass('modal-opend-' + (mobileCheck()? 'mobile' : 'window'));
+				$(modalTarget).removeClass('removing');
+				body.removeClass('modal-opend-' + (mobileCheck()? 'mobile' : 'window'));
+				$(modalTarget).css('transition', '');
+				$(modalTarget + ' > .modal-content').css('transition', '');
 			});
 		}
     });
