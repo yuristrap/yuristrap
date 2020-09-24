@@ -14,12 +14,13 @@ html {
 	}
 }
 html[data-theme='dark'] {
-	background-color: var(--whiteColor);
+	background-color: var(--nightBG);
 	color: var(--blackColor);
 	--whiteColor: #{$black};
 	--blackColor: #{$white};
 	--lightColor: #{$dark};
 	--darkColor: #{$light};
+	--nightBG: #{$nightBG};
 }
 
 body {

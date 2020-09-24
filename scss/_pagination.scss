@@ -11,7 +11,7 @@
 		&.active {
 			.page-link {
 				background-color: $link-color;
-				color: var(--whiteColor);
+				color: $white;
 			}
 		}
 		&.disabled {
@@ -30,7 +30,7 @@
 		padding: .5rem 1rem;
 		margin-left: -1px;		// border 1px
 		border: 1px solid $gray;
-		background-color: var(--whiteColor);
+		background-color: transparent;
 	}
 	
 	/**
