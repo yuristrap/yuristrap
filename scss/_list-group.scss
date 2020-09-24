@@ -18,7 +18,19 @@ $LIST-BG-OPA: .3;
 	border: 1px solid rgba($color, $LIST-BORDER-OPA);
 	background-color: rgba($color, $LIST-BG-OPA);
 }
-
+@mixin list-action-hover($color) {
+    &.list-group-item-action {
+        &:not(.active):not(.disabled):not(button) {
+            &:hover {
+                background-color : $color;
+                color: var(--lightColor);
+                @if $color ==$dark {
+                    color: $white;
+                }
+            }
+        }
+    }
+}
 .list-group {
     position: relative;
     display: flex;
@@ -49,36 +61,37 @@ $LIST-BG-OPA: .3;
             border-bottom: 0px;
             padding: 1rem 1.25rem;
             @include border-radius;
+            color: var(--darkColor);
+            @include list-action-hover(var(--darkColor));
             &.list-group-item-primary {
                 @include base-list($primary);
+                @include list-action-hover($primary);
             }
             &.list-group-item-success {
                 @include base-list($success);
+                @include list-action-hover($success);
             }
             &.list-group-item-danger {
                 @include base-list($danger);
+                @include list-action-hover($danger);
             }
             &.list-group-item-warning {
                 @include base-list($warning);
+                @include list-action-hover($warning);
             }
             &.list-group-item-info {
                 @include base-list($info);
+                @include list-action-hover($info);
             }
             &.list-group-item-light { 
                 @include base-list($gray);
+                @include list-action-hover($gray);
                 border: 1px solid $gray;
                 background-color: $white;
             }
             &.list-group-item-dark {
                 @include base-list($dark);
-                color: $black;
-            }
-            &.list-group-item-action {
-                &:not(.active):not(.disabled):not(button) {
-                    &:hover {
-                        background-color : var(--darkColor);
-                    }
-                }
+                @include list-action-hover($dark);
             }
         }
     }
