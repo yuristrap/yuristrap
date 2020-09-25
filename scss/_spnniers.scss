@@ -1,17 +1,21 @@
-@mixin set-spinner-color($color) {
+@mixin set-border-color($color) {
   border-bottom-color : $color;
 }
+@mixin set-dot-color($color) {
+   border-top-color : $color;
+ }
   .spinner-border {
     width: 48px;
     height: 48px;
     border: 5px solid $white;
-    border-bottom-color: $black;
+    border-bottom-color: $dark;
     border-radius: 50%;
     display: inline-block;
     box-sizing: border-box;
     animation: rotation 1s linear infinite;
     &.alpha {
       border-color: transparent;
+      border-bottom-color: $dark;
     }
     &.spinner-border-sm {
       width: 35px;
@@ -26,25 +30,25 @@
       height: 75px;
     }
     &.success {
-       @include set-spinner-color($success);
+       @include set-border-color($success);
     } 
     &.primary {
-       @include set-spinner-color($primary);
+       @include set-border-color($primary);
     }
     &.warning {
-       @include set-spinner-color($warning);
+       @include set-border-color($warning);
     } 
     &.danger {
-       @include set-spinner-color($danger);
+       @include set-border-color($danger);
     } 
     &.gray {
-       @include set-spinner-color($gray);
+       @include set-border-color($gray);
     } 
     &.info {
-       @include set-spinner-color($info);
+       @include set-border-color($info);
     }  
     &.brown {
-       @include set-spinner-color($brown);
+       @include set-border-color($brown);
     }
   }
   
@@ -53,7 +57,7 @@
     height: 48px;
     border-radius: 50%;
     display: inline-block;
-    border-top: 3px solid $black;
+    border-top: 3px solid $dark;
     border-right: 3px solid transparent;
     box-sizing: border-box;
     animation: rotation 1s linear infinite;
@@ -70,25 +74,25 @@
       height: 75px;
     }
     &.success {
-       @include set-spinner-color($success);
+       @include set-dot-color($success);
     } 
     &.primary {
-       @include set-spinner-color($primary);
+       @include set-dot-color($primary);
     }
     &.warning {
-       @include set-spinner-color($warning);
+       @include set-dot-color($warning);
     } 
     &.danger {
-       @include set-spinner-color($danger);
+       @include set-dot-color($danger);
     } 
     &.gray {
-       @include set-spinner-color($gray);
+       @include set-dot-color($gray);
     } 
     &.info {
-       @include set-spinner-color($info);
+       @include set-dot-color($info);
     }  
     &.brown {
-       @include set-spinner-color($brown);
+       @include set-dot-color($brown);
     }
   }
 
