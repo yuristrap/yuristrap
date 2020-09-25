@@ -17,12 +17,27 @@ function whichTransitionEvent() {
 }  
 const transitionEvent = whichTransitionEvent();
 
+function checkingNoticeTargetTransitioning(target, className) {
+	if (target.hasClass(className)) {
+		target.off(transitionEvent);
+		target.removeClass(className);
+		target.css('transition', '');
+		target[0].offsetWidth;
+	}
+}
 $(function(){	
 	const body = $('body');
-	
+	let alertTimer;
+
     body.on('click', '[data-toggle="collapse"]', function(e){
 		e.preventDefault();
-		var collapseTarget = $(this).data('target');
+		let collapseTarget;
+		try {
+			collapseTarget = $(this).data('target');
+			if (collapseTarget === undefined) throw `[yuristrap] ${$(this)} : data-target not defined`;
+		} catch (err) {
+			console.error(err);
+		}
 
 		if (!$(collapseTarget).hasClass('show'))
 			$(collapseTarget).addClass('show');
@@ -31,57 +46,95 @@ $(function(){
     });
     body.on('click', '[data-toggle="modal"]', function(e){
 		e.preventDefault();
-		let modalTarget;
+		let modalTarget = '';
+		let modalTargetName = undefined;
 		let transitionSpeed = '.2';
 		try {
-			modalTarget = $(this).data('target');
-			if (modalTarget === undefined) throw `${$(this)} : data-target not defined`;
+			modalTargetName = $(this).data('target');
+			if (modalTargetName === undefined) throw `[yuristrap] ${$(this)} : data-target not defined`;
+			modalTarget = $(modalTargetName);
 		} catch (err) {
 			console.error(err);
 		}
 		try {
-			if ($(modalTarget).data('speed') !== undefined) {
-				transitionSpeed = Number($(modalTarget).data('speed'));
-				if (isNaN(transitionSpeed)) throw `${modalTarget} : data-speed was wrong type`;
+			if (modalTarget.data('speed') !== undefined) {
+				transitionSpeed = Number(modalTarget.data('speed'));
+				if (isNaN(transitionSpeed)) throw `[yuristrap] ${modalTargetName} : data-speed was wrong type`;
 				transitionSpeed /= 1000;
 			}
 		} catch (err) {
 			console.error(err);
 		}
 		
-		if (!$(modalTarget).hasClass('addModalCloseEvent') && !$(modalTarget).hasClass('bg-disabled')) {
-			$(modalTarget).addClass('addModalCloseEvent');
-			for (var i = 0 ; i < $(modalTarget).length; i++) {
-				$(modalTarget)[i].addEventListener('click' , function(e) {
+		if (!modalTarget.hasClass('addModalCloseEvent') && !modalTarget.hasClass('bg-disabled')) {
+			modalTarget.addClass('addModalCloseEvent');
+			for (var i = 0 ; i < modalTarget.length; i++) {
+				modalTarget[i].addEventListener('click' , function(e) {
 					if (e.target == this && $(this).hasClass('show')) {
 						$(this).removeClass('show');
 						$(this).addClass('removing');
 						$(this).one(transitionEvent, (e) => {
-							$(modalTarget).removeClass('removing');
+							modalTarget.removeClass('removing');
 							body.removeClass('modal-opend-' + (mobileCheck()? 'mobile' : 'window'));
-							$(modalTarget).css('transition', '');
-							$(modalTarget + ' > .modal-content').css('transition', '');
+							modalTarget.css('transition', '');
+							$(modalTargetName + ' > .modal-content').css('transition', '');
 						});
 					}
 				});
 			}
 		}
 		
-		if (!$(modalTarget).hasClass('show')) {
-			$(modalTarget).addClass('show');
+		if (!modalTarget.hasClass('show')) {
+			modalTarget.addClass('show');
 			body.addClass('modal-opend-' + (mobileCheck()? 'mobile' : 'window'));
-			$(modalTarget).css('transition', `visibility 0s, padding ${transitionSpeed}s, opacity ${transitionSpeed}s linear`);
+			modalTarget.css('transition', `visibility 0s, padding ${transitionSpeed}s, opacity ${transitionSpeed}s linear`);
 			$(modalTarget + ' > .modal-content').css('transition', `all ${transitionSpeed}s`);
 		}
 		else {
-			$(modalTarget).removeClass('show');
-			$(modalTarget).addClass('removing');
-			$(modalTarget).one(transitionEvent, (e) => {
-				$(modalTarget).removeClass('removing');
+			modalTarget.removeClass('show');
+			modalTarget.addClass('removing');
+			modalTarget.one(transitionEvent, (e) => {
+				modalTarget.removeClass('removing');
 				body.removeClass('modal-opend-' + (mobileCheck()? 'mobile' : 'window'));
-				$(modalTarget).css('transition', '');
-				$(modalTarget + ' > .modal-content').css('transition', '');
+				modalTarget.css('transition', '');
+				$(modalTargetName + ' > .modal-content').css('transition', '');
 			});
 		}
     });
+    body.on('click', '[data-toggle="notice"]', function(e){
+		e.preventDefault();
+		let noticeTarget = undefined;
+		let transitionSpeed = '4.0';
+		try {
+			noticeTarget = $(this).data('target');
+			if (noticeTarget === undefined) throw `[yuristrap] ${$(this)} : data-target not defined`;
+		} catch (err) {
+			console.error(err);
+		}
+		try {
+			if ($(noticeTarget).data('speed') !== undefined) {
+				transitionSpeed = Number($(noticeTarget).data('speed'));
+				if (isNaN(transitionSpeed)) throw `[yuristrap] ${noticeTarget} : data-speed was wrong type`;
+				transitionSpeed /= 1000;
+			}
+		} catch (err) {
+			console.error(err);
+		}
+		noticeTarget = $(noticeTarget);
+
+		checkingNoticeTargetTransitioning(noticeTarget, 'notice-box-showing');
+		checkingNoticeTargetTransitioning(noticeTarget, 'notice-box-closing');
+
+		noticeTarget.addClass('notice-box-showing');
+		noticeTarget.css('transition', `opacity ${transitionSpeed/2}s cubic-bezier(.1,1,0,1)`);
+		noticeTarget.one(transitionEvent, (e) => {	
+			noticeTarget.removeClass('notice-box-showing');
+			noticeTarget.addClass('notice-box-closing');
+			noticeTarget.css('transition', `opacity ${transitionSpeed/2}s cubic-bezier(1,0,1,.1)`);
+			noticeTarget.one(transitionEvent, (e) => {
+				noticeTarget.removeClass('notice-box-closing');
+				noticeTarget.css('transition', '');
+			});
+		});
+    });	
 });
