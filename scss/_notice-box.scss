@@ -1,0 +1,30 @@
+/* notice - Box */
+.notice-box {
+	position: fixed;
+    width: 400px;
+    height: auto;
+	padding: .8rem;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+	bottom: 100px;
+    background-color: var(--whiteColor);
+    opacity: 0;
+	text-align: center;
+	border-radius: $BORDER-PILL;
+	box-shadow:  11px 11px 22px #919191, 
+				 -11px -11px 22px #ffffff;
+	z-index: $Z-notice-box;
+	@media (max-width: $MD-WIDTH) {
+		width: 80%;
+	}
+	@media (max-width: $SM-WIDTH) {
+		width: 90%;
+	}
+}
+.notice-box-showing {
+	opacity: 1;
+}
+.notice-box-closing {
+	opacity: 0;
+}

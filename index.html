@@ -1,11 +1,11 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- CSS -->
-    <link rel="stylesheet" href="dist/css/yuri.css">
-    <title>Yuri Strap</title>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- CSS -->
+	<link rel="stylesheet" href="dist/css/yuri.css">
+	<title>Yuri Strap</title>
 	<style>
 		.col-test {
 			border: 1px solid #C5A4D8;
@@ -17,10 +17,12 @@
 <body>
 
 	<!-- Navbar -->
-	<nav class="navbar navbar-light navbar-md fixed-top">
+	<nav class="navbar navbar-light navbar-md fixed-top shadow-center-md">
 		<a class="navbar-brand" href="#">Navbar</a>
 		<button class="navbar-toggler" type="button" data-target="#navbar-collapse-00" data-toggle="collapse">
-			<span class="navbar-toggler-icon"></span>
+			<svg class="navbar-toggler-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+</svg>
 		</button>
 		<div class="collapse navbar-collapse" id="navbar-collapse-00">
 			<ul class="navbar-nav" id="navbar-nav">
@@ -59,7 +61,9 @@
 	<nav class="navbar navbar-md">
 		<a class="navbar-brand" href="#">Navbar</a>
 		<button class="navbar-toggler" type="button" data-target="#navbar-collapse-01" data-toggle="collapse">
-			<span class="navbar-toggler-icon"></span>
+			<svg class="navbar-toggler-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+</svg>
 		</button>
 		<div class="collapse navbar-collapse" id="navbar-collapse-01">
 			<ul class="navbar-nav">
@@ -155,6 +159,16 @@
 
 		<br />
 		<br />
+		
+		<h2>Notice-Box</h2>
+		<button class="btn btn-brown" data-toggle="notice" data-target="#exampleNoticeBox00">Notice-Box</button>
+		<div class="notice-box" id="exampleNoticeBox00" data-speed="3000">
+			This is Notice-Box
+		</div>
+		
+		<br />
+		<br />
+		
 		
 		<h2>Modal</h2>
 		<button class="btn btn-brown" data-toggle="modal" data-target="#exampleModal00">Modal</button>
@@ -732,7 +746,7 @@
 			  </div>
 			</div>
 		  </form>
-
+		  <div class="spinner-border alpha" role="status"> </div>
 		  <div class="spinner-border success alpha" role="status"> </div>
 		  <div class="spinner-border primary" role="status"> </div>
 		  <div class="spinner-border warning" role="status"> </div>

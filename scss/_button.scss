@@ -131,7 +131,7 @@
 	@include focus-darken($dark);
 }
 .btn-outline-dark {
-    color : $dark;
+    color : var(--blackColor);
     background-color: transparent;
     &:hover {
         background-color: $dark;

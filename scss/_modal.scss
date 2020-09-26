@@ -50,7 +50,7 @@ $MODAL-BG-OPA: .4;
 		}
 	}
 	.modal-content {
-		background-color: $white;
+		background-color: var(--whiteColor);
 		margin: 1.75rem auto;
 		max-width: 50%;
 		border: 1px solid $gray;
