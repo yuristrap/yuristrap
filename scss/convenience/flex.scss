@@ -1,4 +1,6 @@
-// Flex-Direction
+/**
+ * Flex-Direction
+ */
 .f-column {
 	flex-direction: column;
 }
@@ -12,9 +14,24 @@
 	flex-direction: row-reverse;
 }
 
-// Flex-Fill
+/**
+ * Flex-Fill
+ */
 .f-fill {
 	flex: 1 1 auto;
+}
+
+/**
+ * Flex-Wrap
+ */
+.f-wrap {
+	flex-wrap: wrap;
+}
+.f-nowrap {
+	flex-wrap: nowrap;
+}
+.f-wrap-reverse {
+	flex-wrap: wrap-reverse;
 }
 
 // Flex-Responsive
@@ -32,14 +49,14 @@
 .f-row-md {	@include change-to-row($MD-WIDTH); }
 .f-row-lg {	@include change-to-row($LG-WIDTH); }
 .f-row-xl {	@include change-to-row($XL-WIDTH); }
-
-// Flex-Responsive
 .f-column-sm {	@include change-to-column($SM-WIDTH); }
 .f-column-md {	@include change-to-column($MD-WIDTH); }
 .f-column-lg {	@include change-to-column($LG-WIDTH); }
 .f-column-xl {	@include change-to-column($XL-WIDTH); }
 
-// Flex-Justify
+/**
+ * Justify
+ */
 .justify-start {
 	justify-content: flex-start !important;
 }
@@ -54,4 +71,61 @@
 }
 .justify-around {
 	justify-content: space-around !important;
+}
+
+/**
+ * Item-Align
+ */
+.align-items-stretch {
+	align-items: stretch;
+}
+.align-items-center {
+	align-items: center;
+}
+.align-items-start {
+	align-items: flex-start;
+}
+.align-items-end {
+	align-items: flex-end;
+}
+.align-items-baseline {
+	align-items: baseline;
+}
+
+/**
+ * Content-Align
+ */
+.align-content-stretch {
+	align-content: stretch;
+}
+.align-content-center {
+	align-content: center;
+}
+.align-content-start {
+	align-content: flex-start;
+}
+.align-content-end {
+	align-content: flex-end;
+}
+.align-content-space-around {
+	align-content: space-around;
+}
+
+/**
+ * Self-Align
+ */
+.align-self-stretch {
+	align-self: stretch;
+}
+.align-self-center {
+	align-self: center;
+}
+.align-self-start {
+	align-self: flex-start;
+}
+.align-self-end {
+	align-self: flex-end;
+}
+.align-self-baseline {
+	align-self: baseline;
 }
