@@ -3,15 +3,16 @@
  */
 .btn {
     display: inline-block;
-    padding: 5px 20px;
+    padding: .375rem .75rem;
     border: 0px;
     border-radius: $BORDER-XS;
-    font-size: 20px;
+    font-size: 1rem;
     text-align: center;
     text-decoration: none;
     -webkit-transition-duration: 0.4s; 
     transition-duration: 0.4s;
 	cursor: pointer;
+	line-height: 1.5;
     &.btn-sm {
         padding: 8px 8px;
         font-size: 12px;

@@ -18,7 +18,8 @@
 // Grid
 @mixin base-column ($i) {
 	position: relative;
-	padding: $column-padding;
+	padding-left: $column-padding;
+	padding-right: $column-padding;
 }
 @mixin flex-column ($i) {
 	flex: 0 0 percentage($i / $MAX-COLUMNS);
@@ -46,7 +47,8 @@
 	 */
 	.col {
 		position: relative;
-		padding: $column-padding;
+		padding-left: $column-padding;
+		padding-right: $column-padding;
 		flex: 1 1 0;
 	}
 	@for $i from 1 through $MAX-COLUMNS {
