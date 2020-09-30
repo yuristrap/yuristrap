@@ -791,6 +791,16 @@
 		<span class="badge badge-pill badge-dark">Dark</span>
 		<span class="badge badge-pill badge-brown">Brown</span>
 		<br />
+		<div class="dropdown">
+			<button class="btn btn-secondary dropdown-toggle" onclick="tempdropdown()" type="button"  data-toggle="dropdown">
+			  Dropdown button
+			</button>
+			<div class="dropdown-menu" id="dropdownMenuButton">
+			  <a class="dropdown-item" href="#">Action</a>
+			  <a class="dropdown-item" href="#">Another action</a>
+			  <a class="dropdown-item" href="#">Something else here</a>
+			</div>
+		  </div>
 		<br />
 		<br />
 		<!-- 	end of body	 -->
@@ -800,6 +810,11 @@
   
 	<!-- JavaScript -->
 	<script>
+		function tempdropdown() {
+			var element = document.getElementById('dropdownMenuButton');
+			element.classList.toggle('show');
+		};
+
 		var checkbox = document.querySelector('input[name=mode]');
 
 		checkbox.addEventListener('change', function () {
