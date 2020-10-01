@@ -2,20 +2,20 @@
  * Position
  */
 .pos-static {
-	position: static;
+	position: static !important;
 }
 .pos-relative {
-	position: relative;
+	position: relative !important;
 }
 .pos-absolute {
-	position: absolute;
+	position: absolute !important;
 }
 .pos-fixed {
-	position: fixed;
+	position: fixed !important;
 }
 .pos-sticky {
-	position: -webkit-sticky;
-	position: sticky;
+	position: -webkit-sticky !important;
+	position: sticky !important;
 }
 
 
@@ -23,20 +23,20 @@
  * Pos-convenience
  */
 .top-left {
-	top: 0px;
-	left: 0px;
+	top: 0px !important;
+	left: 0px !important;
 }
 .top-right {
-	top: 0px;
-	right: 0px;
+	top: 0px !important;
+	right: 0px !important;
 }
 .bottom-left {
-	bottom: 0px;
-	left: 0px;
+	bottom: 0px !important;
+	left: 0px !important;
 }
 .bottom-right {
-	bottom: 0px;
-	right: 0px;
+	bottom: 0px !important;
+	right: 0px !important;
 }
 
 /**
@@ -45,10 +45,10 @@
 .fixed-top {
 	position: fixed !important;
 	top: 0px !important;
-	z-index: $Z-fixed;
+	z-index: $Z-fixed !important;
 }
 .fixed-bottom {
 	position: fixed !important;
 	bottom: 0px !important;
-	z-index: $Z-fixed;
+	z-index: $Z-fixed !important;
 }

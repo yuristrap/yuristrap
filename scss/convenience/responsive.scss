@@ -1,7 +1,7 @@
 // Responsive
 @mixin hide-block ($responsive-width) {
 	@media (max-width: $responsive-width) {
-		display: none;
+		display: none !important;
 	}
 }
 .hide-sm {
@@ -19,7 +19,7 @@
 
 @mixin show-block ($responsive-width) {
 	@media (min-width: $responsive-width) {
-		display: none;
+		display: none !important;
 	}
 }
 .show-sm {
