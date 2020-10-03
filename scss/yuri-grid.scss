@@ -14,6 +14,24 @@
 	margin-right: auto;
 	@include container-box;
 }
+.container-xl {
+	max-width: $container-xl-width;
+	margin-left: auto;
+	margin-right: auto;
+	@include container-box;
+}
+.container-md {
+	max-width: $container-md-width;
+	margin-left: auto;
+	margin-right: auto;
+	@include container-box;
+}
+.container-sm {
+	max-width: $container-sm-width;
+	margin-left: auto;
+	margin-right: auto;
+	@include container-box;
+}
 
 // Grid
 @mixin base-column ($i) {
@@ -40,46 +58,46 @@
 	margin-right: -$container-padding;
 	// justify-content: space-between;
 	// text-align: center;
-	flex-wrap: wrap;
+	flex-wrap: wrap;	
+}
+/**
+ *	.col
+ *	@desc: auto sizing
+ */
+.col {
+	position: relative;
+	padding-left: $column-padding;
+	padding-right: $column-padding;
+	flex: 1 1 0;
+}
+@for $i from 1 through $MAX-COLUMNS {
 	/**
-	 *	.col
-	 *	@desc: auto sizing
+	 *	.col-*
+	 *	@desc: None-Responsive sizing. Based on flex
 	 */
-	.col {
-		position: relative;
-		padding-left: $column-padding;
-		padding-right: $column-padding;
-		flex: 1 1 0;
+	.col-#{$i} {
+		@include base-column($i);
+		@include flex-column($i);
 	}
-	@for $i from 1 through $MAX-COLUMNS {
-		/**
-		 *	.col-*
-		 *	@desc: None-Responsive sizing. Based on flex
-		 */
-		.col-#{$i} {
-			@include base-column($i);
-			@include flex-column($i);
-		}
-		/**
-		 *	.col-sm-*
-		 *	@desc: Responsive sizing on SM-WIDTH
-		 */
-		.col-sm-#{$i} {
-			@include responsive-column($i, $SM-WIDTH);
-		}
-		/**
-		 *	.col-md-*
-		 *	@desc: Responsive sizing on MD-WIDTH
-		 */
-		.col-md-#{$i} {
-			@include responsive-column($i, $MD-WIDTH);
-		}
-		/**
-		 *	.col-lg-*
-		 *	@desc: Responsive sizing on LG-WIDTH
-		 */
-		.col-lg-#{$i} {
-			@include responsive-column($i, $LG-WIDTH);
-		}
+	/**
+	 *	.col-sm-*
+	 *	@desc: Responsive sizing on SM-WIDTH
+	 */
+	.col-sm-#{$i} {
+		@include responsive-column($i, $SM-WIDTH);
+	}
+	/**
+	 *	.col-md-*
+	 *	@desc: Responsive sizing on MD-WIDTH
+	 */
+	.col-md-#{$i} {
+		@include responsive-column($i, $MD-WIDTH);
+	}
+	/**
+	 *	.col-lg-*
+	 *	@desc: Responsive sizing on LG-WIDTH
+	 */
+	.col-lg-#{$i} {
+		@include responsive-column($i, $LG-WIDTH);
 	}
 }
