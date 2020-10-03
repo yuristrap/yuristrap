@@ -1,0 +1,94 @@
+@mixin striped-color($color) {
+   $tint-color: darken($color, 5%);
+   color: darken($color, 25%);
+   background-image: linear-gradient(45deg, $color 25%, $tint-color 25%, $tint-color 50%, $color 50%, $color 75%, $tint-color 75%, $tint-color 100%);
+}
+@mixin progress-bar-color($color) {
+   background-color: $color;
+}
+
+.progress {
+ padding: .25rem;
+ background: $gray;
+ border-radius: $BORDER-XS;
+ box-shadow: inset 0  0.0625rem 0.125rem rgba(0, 0, 0, 0.25), 0  0.0625rem rgba(255, 255, 255, 0.08);
+ text-align: center;
+ &.progress-filled{
+   padding: 0px;
+ }
+
+ .progress-bar {
+   height: 1rem;
+   background-color: $black;  
+   border-radius: $BORDER-XS; 
+   transition: 0.4s linear;  
+   transition-property: width, background-color;
+   &.progress-bar-sm {
+       height: .5rem;
+   }
+   &.progress-bar-lg {
+       height: 1.5rem;
+   }
+   &.progress-bar-xl {
+       height: 2rem;
+   }
+
+   &.success {
+       @include progress-bar-color($success);
+    } 
+    &.primary {
+       @include progress-bar-color($primary);
+    }
+    &.warning {
+       @include progress-bar-color($warning);
+    } 
+    &.danger {
+       @include progress-bar-color($danger);
+    } 
+    &.gray {
+       @include progress-bar-color($gray);
+    } 
+    &.info {
+       @include progress-bar-color($info);
+    }  
+    &.brown {
+       @include progress-bar-color($brown);
+    }
+   &.progress-moved {
+       animation: progressAnimation 6s;
+   }
+   &.progress-striped { 
+       background-size: 3.5rem 3.5rem;
+       width: 100%; 
+       @include striped-color($white);
+       &.success {
+           @include striped-color($success);
+        } 
+        &.primary {
+           @include striped-color($primary);
+        }
+        &.warning {
+           @include striped-color($warning);
+        } 
+        &.danger {
+           @include striped-color($danger);
+        } 
+        &.gray {
+           @include striped-color($gray);
+        } 
+        &.info {
+           @include striped-color($info);
+        }  
+        &.brown {
+           @include striped-color($brown);
+        }
+       &.progress-striped-moved {
+       animation: progressAnimation 6s;
+     }
+   }
+ }
+}
+
+@keyframes progressAnimation {
+ 0%   { width: 0px;}
+}
