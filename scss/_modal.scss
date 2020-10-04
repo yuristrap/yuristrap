@@ -50,7 +50,7 @@ $MODAL-BG-OPA: .4;
 		}
 	}
 	.modal-content {
-		background-color: var(--whiteColor);
+		background-color: var(--lightColor);
 		margin: 1.75rem auto;
 		max-width: 50%;
 		border: 1px solid $gray;
@@ -81,7 +81,7 @@ $MODAL-BG-OPA: .4;
 		border-top: 1px solid $gray;
 	}
 	.close {
-		color: rgba($black, .7);
+		color: rgba(var(--textColor), .7);
 		float: right;
 		font-size: 1.5rem;
 		font-weight: bold;
@@ -92,7 +92,7 @@ $MODAL-BG-OPA: .4;
 		background: transparent;
 		&:hover,
 		&:focus {
-			color: $black;
+			color: var(--textColor);
 			text-decoration: none;
 			cursor: pointer;
 		}
