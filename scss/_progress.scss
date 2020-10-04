@@ -1,13 +1,15 @@
 @mixin striped-color($color) {
    $tint-color: darken($color, 5%);
-   color: darken($color, 25%);
+   color: darken($color, 30%);
    background-image: linear-gradient(45deg, $color 25%, $tint-color 25%, $tint-color 50%, $color 50%, $color 75%, $tint-color 75%, $tint-color 100%);
 }
 @mixin progress-bar-color($color) {
+   color: darken($color, 30%);
    background-color: $color;
 }
 
 .progress {
+ overflow: hidden;
  padding: .25rem;
  background: $gray;
  border-radius: $BORDER-XS;
@@ -18,13 +20,19 @@
  }
 
  .progress-bar {
+   width: 0px;
    height: 1rem;
-   background-color: $black;  
-   border-radius: $BORDER-XS; 
-   transition: 0.4s linear;  
+   border-radius: $BORDER-XS;
+   display: flex; 
+   text-align: center;
+   justify-content: center;
+   flex-direction: column;
+   transition: 0.4s linear;
+   @include progress-bar-color($primary);  
    transition-property: width, background-color;
    &.progress-bar-sm {
-       height: .5rem;
+       height: .65rem;
+       font-size: .75rem;
    }
    &.progress-bar-lg {
        height: 1.5rem;
@@ -35,18 +43,12 @@
 
    &.success {
        @include progress-bar-color($success);
-    } 
-    &.primary {
-       @include progress-bar-color($primary);
     }
     &.warning {
        @include progress-bar-color($warning);
     } 
     &.danger {
        @include progress-bar-color($danger);
-    } 
-    &.gray {
-       @include progress-bar-color($gray);
     } 
     &.info {
        @include progress-bar-color($info);
@@ -59,7 +61,7 @@
    }
    &.progress-striped { 
        background-size: 3.5rem 3.5rem;
-       width: 100%; 
+       width: 0px; 
        @include striped-color($white);
        &.success {
            @include striped-color($success);
@@ -72,9 +74,6 @@
         } 
         &.danger {
            @include striped-color($danger);
-        } 
-        &.gray {
-           @include striped-color($gray);
         } 
         &.info {
            @include striped-color($info);
