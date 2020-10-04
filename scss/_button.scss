@@ -31,7 +31,8 @@
 @mixin focus-darken ($color) {
     border: 1px solid $color;
     &:focus {
-        outline-color: darken($color, 10%);
+		outline: none;
+		box-shadow: 0 0 0 1px darken($color, 10%);
     }
 }
 
@@ -43,6 +44,7 @@
     background-color: $primary;
     &:hover {
         background-color : darken($primary, 10%);
+        border-color : darken($primary, 10%);
     }
 	@include focus-darken($primary);
 }
@@ -64,6 +66,7 @@
     background-color: $success;
     &:hover {
         background-color : darken($success, 10%);
+        border-color : darken($success, 10%);
     }
 	@include focus-darken($success);
 }
@@ -86,6 +89,7 @@
     background-color: $warning;
     &:hover {
         background-color : darken($warning, 10%);
+        border-color : darken($warning, 10%);
     }
 	@include focus-darken($warning);
 }
@@ -107,6 +111,7 @@
     background-color: $danger;
     &:hover {
         background-color : darken($danger, 10%);
+        border-color : darken($danger, 10%);
     }
 	@include focus-darken($danger);
 }
@@ -128,6 +133,7 @@
     background-color: $dark;
     &:hover {
         background-color : darken($dark, 15%);
+        border-color : darken($dark, 15%);
     }
 	@include focus-darken($dark);
 }
@@ -148,11 +154,10 @@
     color: $dark;
     background-color: $light;
     &:hover {
-        background-color : $light;
+        background-color : darken($light, 10%);
+        border-color : darken($light, 10%);
     }
-    &:focus {
-        outline-color: $light;
-    }
+	@include focus-darken($light);
 }
 
 /**
@@ -163,6 +168,7 @@
     background-color: $info;
     &:hover {
         background-color : darken($info, 10%);
+        border-color : darken($info, 10%);
     }
 	@include focus-darken($info);
 }
@@ -184,6 +190,7 @@
     background-color: $brown;
     &:hover {
         background-color : darken($brown, 10%);
+        border-color : darken($brown, 10%);
     }
 	@include focus-darken($brown);
 }

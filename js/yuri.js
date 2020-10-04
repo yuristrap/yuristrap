@@ -88,7 +88,7 @@ $(function(){
 			modalTarget.addClass('show');
 			body.addClass('modal-opend-' + (mobileCheck()? 'mobile' : 'window'));
 			modalTarget.css('transition', `visibility 0s, padding ${transitionSpeed}s, opacity ${transitionSpeed}s linear`);
-			$(modalTarget + ' > .modal-content').css('transition', `all ${transitionSpeed}s`);
+			$(modalTargetName + ' > .modal-content').css('transition', `all ${transitionSpeed}s`);
 		}
 		else {
 			modalTarget.removeClass('show');
