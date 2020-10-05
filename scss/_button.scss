@@ -13,16 +13,28 @@
     transition-duration: 0.4s;
 	cursor: pointer;
 	line-height: 1.5;
-    &.btn-sm {
-        padding: 8px 8px;
-        font-size: 12px;
-    }
-    &.btn-lg {
-        padding: 20px 40px;
-    }
-    &.btn-block {
-        min-width: 100%;
-    }
+}
+
+/**
+ * 	SM Button size
+ */
+.btn-sm {
+	padding: 8px 8px;
+	font-size: 12px;
+}
+
+/**
+ * 	LG Button size
+ */
+.btn-lg {
+	padding: 20px 40px;
+}
+
+/**
+ * 	W-100 Button size
+ */
+.btn-block {
+	min-width: 100%;
 }
 
 /**

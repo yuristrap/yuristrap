@@ -15,9 +15,8 @@
 		@include base-collapse();
 	}
 }
-.collapse {
-	&.collapse-sm { @include responsive-collapse($SM-WIDTH); }
-	&.collapse-md { @include responsive-collapse($MD-WIDTH); }
-	&.collapse-lg { @include responsive-collapse($LG-WIDTH); }
-	&.collapse-xl { @include responsive-collapse($XL-WIDTH); }
-}
+.collapse {}
+.collapse-sm { @include responsive-collapse($SM-WIDTH); }
+.collapse-md { @include responsive-collapse($MD-WIDTH); }
+.collapse-lg { @include responsive-collapse($LG-WIDTH); }
+.collapse-xl { @include responsive-collapse($XL-WIDTH); }
