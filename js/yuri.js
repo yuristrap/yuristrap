@@ -137,4 +137,45 @@ $(function(){
 			});
 		});
     });	
+	
+	
+	var locationHref = function(h) {
+		if (history.pushState) history.pushState(null, null, h);
+		else location.hash = h;
+	};
+
+	$('[data-spy="scroll"]').each(function () {
+		let scrollNavTarget;
+		
+		try {
+			scrollNavTarget = $(this).data('target');
+			if (scrollNavTarget === undefined) throw `[yuristrap] ${$(this)} : data-target not defined`;
+		} catch (err) {
+			console.error(err);
+		}
+		scrollNavTarget = $(scrollNavTarget);
+
+		scrollNavTarget.on('click', '[href]', function(e){
+			if ($(this).attr("href")[0] !== '#')
+				return;
+
+			console.log($(this).attr("href"));
+
+			let hrefTaget = $(this).attr('href');
+			e.preventDefault();
+			if (hrefTaget === undefined || hrefTaget === '#') {
+				console.log("NO");
+			} else {
+				var target = $($(this).attr('href')); 
+				$('html, body').animate({
+					scrollTop: target.offset().top
+				},
+				{
+				  duration: 600,
+				  complete: locationHref($(this).attr("href"))
+				});
+			}
+		});
+	});
+	
 });
