@@ -116,6 +116,10 @@
 	vertical-align: top;
 }
 
+.nav-link.active {
+	background-color: $primary;
+}
+
 // Navbar menu
 .navbar-nav {
 	display: flex;

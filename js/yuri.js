@@ -137,4 +137,88 @@ $(function(){
 			});
 		});
     });	
+	
+	// hash 주소 나중에 입력
+	var locationHref = function(h) {
+		if (history.pushState) history.pushState(null, null, h);
+		else location.hash = h;
+	};
+
+	// Nav 메뉴를 눌렀을때
+	let beforeScrollTarget;
+	$('[data-spy="scroll"]').each(function () {
+		let scrollNavTarget;
+
+		let mine = $(this);
+		let scrollHead = $(this);
+		if (mine.is('body')) {
+			mine = $(window);
+			scrollHead = $('html, body');
+		}
+		try {
+			scrollNavTarget = $(this).data('target');
+			if (scrollNavTarget === undefined) throw `[yuristrap] ${$(this)} : data-target not defined`;
+		} catch (err) {
+			console.error(err);
+		}
+		scrollNavTarget = $(scrollNavTarget);
+
+		console.log(' dsfdf ', mine);
+		console.log(' dsfdf ', scrollNavTarget);
+
+
+		scrollNavTarget.on('click', '[href]', function(e){
+			if ($(this).attr("href")[0] !== '#')
+				return;
+
+			console.log($(this).attr("href"));
+
+			let hrefTaget = $(this).attr('href');
+			e.preventDefault();
+			if (hrefTaget === undefined || hrefTaget === '#') {
+				console.log("NO");
+			} else {
+				console.log('im in');
+				var target = $($(this).attr('href')); 
+				console.log(target.offset().top);
+				scrollHead.animate({
+					scrollTop: target.offset().top
+				},
+				{
+				  duration: 600,
+				  complete: locationHref($(this).attr("href"))
+				});
+			}
+		});
+		let navDatas = [];
+		let sectionDatas = [];
+		scrollNavTarget.find('[data-scroll]').each(function(idx, element) {
+			navDatas.push($(element));
+			sectionDatas.push($($(element).attr("href")));
+			console.log(' sssssssss ', $(element));
+		});
+		console.log(navDatas);
+
+		mine.on('scroll', function(e){
+			console.log('sccc');
+			// scrollSpyContent.offset().top
+			checkingScrollSpy(navDatas, sectionDatas, document.documentElement.scrollTop);
+		});	
+		checkingScrollSpy(navDatas, sectionDatas, document.documentElement.scrollTop);
+	})
+
+	function checkingScrollSpy(navDatas, sectionDatas, posY) {
+		navDatas.forEach((navData, idx) => {
+			if (Math.abs(parseInt(sectionDatas[idx].offset().top) - parseInt(posY)) < 20) {
+				if (beforeScrollTarget !== undefined)
+					beforeScrollTarget.removeClass('active');
+				navData.addClass('active');
+				beforeScrollTarget = navData;
+			}
+			console.log('a ' + document.documentElement.scrollTop);
+			console.log('ss ' + Math.abs(parseInt(sectionDatas[idx].offset().top) - parseInt(posY)));
+		});
+		// console.log('-------');
+	}
+	
 });
