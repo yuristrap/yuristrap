@@ -18,3 +18,8 @@ Install `node-sass` module
 node-sass --output-style compressed scss/yuri.scss --output dist/css
 ```
 Build `compressed`
+
+```
+node-sass --watch scss/yuri.scss dist/css/yuri.css
+```
+Build `watch mode`
