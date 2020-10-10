@@ -2545,3 +2545,29 @@ input[type=radio].form-check-input {
     transform: rotate(0deg); }
   100% {
     transform: rotate(360deg); } }
+
+.hr-style {
+  overflow: visible;
+  padding: 0px;
+  border: none;
+  border-top: 0.1rem solid var(--border-color, gainsboro); }
+  .hr-style.center {
+    text-align: center; }
+  .hr-style.left {
+    text-align: left; }
+  .hr-style.right {
+    text-align: right; }
+  .hr-style:after {
+    content: var(--content, "</>");
+    display: inline-block;
+    position: relative;
+    top: -.9rem;
+    font-size: 1rem;
+    padding: 0 0.25rem;
+    color: var(--text-color, gainsboro);
+    background: var(--backgroundColor); }
+
+.hr-dashed {
+  border: 0;
+  border-bottom: .1rem dashed #ccc;
+  background: var(--backgroundColor); }
