@@ -11,9 +11,21 @@ $ALERT-BG-OPA: .3;
 		border: thin solid rgba($color, $ALERT-HR-OPA);
 	}
 	& a {
-		color: darken($color, 20%);
+		@if $color ==$dark {
+			color: var(--lightcolor);
+		}
+		@else {
+			color: darken($color, 20%);
+		}
 		font-weight: bold ;
 	}
+	
+	@if $color ==$dark {
+        color: var(--darkColor)
+    }
+    @else if $color ==$gray {
+        color: darken($color, 30%);
+    }
 }
 
 .alert {
