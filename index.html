@@ -41,8 +41,11 @@
 				<li class="nav-item">
 					<a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
 				</li>
-				<input class="container_toggle" type="checkbox" id="switch" name="mode">
-				<label for="switch">Toggle</label>
+				<div class="form-check dsp-flex align-items-center">
+					<input class="container_toggle form-switch-input" type="checkbox" id="switch" name="mode">
+					<label class="form-switch-label size-md" for="switch"></label>
+					Dark Mode
+				</div>
 			</ul>
 		</div>
 	</nav>
@@ -416,6 +419,26 @@
 		<div class="form-check form-check-inline">
 			<input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled>
 			<label class="form-check-label" for="inlineCheckbox3">3 (disabled)</label>
+		</div>
+		<div class="form-check dsp-flex align-items-center">
+			<input class="form-switch-input" type="checkbox" id="defaultSwitch1">
+			<label class="form-switch-label size-md" for="defaultSwitch1">Switch</label>
+			Primary Switch
+		</div>
+		<div class="form-check dsp-flex align-items-center">
+			<input class="form-switch-input" type="checkbox" id="defaultSwitch3">
+			<label class="form-switch-label brown size-lg" for="defaultSwitch3">Switch</label>
+			Brown Switch
+		</div>
+		<div class="form-check form-check-inline">
+			<input class="form-switch-input" type="checkbox" id="defaultSwitch2">
+			<label class="form-switch-label dark" for="defaultSwitch2">Switch</label>
+			Dark Switch
+		</div>
+		<div class="form-check form-check-inline">
+			<input class="form-switch-input" type="checkbox" id="defaultSwitch4">
+			<label class="form-switch-label light" for="defaultSwitch4">Switch</label>
+			Light Switch
 		</div>
 		<br />
 		<br />
