@@ -1783,6 +1783,7 @@ p {
       color: gainsboro;
       border: 1px solid rgba(220, 220, 220, 0.4);
       background-color: rgba(220, 220, 220, 0.3);
+      color: darkgray;
       border: 1px solid gainsboro;
       background-color: white; }
       .list-group:not(.list-group-flush) .list-group-item.list-group-item-light.list-group-item-action:not(.active):not(.disabled):not(button):hover {
@@ -1791,11 +1792,12 @@ p {
     .list-group:not(.list-group-flush) .list-group-item.list-group-item-dark {
       color: #302C35;
       border: 1px solid rgba(48, 44, 53, 0.4);
-      background-color: rgba(48, 44, 53, 0.3); }
+      background-color: rgba(48, 44, 53, 0.3);
+      color: var(--darkColor); }
       .list-group:not(.list-group-flush) .list-group-item.list-group-item-dark.list-group-item-action:not(.active):not(.disabled):not(button):hover {
         background-color: #302C35;
         color: var(--lightColor);
-        color: white; }
+        color: #625a6d; }
   .list-group button {
     background-color: var(--lightColor);
     color: var(--darkColor);
@@ -1809,7 +1811,8 @@ p {
       border-bottom-right-radius: 0.5rem;
       border-bottom: 1px solid var(--darkColor); }
     .list-group button:not(.active):hover:enabled {
-      background-color: var(--darkColor); }
+      background-color: var(--darkColor);
+      color: var(--lightColor); }
   .list-group a:not(.disabled):focus {
     outline: 0; }
   .list-group a:not(.disabled):link {
