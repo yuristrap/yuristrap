@@ -88,7 +88,7 @@ $(function(){
 			modalTarget.addClass('show');
 			body.addClass('modal-opend-' + (mobileCheck()? 'mobile' : 'window'));
 			modalTarget.css('transition', `visibility 0s, padding ${transitionSpeed}s, opacity ${transitionSpeed}s linear`);
-			$(modalTarget + ' > .modal-content').css('transition', `all ${transitionSpeed}s`);
+			$(modalTargetName + ' > .modal-content').css('transition', `all ${transitionSpeed}s`);
 		}
 		else {
 			modalTarget.removeClass('show');
@@ -137,4 +137,77 @@ $(function(){
 			});
 		});
     });	
+	
+	var locationHref = function (hash) {
+		if (history.pushState) history.pushState(null, null, hash);
+		else location.hash = hash;
+	};
+
+	$('[data-spy="scroll"]').each(function () {
+		let beforeScrollTarget,
+			scrollNavTarget;
+		let self = $(this),
+			scrollHead = $(this);
+		let imBody = false;
+
+		if (self.is('body')) {
+			self = $(window);
+			scrollHead = $('html, body');
+			imBody = true;
+		}
+
+		try {
+			scrollNavTarget = $(this).data('target');
+			if (scrollNavTarget === undefined) throw `[yuristrap] ${$(this)} : data-target not defined`;
+			scrollNavTarget = $(scrollNavTarget);
+		} catch (err) {
+			console.error(err);
+		}
+
+		scrollNavTarget.on('click', '[href]', function(e){
+			let hrefTaget = $(this).attr('href');
+			if (hrefTaget[0] !== '#') return;
+			
+			e.preventDefault();
+			if (hrefTaget !== undefined && hrefTaget !== '#') {
+				let target = $(hrefTaget); 
+				scrollHead.animate({
+					scrollTop: target.offset().top
+				},
+				{
+					duration: 600,
+					complete: locationHref(hrefTaget)
+				});
+			}
+		});
+
+		let navDatas = [], sectionDatas = [];
+		scrollNavTarget.find('[data-scroll]').each(function(idx, element) {
+			navDatas.push($(element));
+			sectionDatas.push($($(element).attr('href')));
+		});
+
+		self.on('scroll', function(e){
+			checkingScrollSpy(navDatas, sectionDatas, imBody ? document.documentElement.scrollTop : self.offset().top );
+		});	
+
+		function checkingScrollSpy(navDatas, sectionDatas, headScrollTop) {
+			let isActiveScrollSpy = false;
+			navDatas.forEach((navData, idx) => {
+				if (sectionDatas[idx].offset().top - headScrollTop <= 20) {
+					if (beforeScrollTarget !== undefined)
+						beforeScrollTarget.removeClass('active');
+					navData.addClass('active');
+					beforeScrollTarget = navData;
+					isActiveScrollSpy = true;
+				}
+			});
+			if (!isActiveScrollSpy && beforeScrollTarget !== undefined) {
+				beforeScrollTarget.removeClass('active');
+				beforeScrollTarget = undefined;
+			}
+		}
+
+		checkingScrollSpy(navDatas, sectionDatas, imBody ? document.documentElement.scrollTop : self.offset().top);
+	});
 });

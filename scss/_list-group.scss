@@ -37,6 +37,7 @@ $LIST-BG-OPA: .3;
         }
     }
 }
+
 .list-group {
     position: relative;
     display: flex;
@@ -45,14 +46,7 @@ $LIST-BG-OPA: .3;
     padding-left:0px;
     margin-right: auto;
     color: var(--darkColor);
-
-    &.list-group-flush { 
-        .list-group-item {
-            border-bottom: 1px solid var(--darkColor);
-            padding: 1rem 1.25rem;
-        }
-    }
-
+	
     .active {
         background-color: desaturate(blue , 50%);       // 임시 색
     }
@@ -60,8 +54,7 @@ $LIST-BG-OPA: .3;
         $colortest: var(--darkColor);
          color: fade-out($dark, 0);
     }
-
-    &:not(.list-group-flush) {
+	&:not(.list-group-flush) {
         .list-group-item {
             border: 1px solid  var(--darkColor);
             border-bottom: 0px;
@@ -88,6 +81,10 @@ $LIST-BG-OPA: .3;
             &.list-group-item-info {
                 @include base-list($info);
                 @include list-action-hover($info);
+            }
+			&.list-group-item-brown {
+                @include base-list($brown);
+                @include list-action-hover($brown);
             }
             &.list-group-item-light { 
                 @include base-list($gray);
@@ -127,4 +124,11 @@ $LIST-BG-OPA: .3;
             }
         }
     }
+}
+
+.list-group-flush { 
+	.list-group-item {
+		border-bottom: 1px solid var(--darkColor);
+		padding: 1rem 1.25rem;
+	}
 }

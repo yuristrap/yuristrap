@@ -66,54 +66,58 @@
     align-items: center;
 	flex-flow: row wrap;
 	justify-content: flex-start;
-	/**
-	 * Navbar-Themes
-	 */
 	@include navbar-theme(var(--darkColor));
-	&.navbar-light {
-		background-color: var(--lightColor);
-	}
-	&.navbar-dark {
-		background-color: var(--darkColor);
-		@include navbar-theme(var(--lightColor));
-	}
-	&.navbar-primary {
+}
+/**
+ * Navbar-Themes
+ */
+.navbar-light {
+	background-color: var(--lightColor);
+}
+.navbar-dark {
+	background-color: var(--darkColor);
+	@include navbar-theme(var(--lightColor));
+}
+.navbar-primary {
+	background-color: $primary;
+	@include navbar-theme(var(--lightColor));
+	.navbar-toggler {
 		background-color: $primary;
-		@include navbar-theme(var(--lightColor));
-		.navbar-toggler {
-			background-color: $primary;
-		}
 	}
+}
 
-	/**
-	 * Responsive-size
-	 */
-	&.navbar-sm {
-		@include navbar-responsive($SM-WIDTH);
-	}
-	&.navbar-md {
-		@include navbar-responsive($MD-WIDTH);
-	}
-	&.navbar-lg {
-		@include navbar-responsive($LG-WIDTH);
-	}
-	&.navbar-xl {
-		@include navbar-responsive($XL-WIDTH);
-	}
-	
-	/**
-	 * Navbar-brand : title
-	 */
-	.navbar-brand {
-		margin-right: 1rem;
-		display: inline-block;
-		padding: 0.5rem;
-		font-weight: 700;
-		.navbar-brand-logo {
-			display: inline-block;
-			vertical-align: top;
-		}
-	}
+/**
+ * Responsive-size
+ */
+.navbar-sm {
+	@include navbar-responsive($SM-WIDTH);
+}
+.navbar-md {
+	@include navbar-responsive($MD-WIDTH);
+}
+.navbar-lg {
+	@include navbar-responsive($LG-WIDTH);
+}
+.navbar-xl {
+	@include navbar-responsive($XL-WIDTH);
+}
+
+/**
+ * Navbar-brand : title
+ */
+.navbar-brand {
+	margin-right: 1rem;
+	display: inline-block;
+	padding: 0.5rem;
+	font-weight: 700;
+}
+.navbar-brand-logo {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.nav-link.active {
+	background-color: $primary;
 }
 
 // Navbar menu
@@ -126,6 +130,7 @@
 	align-items: center;
 }
 
+// Collapse of navbar
 .navbar-collapse {
 	display: flex;
 	flex-basis: auto;
@@ -134,18 +139,21 @@
 	justify-content: space-between;
 }
 
+/**
+ * Toggler of navbar
+ */
 .navbar-toggler {
 	cursor: pointer;
 	border: 1px solid var(--darkColor);
 	border-radius: $BORDER-XS;
 	background-color: $light;
-	.navbar-toggler-icon {
-		display: inline-block;
-		width: 1.5em;
-		height: 1.5em;
-		vertical-align: middle;
-		background: no-repeat center center;
-		background-size: 100% 100%;
-		// background-image: url(https://systemuicons.com/images/icons/side_menu.svg);
-	}
+}
+.navbar-toggler-icon {
+	display: inline-block;
+	width: 1.5em;
+	height: 1.5em;
+	vertical-align: middle;
+	background: no-repeat center center;
+	background-size: 100% 100%;
+	// background-image: url(https://systemuicons.com/images/icons/side_menu.svg);
 }

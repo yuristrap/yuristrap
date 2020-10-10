@@ -1,29 +1,31 @@
+$SHADOW-COLOR: rgba(0, 0, 0, .25);
+
 .shadow-none {
 	box-shadow: none !important;
 }
 
 .shadow-sm {
-	box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+	box-shadow: 0 .125rem .25rem $SHADOW-COLOR;
 }
 .shadow-md {
-	box-shadow: 0 .25rem .25rem rgba(0,0,0,.075);
+	box-shadow: 0 .25rem .25rem $SHADOW-COLOR;
 }
 .shadow-lg {
-	box-shadow: 0 .5rem 1rem rgba(0,0,0,.075);
+	box-shadow: 0 .5rem 1rem $SHADOW-COLOR;
 }
 .shadow-xl {
-	box-shadow: 0 1rem 3rem rgba(0,0,0,.075);
+	box-shadow: 0 1rem 3rem $SHADOW-COLOR;
 }
 
 .shadow-center-sm {
-	box-shadow: 0 0 1rem .125rem rgba(0,0,0,.075);
+	box-shadow: 0 0 1rem .125rem $SHADOW-COLOR;
 }
 .shadow-center-md {
-	box-shadow: 0 0 1rem .25rem rgba(0,0,0,.075);
+	box-shadow: 0 0 1rem .25rem $SHADOW-COLOR;
 }
 .shadow-center-lg {
-	box-shadow: 0 0 1rem .5rem rgba(0,0,0,.075);
+	box-shadow: 0 0 1rem .5rem $SHADOW-COLOR;
 }
 .shadow-center-xl {
-	box-shadow: 0 0 3rem 1rem rgba(0,0,0,.075);
+	box-shadow: 0 0 3rem 1rem $SHADOW-COLOR;
 }

@@ -15,10 +15,11 @@
 	</style>
 </head>
 
-<body>
+<!-- <body> -->
+<body data-spy="scroll"  data-target="#navbar-example4" data-offset="0" style="position: relative;">
 
 	<!-- Navbar -->
-	<nav class="navbar navbar-light navbar-md fixed-top shadow-center-md">
+	<nav class="navbar navbar-light navbar-md fixed-top shadow-center-md" id="navbar-example4">
 		<a class="navbar-brand" href="#">Navbar</a>
 		<button class="navbar-toggler" type="button" data-target="#navbar-collapse-00" data-toggle="collapse">
 			<svg class="navbar-toggler-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -29,13 +30,13 @@
 		<div class="collapse navbar-collapse" id="navbar-collapse-00">
 			<ul class="navbar-nav" id="navbar-nav">
 				<li class="nav-item active">
-					<a class="nav-link" href="#">Home</a>
+					<a class="nav-link" href="#buttons" data-scroll="buttons">Buttons</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">Features</a>
+					<a class="nav-link" href="#alerts" data-scroll="alerts">Alerts</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#">Pricing</a>
+					<a class="nav-link" href="#cards" data-scroll="cards">Card</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
@@ -253,7 +254,7 @@
 		<br />
 
 		<!-- Buttons -->
-		<h2>Buttons</h2>
+		<h2 id="buttons">Buttons</h2>
 		<button type="button" class="btn btn-primary border-flat">primary</button>
 		<button type="button" class="btn btn-success">success</button>
 		<button type="button" class="btn btn-warning">warning</button>
@@ -293,7 +294,7 @@
 		<br />
 
 		<!-- Alerts -->
-		<h2>Alerts</h2>
+		<h2 id="alerts">Alerts</h2>
 		<div class="alert alert-success" role="success">
 			<h4 class="alert-header">Well done!</h4>
 			<p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit
@@ -348,7 +349,7 @@
 		<br />
 
 		<!-- Card -->
-		<h2>Card</h2>
+		<h2 id="cards">Card</h2>
 		<div class="card" style="width: 20rem;">
 			<img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/181029_IZ%2AONE_Yuri_01.png"
 				class="card-img-top" alt="...">
@@ -828,7 +829,7 @@
 		<span class="badge badge-pill badge-brown">Brown</span>
 		<br />
 		<div class="progress">
-			<div class="progress-bar progress-moved" style="width: 80%;">
+			<div class="progress-bar gray progress-moved" style="width: 80%;">
 			</div>
 		</div>
 		<div class="progress progress-filled ">
@@ -838,6 +839,44 @@
 		</div>
 		<br />
 		<br />
+		
+		<h1 id="testest">Scrollspy</h1>
+		<nav id="navbar-example2" class="navbar navbar-light bg-light">
+		  <a class="navbar-brand" href="/">Navbar</a>
+		  <ul class="nav nav-pills">
+			<li class="nav-item">
+			  <a class="nav-link" href="#aaa" data-scroll="aaa">@aaa</a>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link" href="#bbb" data-scroll="bbb">@bbb</a>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link" href="#ccc" data-scroll="ccc">@ccc</a>
+			</li>
+		  </ul>
+		</nav>
+		<!-- <div style="position: relative; -->
+		<div data-spy="scroll"  data-target="#navbar-example2" data-offset="0" style="position: relative;
+    height: 200px;
+    margin-top: .5rem;
+    overflow: auto;" id="exampleScrollSpy">
+		  <h4 id="aaa">@aaa</h4>
+		  <p>Veniam marfa mustache skateboard, adipisicing fugiat velit pitchfork beard. Freegan beard aliqua cupidatat mcsweeney's vero. Cupidatat four loko nisi, ea helvetica nulla carles. Tattooed cosby sweater food truck, mcsweeney's quis non freegan vinyl. Lo-fi wes anderson +1 sartorial. Carles non aesthetic exercitation quis gentrify. Brooklyn adipisicing craft beer vice keytar deserunt.</p>
+		  <h4 id="bbb">@bbb</h4>
+		  <p>Veniam marfa mustache skateboard, adipisicing fugiat velit pitchfork beard. Freegan beard aliqua cupidatat mcsweeney's vero. Cupidatat four loko nisi, ea helvetica nulla carles. Tattooed cosby sweater food truck, mcsweeney's quis non freegan vinyl. Lo-fi wes anderson +1 sartorial. Carles non aesthetic exercitation quis gentrify. Brooklyn adipisicing craft beer vice keytar deserunt.</p>
+		  <h4 id="ccc">ccc</h4>
+		  <p>Veniam marfa mustache skateboard, adipisicing fugiat velit pitchfork beard. Freegan beard aliqua cupidatat mcsweeney's vero. Cupidatat four loko nisi, ea helvetica nulla carles. Tattooed cosby sweater food truck, mcsweeney's quis non freegan vinyl. Lo-fi wes anderson +1 sartorial. Carles non aesthetic exercitation quis gentrify. Brooklyn adipisicing craft beer vice keytar deserunt.</p>
+		</div>
+		<br/><br/><br/><br/><br/>
+		<br/><br/><br/><br/><br/>
+		<br/><br/><br/><br/><br/>
+		<br/><br/><br/><br/><br/>
+		<br/><br/><br/><br/><br/>
+		<br/><br/><br/><br/><br/>
+		<br/><br/><br/><br/><br/>
+		<br/><br/><br/><br/><br/>
+		<br/>
+		<br/>
 		<!-- 	end of body	 -->
 	</div>
 	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>

@@ -4,76 +4,78 @@
     padding-left: 0;
     list-style: none;
     border-radius: $BORDER-XS;
-	/**
-	 * page-item
-	 */
+}
+
+/**
+ * page-item
+ */
+.page-item {
+	&.active {
+		.page-link {
+			background-color: $link-color;
+			color: $white;
+		}
+	}
+	&.disabled {
+		.page-link {
+			pointer-events: none;
+			color: $gray;
+		}
+	}
+}
+
+/**
+ * page-link
+ */
+.page-link {
+	position: relative;
+	display: inline-block;
+	padding: .5rem 1rem;
+	margin-left: -1px;		// border 1px
+	border: 1px solid $gray;
+	background-color: transparent;
+}
+
+/**
+ * primary theme pagination
+ */
+.primary {
 	.page-item {
 		&.active {
 			.page-link {
-				background-color: $link-color;
-				color: $white;
-			}
-		}
-		&.disabled {
-			.page-link {
-				pointer-events: none;
-				color: $gray;
+				background-color: $primary;
 			}
 		}
 	}
-	/**
-	 * page-link
-	 */
 	.page-link {
-		position: relative;
-		display: inline-block;
-		padding: .5rem 1rem;
-		margin-left: -1px;		// border 1px
-		border: 1px solid $gray;
-		background-color: transparent;
+		color: $primary;
 	}
-	
-	/**
-	 * primary theme pagination
-	 */
-	&.primary {
-		.page-item {
-			&.active {
-				.page-link {
-					background-color: $primary;
-				}
+}
+
+/**
+ * bubble theme pagination
+ */
+.bubble {
+	.page-link {
+		border-radius: $BORDER-ROUNDED;
+	}
+}
+
+/**
+ * rounded theme pagination
+ */
+.rounded {
+	.page-item {
+		&:first-child {
+			.page-link {
+				border-top-left-radius: $BORDER-XS;
+				border-bottom-left-radius: $BORDER-XS;
 			}
 		}
-		.page-link {
-			color: $primary;
-		}
-	}
-	
-	/**
-	 * bubble theme pagination
-	 */
-	&.bubble {
-		.page-link {
-			border-radius: $BORDER-ROUNDED;
-		}
-	}
-	
-	/**
-	 * rounded theme pagination
-	 */
-	&.rounded {
-		.page-item {
-			&:first-child {
-				.page-link {
-					border-top-left-radius: $BORDER-XS;
-					border-bottom-left-radius: $BORDER-XS;
-				}
-			}
-			&:last-child {
-				.page-link {
-					border-top-right-radius: $BORDER-XS;
-					border-bottom-right-radius: $BORDER-XS;
-				}
+		&:last-child {
+			.page-link {
+				border-top-right-radius: $BORDER-XS;
+				border-bottom-right-radius: $BORDER-XS;
 			}
 		}
 	}
