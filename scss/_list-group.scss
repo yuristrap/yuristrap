@@ -16,7 +16,13 @@ $LIST-BG-OPA: .3;
 @mixin base-list ($color) {
 	color : $color;
 	border: 1px solid rgba($color, $LIST-BORDER-OPA);
-	background-color: rgba($color, $LIST-BG-OPA);
+    background-color: rgba($color, $LIST-BG-OPA);
+    @if $color ==$dark {
+        color: var(--darkColor);
+    }
+    @else if $color ==$gray {
+        color: darken($color, 20%);
+    }
 }
 @mixin list-action-hover($color) {
     &.list-group-item-action {
@@ -25,7 +31,7 @@ $LIST-BG-OPA: .3;
                 background-color : $color;
                 color: var(--lightColor);
                 @if $color ==$dark {
-                    color: $white;
+                    color: lighten($color, 20%);
                 }
             }
         }
@@ -103,6 +109,7 @@ $LIST-BG-OPA: .3;
         &:not(.active) {
             &:hover:enabled{
                 background-color : var(--darkColor);
+                color : var(--lightColor);
             }
         }
     }
