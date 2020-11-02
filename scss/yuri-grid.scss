@@ -43,14 +43,15 @@
 	flex: 0 0 percentage($i / $MAX-COLUMNS);
 	max-width : percentage($i / $MAX-COLUMNS);
 }
-@mixin responsive-column ($i, $responsive-width) {
-	width: 100%;
-	@include base-column($i);
-	// flex working on $responsive-width
-	@media (min-width: $responsive-width) {
-		@include flex-column($i);
-	}
-}
+// @mixin responsive-column ($i, $responsive-width) {
+// 	width: 100%;
+// 	@include base-column($i);
+// 	// flex working on $responsive-width
+// 	@media (min-width: $responsive-width) {
+// 		@include flex-column($i);
+// 	}
+// }
+
 .row {
 	display: flex;
 	position: relative;
@@ -84,20 +85,60 @@
 	 *	@desc: Responsive sizing on SM-WIDTH
 	 */
 	.col-sm-#{$i} {
-		@include responsive-column($i, $SM-WIDTH);
+		width: 100%;
+		@include base-column($i);
 	}
+	
 	/**
 	 *	.col-md-*
 	 *	@desc: Responsive sizing on MD-WIDTH
 	 */
 	.col-md-#{$i} {
-		@include responsive-column($i, $MD-WIDTH);
+		width: 100%;
+		@include base-column($i);
 	}
 	/**
 	 *	.col-lg-*
-	 *	@desc: Responsive sizing on LG-WIDTH
 	 */
 	.col-lg-#{$i} {
-		@include responsive-column($i, $LG-WIDTH);
+		width: 100%;
+		@include base-column($i);
+	}
+	/**
+	 *	.col-xl-*
+	 *	@desc: Responsive sizing on XL-WIDTH
+	 */
+	.col-xl-#{$i} {
+		width: 100%;
+		@include base-column($i);
+	}
+}
+
+@media (min-width: $SM-WIDTH) {
+	@for $i from 1 through $MAX-COLUMNS {
+		.col-sm-#{$i} {
+			@include flex-column($i);
+		}
+	}
+}
+@media (min-width: $MD-WIDTH) {
+	@for $i from 1 through $MAX-COLUMNS {
+		.col-md-#{$i} {
+			@include flex-column($i);
+		}
+	}
+}
+@media (min-width: $LG-WIDTH) {
+	@for $i from 1 through $MAX-COLUMNS {
+		.col-lg-#{$i} {
+			@include flex-column($i);
+		}
+	}
+}
+@media (min-width: $XL-WIDTH) {
+	@for $i from 1 through $MAX-COLUMNS {
+		.col-xl-#{$i} {
+			@include flex-column($i);
+		}
 	}
 }
