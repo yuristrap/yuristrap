@@ -1,0 +1,27 @@
+$MAX-PADDING-THROUGH: 10;
+
+@for $i from 0 through 10 {
+	.pd-#{$i} {
+		padding: #{$i}rem;
+	}
+	.pd-tb-#{$i} {
+		padding-top: #{$i}rem;
+		padding-bottom: #{$i}rem;
+	}
+	.pd-lr-#{$i} {
+		padding-left: #{$i}rem;
+		padding-right: #{$i}rem;
+	}
+	.pd-t-#{$i} {
+		padding-top: #{$i}rem;
+	}
+	.pd-b-#{$i} {
+		padding-bottom: #{$i}rem;
+	}
+	.pd-l-#{$i} {
+		padding-left: #{$i}rem;
+	}
+	.pd-r-#{$i} {
+		padding-right: #{$i}rem;
+	}
+}
