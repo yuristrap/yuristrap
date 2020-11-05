@@ -1,6 +1,6 @@
 $MAX-PADDING-THROUGH: 10;
 
-@for $i from 0 through 10 {
+@for $i from 0 through $MAX-PADDING-THROUGH {
 	.pd-#{$i} {
 		padding: #{$i}rem;
 	}

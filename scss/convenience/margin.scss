@@ -1,6 +1,6 @@
-$MAX-margin-THROUGH: 10;
+$MAX-MARGIN-THROUGH: 10;
 
-@for $i from 0 through 10 {
+@for $i from 0 through $MAX-MARGIN-THROUGH {
 	.mg-#{$i} {
 		margin: #{$i}rem;
 	}
