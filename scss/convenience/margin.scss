@@ -1,0 +1,27 @@
+$MAX-margin-THROUGH: 10;
+
+@for $i from 0 through 10 {
+	.mg-#{$i} {
+		margin: #{$i}rem;
+	}
+	.mg-tb-#{$i} {
+		margin-top: #{$i}rem;
+		margin-bottom: #{$i}rem;
+	}
+	.mg-lr-#{$i} {
+		margin-left: #{$i}rem;
+		margin-right: #{$i}rem;
+	}
+	.mg-t-#{$i} {
+		margin-top: #{$i}rem;
+	}
+	.mg-b-#{$i} {
+		margin-bottom: #{$i}rem;
+	}
+	.mg-l-#{$i} {
+		margin-left: #{$i}rem;
+	}
+	.mg-r-#{$i} {
+		margin-right: #{$i}rem;
+	}
+}
