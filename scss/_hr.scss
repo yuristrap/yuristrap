@@ -1,5 +1,6 @@
 .hr-style {
     overflow: visible;
+    margin-top: 1rem;
     padding: 0px;
     border: none;
     border-top: .1rem solid var(--border-color, $gray);
@@ -27,7 +28,7 @@
 }
 
 .hr-dashed {
-    border: 0;
+    border: 0px;
     border-bottom: .1rem dashed #ccc;
     background: var(--backgroundColor);
     transition: $darkmode-transition;
