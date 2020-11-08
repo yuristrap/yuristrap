@@ -48,11 +48,17 @@ $LIST-BG-OPA: .3;
     color: var(--darkColor);
 	
     .active {
+        color: var(--darkColor);
         background-color: desaturate(blue , 50%);       // 임시 색
+        &:hover {
+            background-color: darken(blue, 20%);        // 임시 색
+            color: white;                               // 임시 색
+        }
     }
     .disabled {
         $colortest: var(--darkColor);
-         color: fade-out($dark, 0);
+        color : lighten($dark, 40%);
+        pointer-events: none;
     }
 	&:not(.list-group-flush) {
         .list-group-item {
@@ -60,7 +66,6 @@ $LIST-BG-OPA: .3;
             border-bottom: 0px;
             padding: 1rem 1.25rem;
             @include border-radius;
-            color: var(--darkColor);
             @include list-action-hover(var(--darkColor));
             &.list-group-item-primary {
                 @include base-list($primary);
@@ -112,16 +117,17 @@ $LIST-BG-OPA: .3;
                 color : var(--lightColor);
             }
         }
+        &:disabled {
+            color : lighten($dark, 40%);
+        }
     }
 
     a{
-        &:not(.disabled) {
-            &:focus {
-               outline: 0;
-            }
-            &:link {
-                color: var(--darkColor);
-            }
+        &:focus {
+            outline: 0;
+        }
+        &:not(.disabled):link {
+            color: var(--darkColor);
         }
     }
 }
