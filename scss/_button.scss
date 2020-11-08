@@ -13,6 +13,11 @@
     transition-duration: 0.4s;
 	cursor: pointer;
 	line-height: 1.5;
+	&.disabled,
+	&:disabled {
+		opacity: .7;
+		cursor: default;
+	}
 }
 
 /**
@@ -42,7 +47,7 @@
  */
 @mixin focus-darken ($color) {
     border: 1px solid $color;
-    &:focus {
+	&:not(:disabled):not(.disabled):focus {
 		outline: none;
 		box-shadow: 0 0 0 1px darken($color, 10%);
     }
@@ -54,7 +59,7 @@
 .btn-primary {
     color: $white;
     background-color: $primary;
-    &:hover {
+	&:not(:disabled):not(.disabled):hover {
         background-color : darken($primary, 10%);
         border-color : darken($primary, 10%);
     }
@@ -63,7 +68,7 @@
 .btn-outline-primary {
     color : $primary;
     background-color: transparent;
-    &:hover {
+	&:not(:disabled):not(.disabled):hover {
         background-color: $primary;
         color: $white;
     }
@@ -76,7 +81,7 @@
 .btn-success {
     color: $white;
     background-color: $success;
-    &:hover {
+	&:not(:disabled):not(.disabled):hover {
         background-color : darken($success, 10%);
         border-color : darken($success, 10%);
     }
@@ -85,7 +90,7 @@
 .btn-outline-success {
     color :$success;
     background-color: transparent;
-    &:hover {
+	&:not(:disabled):not(.disabled):hover {
         background-color: $success;
         color: $white;
     }
@@ -99,7 +104,7 @@
 .btn-warning{
     color: $white;
     background-color: $warning;
-    &:hover {
+	&:not(:disabled):not(.disabled):hover {
         background-color : darken($warning, 10%);
         border-color : darken($warning, 10%);
     }
@@ -108,7 +113,7 @@
 .btn-outline-warning {
     color :$warning;
     background-color: transparent;
-    &:hover {
+	&:not(:disabled):not(.disabled):hover {
         background-color: $warning;
         color: $white;
     }
@@ -121,7 +126,7 @@
 .btn-danger {
     color: $white;
     background-color: $danger;
-    &:hover {
+	&:not(:disabled):not(.disabled):hover {
         background-color : darken($danger, 10%);
         border-color : darken($danger, 10%);
     }
@@ -130,7 +135,7 @@
 .btn-outline-danger {
     color :$danger;
     background-color: transparent;
-    &:hover {
+	&:not(:disabled):not(.disabled):hover {
         background-color: $danger;
         color: $white;
     }
@@ -143,7 +148,7 @@
 .btn-dark {
     color: $white;
     background-color: $dark;
-    &:hover {
+	&:not(:disabled):not(.disabled):hover {
         background-color : darken($dark, 15%);
         border-color : darken($dark, 15%);
     }
@@ -152,7 +157,7 @@
 .btn-outline-dark {
     color : var(--blackColor);
     background-color: transparent;
-    &:hover {
+	&:not(:disabled):not(.disabled):hover {
         background-color: $dark;
         color: $white;
     }
@@ -165,7 +170,7 @@
 .btn-light {
     color: $dark;
     background-color: $light;
-    &:hover {
+	&:not(:disabled):not(.disabled):hover {
         background-color : darken($light, 10%);
         border-color : darken($light, 10%);
     }
@@ -178,7 +183,7 @@
 .btn-info {
     color: $white;
     background-color: $info;
-    &:hover {
+	&:not(:disabled):not(.disabled):hover {
         background-color : darken($info, 10%);
         border-color : darken($info, 10%);
     }
@@ -187,7 +192,7 @@
 .btn-outline-info {
     color: $info;
     background-color: transparent;
-    &:hover {
+	&:not(:disabled):not(.disabled):hover {
         background-color: $info;
         color: $white;
     }
@@ -200,7 +205,7 @@
 .btn-brown {
     color: $white;
     background-color: $brown;
-    &:hover {
+	&:not(:disabled):not(.disabled):hover {
         background-color : darken($brown, 10%);
         border-color : darken($brown, 10%);
     }
@@ -209,7 +214,7 @@
 .btn-outline-brown {
     color: $brown;
     background-color: transparent;
-    &:hover {
+	&:not(:disabled):not(.disabled):hover {
         background-color: $brown;
         color: $white;
     }

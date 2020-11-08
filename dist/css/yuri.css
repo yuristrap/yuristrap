@@ -2311,7 +2311,8 @@ input[type=radio].form-check-input {
   opacity: 0;
   text-align: center;
   border-radius: 50rem;
-  box-shadow: 11px 11px 22px #919191,  -11px -11px 22px #ffffff;
+  box-shadow: 11px 11px 22px #919191, 
+ -11px -11px 22px #ffffff;
   z-index: 1002; }
   @media (max-width: 768px) {
     .notice-box {
