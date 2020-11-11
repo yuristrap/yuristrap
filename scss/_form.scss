@@ -277,20 +277,17 @@ input[type=radio].form-check-input {
 	}
 }
 
-
-/**
- * worked-with
- */
-.form-checkbox {
+.form-check-input {
+	/**
+	 * worked-with
+	 */
 	&:checked ~ .form-check-label.worked-with {
 		color: $primary;
 	}
-}
-
-/**
- * disabled
- */
-.form-check-input {
+	
+	/**
+	 * disabled
+	 */
 	&[disabled] ~ .form-check-label,
 	&:disabled ~ .form-check-label {
 		color: $gray;
@@ -300,4 +297,3 @@ input[type=radio].form-check-input {
 		}
 	}
 }
-
