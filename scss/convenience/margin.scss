@@ -2,26 +2,26 @@ $MAX-MARGIN-THROUGH: 10;
 
 @for $i from 0 through $MAX-MARGIN-THROUGH {
 	.mg-#{$i} {
-		margin: #{$i}rem;
+		margin: #{$i}rem !important;
 	}
 	.mg-tb-#{$i} {
-		margin-top: #{$i}rem;
-		margin-bottom: #{$i}rem;
+		margin-top: #{$i}rem !important;
+		margin-bottom: #{$i}rem !important;
 	}
 	.mg-lr-#{$i} {
-		margin-left: #{$i}rem;
-		margin-right: #{$i}rem;
+		margin-left: #{$i}rem !important;
+		margin-right: #{$i}rem !important;
 	}
 	.mg-t-#{$i} {
-		margin-top: #{$i}rem;
+		margin-top: #{$i}rem !important;
 	}
 	.mg-b-#{$i} {
-		margin-bottom: #{$i}rem;
+		margin-bottom: #{$i}rem !important;
 	}
 	.mg-l-#{$i} {
-		margin-left: #{$i}rem;
+		margin-left: #{$i}rem !important;
 	}
 	.mg-r-#{$i} {
-		margin-right: #{$i}rem;
+		margin-right: #{$i}rem !important;
 	}
 }
