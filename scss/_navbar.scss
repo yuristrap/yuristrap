@@ -8,8 +8,8 @@
 		.nav-item {
 			&.active {
 				.nav-link {
-					// color: rgba($fontColor, 1);
 					color: $fontColor;
+					opacity: $NAV-LINK-ACTIVE-OPA;
 				}
 			}
 			/**
@@ -17,18 +17,20 @@
 			 *	@desc: Link of menu (a)
 			 */
 			.nav-link {
-					// color: rgba($fontColor, 1);
-					color: $fontColor;
+				color: $fontColor;
+				opacity: $NAV-LINK-BASIC-OPA;
 				&.disabled {
-					// color: rgba($fontColor, 1);
 					color: $fontColor;
 					opacity: $NAV-LINK-DISABLED-OPA;
+				}
+				&:hover {
+					color: $fontColor;
+					opacity: $NAV-LINK-ACTIVE-OPA;
 				}
 			}
 		}
 	}
 	.navbar-brand {
-		// color: rgba($fontColor, 1);
 		color: $fontColor;
 	}
 }
@@ -80,7 +82,7 @@
 }
 .navbar-primary {
 	background-color: $primary;
-	@include navbar-theme(var(--lightColor));
+	@include navbar-theme(var(--whiteColor));
 	.navbar-toggler {
 		background-color: $primary;
 	}

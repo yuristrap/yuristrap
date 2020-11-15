@@ -53,7 +53,9 @@ $BORDER-ROUNDED: 50%;
 $COLLAPSE-SPEED: 0.25s;
 
 // NAV
-$NAV-LINK-DISABLED-OPA: .5;
+$NAV-LINK-ACTIVE-OPA: 1;
+$NAV-LINK-BASIC-OPA: .7;
+$NAV-LINK-DISABLED-OPA: .4;
 
 // darkmode transition
 $darkmode-transition: cubic-bezier(0.68, -0.55, 0.27, 01.55) 200ms!important;
