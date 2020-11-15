@@ -9,7 +9,6 @@ $LIST-BG-OPA: .3;
     &:last-child {
         border-bottom-left-radius:  $BORDER-SM;
         border-bottom-right-radius: $BORDER-SM;
-        border-bottom: 1px solid  var(--darkColor);
     }
 }
 
@@ -48,12 +47,8 @@ $LIST-BG-OPA: .3;
     color: var(--darkColor);
 	
     .active {
-        color: var(--darkColor);
-        background-color: desaturate(blue , 50%);       // 임시 색
-        &:hover {
-            background-color: darken(blue, 20%);        // 임시 색
-            color: white;                               // 임시 색
-        }
+        background-color: $primary;
+        color: var(--lightColor);
     }
     .disabled {
         $colortest: var(--darkColor);
@@ -62,11 +57,14 @@ $LIST-BG-OPA: .3;
     }
 	&:not(.list-group-flush) {
         .list-group-item {
-            border: 1px solid  var(--darkColor);
+            border: 1px solid rgba($black, $LIST-BORDER-OPA);
             border-bottom: 0px;
+            &:last-child {
+                border: 1px solid rgba($black, $LIST-BORDER-OPA);
+            }
             padding: 1rem 1.25rem;
             @include border-radius;
-            @include list-action-hover(var(--darkColor));
+            @include list-action-hover($primary);
             &.list-group-item-primary {
                 @include base-list($primary);
                 @include list-action-hover($primary);
@@ -105,15 +103,19 @@ $LIST-BG-OPA: .3;
     }
 
     button {
-        background-color: var(--lightColor);
+        background-color:transparent;
         color: var(--darkColor);
         text-align: left;
         font-size: medium; 
         @include border-radius;
-
+        &:focus {
+            background-color : $primary;
+            color : var(--lightColor);
+            outline: 0px;
+        }
         &:not(.active) {
             &:hover:enabled{
-                background-color : var(--darkColor);
+                background-color : $primary;
                 color : var(--lightColor);
             }
         }
@@ -128,6 +130,9 @@ $LIST-BG-OPA: .3;
         }
         &:not(.disabled):link {
             color: var(--darkColor);
+        }
+        &.active:link {
+            color: var(--lightColor);
         }
     }
 }
