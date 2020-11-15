@@ -70,7 +70,7 @@ $DISABLED-OPA: .6;
 	padding: .375rem .75rem;
 	font-size: 1rem;
 	line-height: 1.5;
-	color: var(--dirkColor);
+	color: var(--darkColor);
 	background-color: var(--lightColor);
 	background-clip: padding-box;
 	border: 1px solid $gray;
@@ -277,20 +277,17 @@ input[type=radio].form-check-input {
 	}
 }
 
-
-/**
- * worked-with
- */
-.form-checkbox {
+.form-check-input {
+	/**
+	 * worked-with
+	 */
 	&:checked ~ .form-check-label.worked-with {
 		color: $primary;
 	}
-}
-
-/**
- * disabled
- */
-.form-check-input {
+	
+	/**
+	 * disabled
+	 */
 	&[disabled] ~ .form-check-label,
 	&:disabled ~ .form-check-label {
 		color: $gray;
@@ -300,4 +297,3 @@ input[type=radio].form-check-input {
 		}
 	}
 }
-

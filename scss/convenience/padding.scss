@@ -2,26 +2,26 @@ $MAX-PADDING-THROUGH: 10;
 
 @for $i from 0 through $MAX-PADDING-THROUGH {
 	.pd-#{$i} {
-		padding: #{$i}rem;
+		padding: #{$i}rem !important;
 	}
 	.pd-tb-#{$i} {
-		padding-top: #{$i}rem;
-		padding-bottom: #{$i}rem;
+		padding-top: #{$i}rem !important;
+		padding-bottom: #{$i}rem !important;
 	}
 	.pd-lr-#{$i} {
-		padding-left: #{$i}rem;
-		padding-right: #{$i}rem;
+		padding-left: #{$i}rem !important;
+		padding-right: #{$i}rem !important;
 	}
 	.pd-t-#{$i} {
-		padding-top: #{$i}rem;
+		padding-top: #{$i}rem !important;
 	}
 	.pd-b-#{$i} {
-		padding-bottom: #{$i}rem;
+		padding-bottom: #{$i}rem !important;
 	}
 	.pd-l-#{$i} {
-		padding-left: #{$i}rem;
+		padding-left: #{$i}rem !important;
 	}
 	.pd-r-#{$i} {
-		padding-right: #{$i}rem;
+		padding-right: #{$i}rem !important;
 	}
 }
