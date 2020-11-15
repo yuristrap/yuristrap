@@ -47,12 +47,6 @@ $LIST-BG-OPA: .3;
     color: var(--darkColor);
 	
     .active {
-        // color: var(--darkColor);
-        // background-color: desaturate(blue , 50%);       // 임시 색
-        // &:hover {
-        //     background-color: darken(blue, 20%);        // 임시 색
-        //     color: white;                               // 임시 색
-        // }
         background-color: $primary;
         color: var(--lightColor);
     }
