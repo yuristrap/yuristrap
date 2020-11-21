@@ -43,14 +43,6 @@
 	flex: 0 0 percentage($i / $MAX-COLUMNS);
 	max-width : percentage($i / $MAX-COLUMNS);
 }
-// @mixin responsive-column ($i, $responsive-width) {
-// 	width: 100%;
-// 	@include base-column($i);
-// 	// flex working on $responsive-width
-// 	@media (min-width: $responsive-width) {
-// 		@include flex-column($i);
-// 	}
-// }
 
 .row {
 	display: flex;
@@ -70,6 +62,11 @@
 	padding-left: $column-padding;
 	padding-right: $column-padding;
 	flex: 1 1 0;
+}
+.col-sm, .col-md, .col-lg, .col-xl {
+	width: 100%;
+	padding-left: $column-padding;
+	padding-right: $column-padding;
 }
 @for $i from 1 through $MAX-COLUMNS {
 	/**
@@ -114,7 +111,21 @@
 	}
 }
 
+/**
+ *	Use Responsive Simple column
+ *	@desc: Using .col-sm, .col-md, .col-lg, .col-xl
+ */
+@mixin responsive-column {
+	flex-basis: 0;
+	flex-grow: 1;
+	min-width: 0;
+	max-width: 100%;
+}
+
 @media (min-width: $SM-WIDTH) {
+	.col-sm {
+		@include responsive-column;
+	}
 	@for $i from 1 through $MAX-COLUMNS {
 		.col-sm-#{$i} {
 			@include flex-column($i);
@@ -122,6 +133,9 @@
 	}
 }
 @media (min-width: $MD-WIDTH) {
+	.col-md {
+		@include responsive-column;
+	}
 	@for $i from 1 through $MAX-COLUMNS {
 		.col-md-#{$i} {
 			@include flex-column($i);
@@ -129,6 +143,9 @@
 	}
 }
 @media (min-width: $LG-WIDTH) {
+	.col-lg {
+		@include responsive-column;
+	}
 	@for $i from 1 through $MAX-COLUMNS {
 		.col-lg-#{$i} {
 			@include flex-column($i);
@@ -136,9 +153,59 @@
 	}
 }
 @media (min-width: $XL-WIDTH) {
+	.col-xl {
+		@include responsive-column;
+	}
 	@for $i from 1 through $MAX-COLUMNS {
 		.col-xl-#{$i} {
 			@include flex-column($i);
+		}
+	}
+}
+
+/**
+ *	Order
+ */
+.order-first { order: -1; }
+.order-last { order: $MAX-COLUMNS + 1; }
+@for $i from 1 through $MAX-COLUMNS {
+	.order-#{$i} {
+		order: $i;
+	}
+}
+@media (min-width: $SM-WIDTH) {
+	.order-sm-first { order: -1; }
+	.order-sm-last { order: $MAX-COLUMNS + 1; }
+	@for $i from 1 through $MAX-COLUMNS {
+		.order-sm-#{$i} {
+			order: $i;
+		}
+	}
+}
+@media (min-width: $MD-WIDTH) {
+	.order-md-first { order: -1; }
+	.order-md-last { order: $MAX-COLUMNS + 1; }
+	@for $i from 1 through $MAX-COLUMNS {
+		.order-md-#{$i} {
+			order: $i;
+		}
+	}
+}
+@media (min-width: $LG-WIDTH) {
+	.order-lg-first { order: -1; }
+	.order-lg-last { order: $MAX-COLUMNS + 1; }
+	@for $i from 1 through $MAX-COLUMNS {
+		.order-lg-#{$i} {
+			order: $i;
+		}
+	}
+}
+@media (min-width: $XL-WIDTH) {
+	.order-xl-first { order: -1; }
+	.order-xl-last { order: $MAX-COLUMNS + 1; }
+	@for $i from 1 through $MAX-COLUMNS {
+		.order-xl-#{$i} {
+			order: $i;
 		}
 	}
 }
