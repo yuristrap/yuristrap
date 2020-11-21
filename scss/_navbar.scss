@@ -119,7 +119,8 @@
 }
 
 .nav-link.active {
-	background-color: $primary;
+	// background-color: $primary;
+	opacity: 1;
 }
 
 // Navbar menu

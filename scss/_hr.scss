@@ -3,7 +3,7 @@
     margin-top: 1rem;
     padding: 0px;
     border: none;
-    border-top: .1rem solid var(--border-color, $gray);
+    border-top: 1px solid var(--border-color, $gray);
     &.center{
         text-align: center;
     }
@@ -15,21 +15,22 @@
     }
 
     &:after {
-        content:var(--content,"</>");
+        content: var(--content, "</>");
         display: inline-block;
         position: relative;
         top: -.9rem;
         font-size: 1rem;
-        padding: 0 0.25rem;
+        padding: 0 1rem;
         color: var(--text-color, $gray);
-        background: var(--backgroundColor);
-        transition: $darkmode-transition;
+        background: var(--hrBackgroundColor);
+		transition: $darkmode-transition;
+		transition-delay: $darkmode-delay;
     }
 }
 
 .hr-dashed {
     border: 0px;
-    border-bottom: .1rem dashed #ccc;
-    background: var(--backgroundColor);
-    transition: $darkmode-transition;
+    border-bottom: 1px dashed #ccc;
+    background: var(--hrBackgroundColor);
+    // transition: $darkmode-transition;
 }

@@ -13,16 +13,17 @@
 	
 	--textColor: #{$black};
 	--textNightColor: #{$white};
-	--backgroundColor: #{$white};
-	--backgroundNightColor: #{$dark};	
+	--backgroundColor: #{$bg-color};
+	--backgroundNightColor: #{$dark};
+	--hrBackgroundColor: #{$hr-bg-color};	
 }
 
 html {
 	background-color: var(--backgroundColor);
 	color: var(--textColor);
 	&.transition {
-	  transition: cubic-bezier(0.68, -0.55, 0.27, 01.55) 200ms!important;
-	  transition-delay: 0!important;
+	  transition: $darkmode-transition;
+	  transition-delay: $darkmode-delay;
 	}
 }
 html[data-theme='dark'] {
@@ -35,6 +36,7 @@ html[data-theme='dark'] {
 	--textNightColor: #{$black};
 	--backgroundColor: #{$nightBG};
 	--backgroundNightColor: #{$white};
+	--hrBackgroundColor: #{$nightBG};
 }
 
 body {
@@ -85,3 +87,19 @@ p {
     margin-top: 0;
     margin-bottom: 1rem;
 }
+
+/**
+ * b, strong
+ */
+b, strong {
+    font-weight: bolder;
+}
+
+button:not(:disabled) {
+	cursor: pointer;
+}
+
+/**
+ * blockquote
+ */
+blockquote { margin: 0 0 1rem; }

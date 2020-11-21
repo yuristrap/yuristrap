@@ -27,6 +27,8 @@ $gray: gainsboro;
 $info: #43C6DB;
 $brown: #ba7967;
 $link-color: #2d8aed;
+$bg-color: #fff0;
+$hr-bg-color: #fff;		// It should not have a transparency value.
 
 // Night
 $nightBG: #201D23;
@@ -59,3 +61,4 @@ $NAV-LINK-DISABLED-OPA: .4;
 
 // darkmode transition
 $darkmode-transition: cubic-bezier(0.68, -0.55, 0.27, 01.55) 200ms!important;
+$darkmode-delay: 0s !important;

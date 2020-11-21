@@ -1,7 +1,7 @@
 // Container
 @mixin container-box {
 	width: 100%;
-	position: relative;
+	// position: relative;
 	padding-left: $container-padding;
 	padding-right: $container-padding;
 }
