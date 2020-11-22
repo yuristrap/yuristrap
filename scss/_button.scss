@@ -7,17 +7,23 @@
     border: 0px;
     border-radius: $BORDER-XS;
     font-size: 1rem;
+    font-family: inherit;
     text-align: center;
     text-decoration: none;
     -webkit-transition-duration: 0.4s; 
     transition-duration: 0.4s;
 	cursor: pointer;
 	line-height: 1.5;
+	vertical-align: middle;
+	background-color: transparent;
 	&.disabled,
 	&:disabled {
 		opacity: .7;
 		cursor: default;
 	}
+	&:not(:disabled):not(.disabled):hover {
+        background-color : $week;
+    }
 }
 
 /**

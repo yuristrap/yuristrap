@@ -5,6 +5,8 @@
 	--lightColor: #{$light};
 	--successColor: #{$success};
 	--primaryColor: #{$primary};
+	--secondaryColor: #{$secondary};
+	--weekColor: #{$week};
 	--warningColor: #{$warning};
 	--dangerColor: #{$danger};
 	--grayColor: #{$gray};
@@ -39,13 +41,22 @@ html[data-theme='dark'] {
 	--hrBackgroundColor: #{$nightBG};
 }
 
+::selection {
+   background: var(--primaryColor);
+   color: #fff;
+}
+::-moz-selection {
+   background: var(--primaryColor);
+   color: #fff;
+}
+
 body {
 	margin: 0px;
 	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 	line-height: $BASE-LINE-HEIGHT;
 }
 
-* {	
+*, ::after, ::before {
 	box-sizing: border-box;
 }
 
@@ -103,3 +114,11 @@ button:not(:disabled) {
  * blockquote
  */
 blockquote { margin: 0 0 1rem; }
+
+/**
+ * svg
+ */
+svg {
+	overflow: hidden;
+	vertical-align: middle;
+}

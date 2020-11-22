@@ -8,31 +8,32 @@
 .container-fluid {
 	@include container-box;
 }
-.container {
-	max-width: $container-width;
+.container, .container-xl, .container-lg, .container-md, .container-sm {
 	margin-left: auto;
 	margin-right: auto;
 	@include container-box;
 }
-.container-xl {
-	max-width: $container-xl-width;
-	margin-left: auto;
-	margin-right: auto;
-	@include container-box;
+@media (min-width: $SM-WIDTH) {
+	.container, .container-sm {
+		max-width: $container-sm-width;
+	}
 }
-.container-md {
-	max-width: $container-md-width;
-	margin-left: auto;
-	margin-right: auto;
-	@include container-box;
+@media (min-width: $MD-WIDTH) {
+	.container, .container-md, .container-sm {
+		max-width: $container-md-width;
+	}
 }
-.container-sm {
-	max-width: $container-sm-width;
-	margin-left: auto;
-	margin-right: auto;
-	@include container-box;
+@media (min-width: $LG-WIDTH) {
+	.container, .container-lg, .container-md, .container-sm {
+		max-width: $container-width;
+	}
 }
 
+@media (min-width: $XL-WIDTH) {
+	.container, .container-xl, .container-lg, .container-md, .container-sm {
+		max-width: $container-xl-width;
+	}
+}
 // Grid
 @mixin base-column ($i) {
 	position: relative;

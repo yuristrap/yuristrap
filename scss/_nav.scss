@@ -31,7 +31,7 @@
  */
 .nav-link {
 	display: block;
-	padding: 0.5rem;
+	padding: 0.5rem 1rem;
 	color: var(--darkColor);
 	&.disabled {
 		pointer-events: none;
