@@ -33,8 +33,21 @@ $bg-color: #fff0;
 $hr-bg-color: #fff;		// It should not have a transparency value.
 
 // Night
-$nightBG: #201D23;
+$nightBG: #121212;
 $nightPrimary: #6E5B99;
+
+// Colors Array
+$colors-array: (
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "success":    $success,
+  "warning":    $warning,
+  "danger":     $danger,
+  "info":       $info,
+  "dark":       $dark,
+  "light":      $light,
+  "brown":      $brown
+) !default;
 
 // LINE-HEIGHT
 $BASE-LINE-HEIGHT: 1.5;

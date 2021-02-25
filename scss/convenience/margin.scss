@@ -1,5 +1,9 @@
 $MAX-MARGIN-THROUGH: 10;
 
+.mg-0-auto {
+	margin: 0 auto;
+}
+
 @for $i from 0 through $MAX-MARGIN-THROUGH {
 	.mg-#{$i} {
 		margin: #{$i}rem !important;
