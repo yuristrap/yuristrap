@@ -68,6 +68,8 @@
     align-items: center;
 	flex-flow: row wrap;
 	justify-content: flex-start;
+	transition: $darkmode-transition;
+    transition-delay: $darkmode-delay;
 	@include navbar-theme(var(--darkColor));
 }
 /**

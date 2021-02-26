@@ -48,17 +48,18 @@ You can customize what you want.
 > What has changed? - [Docs - version](https://yuristrap.github.io/v1.0/introduction/version)
 
 ## Sass Environment
+### Install `node-sass` module
 ```
 npm install -g node-sass
 ```
-Install `node-sass` module
 
+### Build `compressed`
 ```
 node-sass --output-style compressed scss/yuri.scss --output dist/css
 ```
-Build `compressed`
 
+### Build `watch mode`
 ```
 node-sass --watch scss/yuri.scss dist/css/yuri.css
 ```
-Build `watch mode`
+

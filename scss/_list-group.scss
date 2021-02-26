@@ -57,10 +57,10 @@ $LIST-BG-OPA: .3;
     }
 	&:not(.list-group-flush) {
         .list-group-item {
-            border: 1px solid rgba($black, $LIST-BORDER-OPA);
+            border: 1px solid var(--darkColor);
             border-bottom: 0px;
             &:last-child {
-                border: 1px solid rgba($black, $LIST-BORDER-OPA);
+                border: 1px solid var(--darkColor);
             }
             padding: 1rem 1.25rem;
             @include border-radius;
