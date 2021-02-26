@@ -154,9 +154,10 @@ input[type=checkbox].form-check-input {
 		}
 	}
 	&:checked + .form-check-label:before {
-		content: '\2714';
+		content: '\2713';
 		text-align: center;
 		text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+		line-height: 1rem;
 	}
 }
 input[type=radio].form-check-input {

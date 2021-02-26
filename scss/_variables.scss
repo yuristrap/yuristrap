@@ -33,8 +33,21 @@ $bg-color: #fff0;
 $hr-bg-color: #fff;		// It should not have a transparency value.
 
 // Night
-$nightBG: #201D23;
+$nightBG: #121212;
 $nightPrimary: #6E5B99;
+
+// Colors Array
+$colors-array: (
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "success":    $success,
+  "warning":    $warning,
+  "danger":     $danger,
+  "info":       $info,
+  "dark":       $dark,
+  "light":      $light,
+  "brown":      $brown
+) !default;
 
 // LINE-HEIGHT
 $BASE-LINE-HEIGHT: 1.5;
@@ -62,5 +75,8 @@ $NAV-LINK-BASIC-OPA: .7;
 $NAV-LINK-DISABLED-OPA: .4;
 
 // darkmode transition
-$darkmode-transition: cubic-bezier(0.68, -0.55, 0.27, 01.55) 200ms!important;
+$darkmode-transition: ease 100ms !important;
 $darkmode-delay: 0s !important;
+
+// font-family
+$COMMON-FONT-FAMILY: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
