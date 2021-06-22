@@ -16,37 +16,15 @@
 /**
  * Badge Colors
  */
-.badge-primary {
-	color: $light;
-	background-color: $primary;
-}
-.badge-success {
-	color: $light;
-	background-color: $success;
-}
-.badge-warning {
-	color: $light;
-	background-color: $warning;
-}
-.badge-danger {
-	color: $light;
-	background-color: $danger;
-}
-.badge-dark {
-	color: $light;
-	background-color: $dark;
+@each $color, $value in $colors-lists {
+    .badge-#{$color} {
+		color: $light;
+		background-color: $value;
+    }
 }
 .badge-light {
 	color: $dark;
 	background-color: $light;
-}
-.badge-info {
-	color: $light;
-	background-color: $info;
-}
-.badge-brown {
-	color: $light;
-	background-color: $brown;
 }
 
 /**

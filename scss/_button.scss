@@ -15,14 +15,14 @@
 	cursor: pointer;
 	line-height: 1.5;
 	vertical-align: middle;
-	background-color: transparent;
+    background-color : $week;
 	&.disabled,
 	&:disabled {
 		opacity: .7;
 		cursor: default;
 	}
 	&:not(:disabled):not(.disabled):hover {
-        background-color : $week;
+        background-color : $btn-hover-color;
     }
 }
 
@@ -49,125 +49,52 @@
 }
 
 /**
- * 	Button focus event & border setting
+ * 	Button hover event & border setting (for btn-#)
  */
-@mixin focus-darken ($color) {
-    border: 1px solid $color;
+ @mixin hover-darken ($value) {
+    &:not(:disabled):not(.disabled):hover {
+        background-color : darken($value, 10%);
+        border-color : darken($value, 10%);
+    }
+}
+
+/**
+ * 	Button hover event & border setting (for btn-outline-#)
+ */
+ @mixin hover-outline-darken ($value) {
+	&:not(:disabled):not(.disabled):hover {
+        color: $white;
+        background-color: $value;
+    }
+}
+
+/**
+ * 	Button focus event & border setting (for btn-#, btn-outline-#)
+ */
+@mixin focus-all-darken ($value) {
 	&:not(:disabled):not(.disabled):focus {
 		outline: none;
-		box-shadow: 0 0 0 1px darken($color, 10%);
+		box-shadow: 0 0 0 1px darken($value, 10%);
     }
 }
 
 /**
- * 	Primary Button
+ * Button Colors
  */
-.btn-primary {
-    color: $white;
-    background-color: $primary;
-	&:not(:disabled):not(.disabled):hover {
-        background-color : darken($primary, 10%);
-        border-color : darken($primary, 10%);
-    }
-	@include focus-darken($primary);
-}
-.btn-outline-primary {
-    color : $primary;
-    background-color: transparent;
-	&:not(:disabled):not(.disabled):hover {
-        background-color: $primary;
+@each $color, $value in $colors-lists {
+    .btn-#{$color} {
         color: $white;
+        background-color: $value;
+        @include hover-darken($value);
+        @include focus-all-darken($value);
     }
-	@include focus-darken($primary);
-}
-
-/**
- * 	Success Button
- */
-.btn-success {
-    color: $white;
-    background-color: $success;
-	&:not(:disabled):not(.disabled):hover {
-        background-color : darken($success, 10%);
-        border-color : darken($success, 10%);
+    .btn-outline-#{$color} {
+        color: $value;
+        background-color: transparent;
+        border: 1px solid $value;
+        @include hover-outline-darken($value);
+        @include focus-all-darken($value);
     }
-	@include focus-darken($success);
-}
-.btn-outline-success {
-    color :$success;
-    background-color: transparent;
-	&:not(:disabled):not(.disabled):hover {
-        background-color: $success;
-        color: $white;
-    }
-	@include focus-darken($success);
-}
-
-
-/**
- * 	Warning Button
- */
-.btn-warning{
-    color: $white;
-    background-color: $warning;
-	&:not(:disabled):not(.disabled):hover {
-        background-color : darken($warning, 10%);
-        border-color : darken($warning, 10%);
-    }
-	@include focus-darken($warning);
-}
-.btn-outline-warning {
-    color :$warning;
-    background-color: transparent;
-	&:not(:disabled):not(.disabled):hover {
-        background-color: $warning;
-        color: $white;
-    }
-	@include focus-darken($warning);
-}
-
-/**
- * 	Danger Button
- */
-.btn-danger {
-    color: $white;
-    background-color: $danger;
-	&:not(:disabled):not(.disabled):hover {
-        background-color : darken($danger, 10%);
-        border-color : darken($danger, 10%);
-    }
-	@include focus-darken($danger);
-}
-.btn-outline-danger {
-    color :$danger;
-    background-color: transparent;
-	&:not(:disabled):not(.disabled):hover {
-        background-color: $danger;
-        color: $white;
-    }
-	@include focus-darken($danger);
-}
-
-/**
- * 	Dark Button
- */
-.btn-dark {
-    color: $white;
-    background-color: $dark;
-	&:not(:disabled):not(.disabled):hover {
-        background-color : darken($dark, 15%);
-        border-color : darken($dark, 15%);
-    }
-	@include focus-darken($dark);
-}
-.btn-outline-dark {
-    color : var(--blackColor);
-    background-color: transparent;
-	&:not(:disabled):not(.disabled):hover {
-        background-color: $dark;
-        color: $white;
-    }
-	@include focus-darken($dark);
 }
 
 /**
@@ -175,54 +102,7 @@
  */
 .btn-light {
     color: $dark;
-    background-color: $light;
-	&:not(:disabled):not(.disabled):hover {
-        background-color : darken($light, 10%);
-        border-color : darken($light, 10%);
-    }
-	@include focus-darken($light);
 }
-
-/**
- * 	Info Button
- */
-.btn-info {
-    color: $white;
-    background-color: $info;
-	&:not(:disabled):not(.disabled):hover {
-        background-color : darken($info, 10%);
-        border-color : darken($info, 10%);
-    }
-	@include focus-darken($info);
-}
-.btn-outline-info {
-    color: $info;
-    background-color: transparent;
-	&:not(:disabled):not(.disabled):hover {
-        background-color: $info;
-        color: $white;
-    }
-	@include focus-darken($info);
-}
-
-/**
- * 	Brown Button
- */
-.btn-brown {
-    color: $white;
-    background-color: $brown;
-	&:not(:disabled):not(.disabled):hover {
-        background-color : darken($brown, 10%);
-        border-color : darken($brown, 10%);
-    }
-	@include focus-darken($brown);
-}
-.btn-outline-brown {
-    color: $brown;
-    background-color: transparent;
-	&:not(:disabled):not(.disabled):hover {
-        background-color: $brown;
-        color: $white;
-    }
-	@include focus-darken($brown);
+.btn-outline-light {
+    color: $dark;
 }

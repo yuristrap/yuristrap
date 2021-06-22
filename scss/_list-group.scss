@@ -45,7 +45,6 @@ $LIST-BG-OPA: .3;
     padding-left:0px;
     margin-right: auto;
     color: var(--darkColor);
-	
     .active {
         background-color: $primary;
         color: var(--lightColor);
@@ -65,29 +64,11 @@ $LIST-BG-OPA: .3;
             padding: 1rem 1.25rem;
             @include border-radius;
             @include list-action-hover($primary);
-            &.list-group-item-primary {
-                @include base-list($primary);
-                @include list-action-hover($primary);
-            }
-            &.list-group-item-success {
-                @include base-list($success);
-                @include list-action-hover($success);
-            }
-            &.list-group-item-danger {
-                @include base-list($danger);
-                @include list-action-hover($danger);
-            }
-            &.list-group-item-warning {
-                @include base-list($warning);
-                @include list-action-hover($warning);
-            }
-            &.list-group-item-info {
-                @include base-list($info);
-                @include list-action-hover($info);
-            }
-			&.list-group-item-brown {
-                @include base-list($brown);
-                @include list-action-hover($brown);
+            @each $color, $value in $default-colors-lists {
+                &.list-group-item-#{$color} {
+                    @include base-list($value);
+                    @include list-action-hover($value);
+                }
             }
             &.list-group-item-light { 
                 @include base-list($gray);

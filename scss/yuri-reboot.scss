@@ -20,6 +20,7 @@
 	--hrBackgroundColor: #{$hr-bg-color};
 
 	--noticeBoxShadowColor: #cfcfcf;
+	// --btnBgColor: #{$week};
 }
 
 html {
@@ -41,6 +42,7 @@ html[data-theme='dark'] {
 	--hrBackgroundColor: #{$nightBG};
 
 	--noticeBoxShadowColor: #131212;
+	// --btnBgColor: #{$secondary};
 }
 
 ::selection {
@@ -108,6 +110,16 @@ b, strong {
     font-weight: bolder;
 }
 
+/**
+ * pre
+ */
+pre {
+	margin-top: 0px;
+}
+
+/**
+ * button
+ */
 button:not(:disabled) {
 	cursor: pointer;
 }

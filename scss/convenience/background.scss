@@ -1,4 +1,4 @@
-@each $color, $value in $colors-array {
+@each $color, $value in $colors-lists {
     .bg-#{$color} {
       background-color: $value;
     }

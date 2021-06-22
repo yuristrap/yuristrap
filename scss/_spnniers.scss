@@ -1,5 +1,5 @@
 @mixin set-border-color($color) {
-	border-bottom-color : $color;
+  border-bottom-color : $color;
 }
 @mixin set-dot-color($color) {
 	border-top-color : $color;
@@ -10,38 +10,23 @@
  */
 .spinner-border {
 	width: 2rem;
-    height: 2rem;
-    border: 5px solid $white;
+  height: 2rem;
+  border: 5px solid $white;
+  border-bottom-color: $dark;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  &.alpha {
+    border-color: transparent;
     border-bottom-color: $dark;
-    border-radius: 50%;
-    display: inline-block;
-    box-sizing: border-box;
-    animation: rotation 1s linear infinite;
-    &.alpha {
-		border-color: transparent;
-		border-bottom-color: $dark;
+  }
+  
+  @each $color, $value in $colors-lists {
+    &.#{$color} {
+      @include set-border-color($value);
     }
-    &.success {
-		@include set-border-color($success);
-    } 
-    &.primary {
-		@include set-border-color($primary);
-    }
-    &.warning {
-		@include set-border-color($warning);
-    } 
-    &.danger {
-		@include set-border-color($danger);
-    } 
-    &.gray {
-		@include set-border-color($gray);
-    } 
-    &.info {
-		@include set-border-color($info);
-    }  
-    &.brown {
-		@include set-border-color($brown);
-    }
+  }
 }
 .spinner-border-sm {
 	width: 1rem;
@@ -59,35 +44,19 @@
  * Spinner - has dot
  */
 .spinner-dot {
-    width: 2rem;
-    height: 2rem;
-    border-radius: 50%;
-    display: inline-block;
-    border-top: 3px solid $dark;
-    border-right: 3px solid transparent;
-    box-sizing: border-box;
-    animation: rotation 1s linear infinite;
-    &.success {
-		@include set-dot-color($success);
-    } 
-    &.primary {
-		@include set-dot-color($primary);
+  width: 2rem;
+  height: 2rem;
+  display: inline-block;
+  border-top: 3px solid $dark;
+  border-right: 3px solid transparent;
+  border-radius: 50%;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  @each $color, $value in $colors-lists {
+    &.#{$color} {
+      @include set-dot-color($value);
     }
-    &.warning {
-		@include set-dot-color($warning);
-    } 
-    &.danger {
-		@include set-dot-color($danger);
-    } 
-    &.gray {
-		@include set-dot-color($gray);
-    } 
-    &.info {
-		@include set-dot-color($info);
-    }  
-    &.brown {
-		@include set-dot-color($brown);
-    }
+  }
 }
 .spinner-dot-sm {
 	width: 1rem;

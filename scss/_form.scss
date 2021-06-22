@@ -246,11 +246,11 @@ input[type=radio].form-check-input {
 	display: none;
 	&:checked + .form-switch-label {
 		background: $primary;
-		&.success { background: $success; }
-		&.warning { background: $warning; }
-		&.danger { background: $danger; }
-		&.info { background: $info; }
-		&.brown { background: $brown; }
+		@each $color, $value in $default-colors-lists {
+			&.#{$color} {
+				background-color: $value;
+			}
+		}
 		&.dark { 
 			background: var(--darkColor);
 			&:after {

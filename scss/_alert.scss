@@ -10,8 +10,9 @@ $ALERT-BG-OPA: .3;
 	& > hr {
 		border: thin solid rgba($color, $ALERT-HR-OPA);
 	}
-	& a {
-		@if $color ==$dark {
+	& a,
+	& .alert-link {
+		@if $color == $dark {
 			color: var(--lightcolor);
 		}
 		@else {
@@ -20,10 +21,10 @@ $ALERT-BG-OPA: .3;
 		font-weight: bold ;
 	}
 	
-	@if $color ==$dark {
+	@if $color == $dark {
         color: var(--darkColor)
     }
-    @else if $color ==$gray {
+    @else if $color == $gray {
         color: darken($color, 30%);
     }
 }
@@ -35,41 +36,11 @@ $ALERT-BG-OPA: .3;
     word-break: break-all;
 }
 
-/**
- *	.alert-success
- */
-.alert-success {
-	@include base-alert($success);
+@each $color, $value in $colors-lists {
+	.alert-#{$color} {
+		@include base-alert($value);
+	}
 }
-
-/**
- *	.alert-primary
- */
-.alert-primary {
-	@include base-alert($primary);
-}
-
-/**
- *	.alert-warning
- */
-.alert-warning {
-	@include base-alert($warning);
-}
-
-/**
- *	.alert-danger
- */
-.alert-danger {
-	@include base-alert($danger);
-}
-
-/**
- *	.alert-dark
- */
-.alert-dark {
-	@include base-alert($dark);
-}
-
 /**
  *	.alert-light
  */
@@ -79,21 +50,6 @@ $ALERT-BG-OPA: .3;
 	background-color: $white;
 } 
 
-/**
- *	.alert-info
- */
-.alert-info {
-	@include base-alert($info);
-}
-
-/**
- *	.alert-brown
- */
-.alert-brown {
-	@include base-alert($brown);
-}
-
-	
 /**
  *	.alert-heading
  *	@desc: Header of alert
