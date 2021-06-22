@@ -17,7 +17,9 @@
 	--textNightColor: #{$white};
 	--backgroundColor: #{$bg-color};
 	--backgroundNightColor: #{$dark};
-	--hrBackgroundColor: #{$hr-bg-color};	
+	--hrBackgroundColor: #{$hr-bg-color};
+
+	--noticeBoxShadowColor: #cfcfcf;
 }
 
 html {
@@ -29,8 +31,6 @@ html {
 	}
 }
 html[data-theme='dark'] {
-	background-color: var(--backgroundColor);
-	color: var(--textColor);
 	--lightColor: #{$dark};
 	--darkColor: #{$light};
 	
@@ -39,6 +39,8 @@ html[data-theme='dark'] {
 	--backgroundColor: #{$nightBG};
 	--backgroundNightColor: #{$white};
 	--hrBackgroundColor: #{$nightBG};
+
+	--noticeBoxShadowColor: #131212;
 }
 
 ::selection {
