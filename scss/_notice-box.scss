@@ -12,6 +12,8 @@
     opacity: 0;
 	text-align: center;
 	border-radius: $BORDER-PILL;
+	// display: none;
+	pointer-events: none;
 	box-shadow:  10px 10px 20px var(--noticeBoxShadowColor), 
 				 -10px -10px 20px var(--backgroundColor);
 	z-index: $Z-notice-box;

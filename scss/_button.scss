@@ -24,6 +24,10 @@
 	&:not(:disabled):not(.disabled):hover {
         background-color : $btn-hover-color;
     }
+    &.btn-transparent, &.bg-transparent {
+        background-color: transparent !important;
+        color: var(--textColor);
+    }
 }
 
 /**

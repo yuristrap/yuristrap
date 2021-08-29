@@ -103,14 +103,17 @@ $(function(){
     });
     body.on('click', '[data-toggle="notice"]', function(e){
 		e.preventDefault();
+
 		let noticeTarget = undefined;
 		let transitionSpeed = '4.0';
+
 		try {
 			noticeTarget = $(this).data('target');
 			if (noticeTarget === undefined) throw `[yuristrap] ${$(this)} : data-target not defined`;
 		} catch (err) {
 			console.error(err);
 		}
+
 		try {
 			if ($(noticeTarget).data('speed') !== undefined) {
 				transitionSpeed = Number($(noticeTarget).data('speed'));
@@ -120,19 +123,26 @@ $(function(){
 		} catch (err) {
 			console.error(err);
 		}
+
 		noticeTarget = $(noticeTarget);
 
 		checkingNoticeTargetTransitioning(noticeTarget, 'notice-box-showing');
 		checkingNoticeTargetTransitioning(noticeTarget, 'notice-box-closing');
 
 		noticeTarget.addClass('notice-box-showing');
+		
+		noticeTarget.css('pointer-events', 'all');
 		noticeTarget.css('transition', `opacity ${transitionSpeed/2}s cubic-bezier(.1,1,0,1)`);
+
 		noticeTarget.one(transitionEvent, (e) => {	
 			noticeTarget.removeClass('notice-box-showing');
 			noticeTarget.addClass('notice-box-closing');
+
 			noticeTarget.css('transition', `opacity ${transitionSpeed/2}s cubic-bezier(1,0,1,.1)`);
+
 			noticeTarget.one(transitionEvent, (e) => {
 				noticeTarget.removeClass('notice-box-closing');
+				noticeTarget.css('pointer-events', 'none');
 				noticeTarget.css('transition', '');
 			});
 		});

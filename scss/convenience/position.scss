@@ -52,3 +52,9 @@
 	bottom: 0px !important;
 	z-index: $Z-fixed !important;
 }
+.fixed-100 {
+	position: fixed !important;
+	@extend .top-left;
+	width: 100%;
+	height: 100%;
+}

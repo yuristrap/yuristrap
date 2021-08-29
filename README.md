@@ -5,7 +5,7 @@
   <b>Poor than Bootstrap. Responsive. Dark mode. Customizable</b>
   <br/>  
   <br/> 
- <img src="https://img.shields.io/badge/version-1.0.3-%23C5A4D8?style=for-the-badge"/>
+ <img src="https://img.shields.io/badge/version-1.0.5-%23C5A4D8?style=for-the-badge"/>
   <br/>  
  <img src="https://img.shields.io/netlify/6e32703e-74ac-40fc-80ef-40e79f8c2de2?label=BUILD&style=for-the-badge"/>
  <img src="https://img.shields.io/github/issues/yuristrap/yuristrap?style=for-the-badge"/>
@@ -18,11 +18,11 @@
 ## Latest Version
 ### CSS
 ```
-https://yuristrap-cdn.vercel.app/1.0.3/css/yuri.css
+https://yuristrap-cdn.vercel.app/1.0.5/css/yuri.css
 ```
 ### JS
 ```
-https://yuristrap-cdn.vercel.app/1.0.3/js/yuri.js
+https://yuristrap-cdn.vercel.app/1.0.5/js/yuri.js
 ```
 
 ## Use Environment
@@ -40,7 +40,9 @@ You can customize what you want.
 > How? - [Docs - Customize](https://yuristrap.github.io/v1.0/introduction/customize)
 
 ## Version list
-- v1.0.3 (latest)
+- v1.0.5 (latest)
+- v1.0.4
+- v1.0.3
 - v1.0.2
 - v1.0.1
 - v1.0.0
